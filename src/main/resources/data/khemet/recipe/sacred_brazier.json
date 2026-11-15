@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "G G",
+    "BCB",
+    "BBB"
+  ],
+  "key": {
+    "G": "minecraft:gold_ingot",
+    "B": "khemet:black_basalt",
+    "C": "minecraft:coal"
+  },
+  "result": {
+    "id": "khemet:sacred_brazier",
+    "count": 1
+  }
+}

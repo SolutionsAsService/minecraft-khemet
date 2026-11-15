@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "khemet:cracked_temple_stone"
+    },
+    "title": {
+      "text": "Under the Dunes"
+    },
+    "description": {
+      "text": "Find a ruin in the desert."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "khemet:desert_ruin"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "khemet:root"
+}

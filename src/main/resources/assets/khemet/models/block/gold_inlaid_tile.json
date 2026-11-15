@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "khemet:block/gold_inlaid_tile"
+  }
+}

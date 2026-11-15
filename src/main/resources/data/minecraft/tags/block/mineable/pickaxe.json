@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "khemet:ancient_limestone",
+    "khemet:white_limestone",
+    "khemet:golden_sandstone",
+    "khemet:black_basalt",
+    "khemet:polished_pharaoh_stone",
+    "khemet:hieroglyph_stone",
+    "khemet:cracked_temple_stone",
+    "khemet:weathered_pyramid_stone",
+    "khemet:gold_inlaid_tile",
+    "khemet:painted_temple_wall",
+    "khemet:hieroglyph_bricks",
+    "khemet:obelisk_block",
+    "khemet:golden_pillar",
+    "khemet:lotus_column",
+    "khemet:sacred_brazier",
+    "khemet:ra_altar",
+    "khemet:anubis_altar"
+  ]
+}

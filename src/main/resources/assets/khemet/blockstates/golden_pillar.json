@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "khemet:block/golden_pillar"
+    },
+    "axis=x": {
+      "model": "khemet:block/golden_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=z": {
+      "model": "khemet:block/golden_pillar_horizontal",
+      "x": 90
+    }
+  }
+}

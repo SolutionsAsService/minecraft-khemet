@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "khemet:blocks/polished_pharaoh_stone",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "khemet:polished_pharaoh_stone"
+        }
+      ]
+    }
+  ]
+}

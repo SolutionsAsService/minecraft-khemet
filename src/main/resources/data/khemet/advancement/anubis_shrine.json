@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "khemet:anubis_altar"
+    },
+    "title": {
+      "text": "The Jackal's Court"
+    },
+    "description": {
+      "text": "Find the shrine of Anubis."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "khemet:anubis_shrine"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "khemet:desert_ruin"
+}

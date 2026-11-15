@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "khemet:blocks/ancient_limestone",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "khemet:ancient_limestone"
+        }
+      ]
+    }
+  ]
+}

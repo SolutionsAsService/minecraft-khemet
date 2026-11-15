@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "khemet:block/lotus_column_top",
+    "side": "khemet:block/lotus_column"
+  }
+}

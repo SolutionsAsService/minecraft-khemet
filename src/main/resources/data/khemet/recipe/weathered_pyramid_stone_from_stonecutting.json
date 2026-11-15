@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:sandstone",
+  "result": {
+    "id": "khemet:weathered_pyramid_stone",
+    "count": 1
+  }
+}

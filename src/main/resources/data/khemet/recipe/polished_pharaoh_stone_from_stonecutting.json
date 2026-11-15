@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:sandstone",
+  "result": {
+    "id": "khemet:polished_pharaoh_stone",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "S",
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": "khemet:golden_sandstone"
+  },
+  "result": {
+    "id": "khemet:golden_pillar",
+    "count": 3
+  }
+}

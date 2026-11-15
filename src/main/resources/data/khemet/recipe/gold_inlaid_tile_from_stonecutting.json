@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "khemet:polished_pharaoh_stone",
+  "result": {
+    "id": "khemet:gold_inlaid_tile",
+    "count": 1
+  }
+}

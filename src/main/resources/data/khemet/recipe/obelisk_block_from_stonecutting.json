@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "khemet:polished_pharaoh_stone",
+  "result": {
+    "id": "khemet:obelisk_block",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:sandstone",
+  "result": {
+    "id": "khemet:hieroglyph_bricks",
+    "count": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "khemet:ankh"
+    },
+    "title": {
+      "text": "The Key of Life"
+    },
+    "description": {
+      "text": "Hold an Ankh of Life."
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "khemet:ankh"
+          }
+        ]
+      }
+    }
+  },
+  "parent": "khemet:ra_shrine"
+}

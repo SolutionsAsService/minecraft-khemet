@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:calcite",
+  "result": {
+    "id": "khemet:white_limestone",
+    "count": 1
+  }
+}

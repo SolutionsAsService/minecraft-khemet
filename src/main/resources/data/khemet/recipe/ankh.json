@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "khemet:sunstone_powder",
+    "khemet:sacred_myrrh"
+  ],
+  "result": {
+    "id": "khemet:ankh",
+    "count": 1
+  }
+}

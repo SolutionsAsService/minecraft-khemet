@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "khemet:item/royal_mummy_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15515196
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 2507675
+      }
+    ]
+  }
+}

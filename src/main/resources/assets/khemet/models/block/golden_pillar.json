@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "khemet:block/golden_pillar_top",
+    "side": "khemet:block/golden_pillar"
+  }
+}

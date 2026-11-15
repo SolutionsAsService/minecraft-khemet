@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "khemet:blocks/gold_inlaid_tile",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "khemet:gold_inlaid_tile"
+        }
+      ]
+    }
+  ]
+}

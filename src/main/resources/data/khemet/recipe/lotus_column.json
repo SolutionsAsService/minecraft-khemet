@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "W",
+    "L",
+    "W"
+  ],
+  "key": {
+    "W": "khemet:white_limestone",
+    "L": "khemet:blue_lotus"
+  },
+  "result": {
+    "id": "khemet:lotus_column",
+    "count": 2
+  }
+}
