@@ -1,1 +1,57 @@
-# minecraft-khemet
+# Khemet
+
+Sands of the Ancient Gods: Egyptian mythology for Minecraft Java Edition (Fabric, 1.21.4). Khemet is the sibling of the
+[Asgard](https://github.com/SolutionsAsService/minecraft-asgard) mod: the same stack, the same design philosophy (divine
+shrines, offerings, legendary artifacts, creatures, ancient structures, mythology-based progression) and a completely
+different identity. The master design is in [`design/master-prompt.md`](design/master-prompt.md).
+
+## Slice one
+
+The first slice builds the core of the design's Phase 1 (the desert) and the heart of Phase 4 (the divine systems), small
+but whole:
+
+- **Building blocks**: twelve Egyptian stones (ancient and white limestone, golden sandstone, black basalt, polished
+  pharaoh stone, carved hieroglyphic stone, cracked temple stone, weathered pyramid stone, gold-inlaid tile, painted temple
+  wall, hieroglyphic bricks, obelisk block), the Golden Pillar, the Lotus Column and the Sacred Brazier. All can be cut from
+  sandstone at a stonecutter.
+- **River plants**: Blue Lotus and Papyrus, which grow on sand and dirt.
+- **Five divine potions** (Blood of Ra, Tears of Isis, Breath of Horus, Anubis's Veil, Bastet's Grace) with their
+  ingredients, brewed from an Awkward Potion. The data is `potions.json`, the same format as Asgard's.
+- **Two gods, Ra and Anubis**, each with a shrine and an **offering altar**. Offerings raise your **divine favor** with
+  that god through four stages (Stranger, Recognized, Favored, Chosen); each stage adds to the blessing the god gives.
+  `/khemet favor` shows where you stand.
+- **Structures** in deserts: the shrine of Ra (a golden obelisk and a sun disc), the shrine of Anubis (black basalt, jackals,
+  canopic jars, a sarcophagus), an obelisk field and a desert ruin, each with a chest of themed loot.
+- **Mummies**: the Mummy (a tomb guardian whose touch weakens, and which burns twice as hard) and the Royal Mummy (gold
+  crown, more health). They reuse the zombie model with their own skins.
+- **Sandstorms**: now and then, anyone caught in a desert under open sky is slowed and blown with sand. Shelter helps.
+- **The Ankh of Life** (heals at once, then regenerates) and **Anubis's Khopesh** (extra damage to the undead).
+
+Not in this slice (see the roadmap in the master design): new biomes and terrain, pyramids and the Sphinx, the other seven
+gods, archaeology and the ancient language, more creatures, armor, the Duat dimension. The slice's status is on the
+site and in `DESIGN-LOG.md`: what is tested, and what is not.
+
+## Build
+
+```
+git clone https://github.com/SolutionsAsService/minecraft-khemet
+cd minecraft-khemet
+gradle build        # the jar is in build/libs/
+```
+
+Needs Java 21, Gradle 8 (no wrapper in the repository), Fabric Loader 0.16+ and Fabric API.
+
+## Regenerate
+
+Textures, models, structures, loot, recipes, worldgen and the site are generated. Edit the script, not the output:
+
+```
+python3 tools/gen_content.py && python3 tools/gen_assets.py   # textures, models, lang
+python3 tools/gen_structures.py                               # the .nbt structure files
+python3 tools/gen_data.py                                     # loot, recipes, tags, worldgen, advancements
+python3 _src/build_site.py                                    # the site
+```
+
+## Credit
+
+All work in this repository is credited only to SolutionsAsService.
