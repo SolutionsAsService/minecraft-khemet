@@ -1,0 +1,1377 @@
+# KHEMET
+## SANDS OF THE ANCIENT GODS
+### Minecraft Mythology Expansion — Master Design Document
+
+**Genre:** Exploration, Mythology, Adventure, Archaeology, Magic, Survival  
+**Setting:** Ancient Egyptian-inspired civilization and mythology  
+**Primary Biome:** Desert  
+**Core Themes:** Ancient gods, lost civilizations, pyramids, sacred relics, tombs, divine magic, desert survival.
+
+---
+
+# 1. THE VISION
+
+Create an enormous Egyptian mythology expansion for Minecraft that transforms deserts into mysterious, ancient landscapes filled with forgotten civilizations, divine temples, monumental architecture, magical creatures, buried treasures, and supernatural encounters.
+
+The mod should draw inspiration from:
+- Ancient Egyptian mythology.
+- Egyptian architecture and monumental engineering.
+- Pharaohs and dynasties.
+- The Egyptian pantheon.
+- The Book of the Dead.
+- The afterlife and Duat.
+- Ancient temples and burial traditions.
+- Sacred animals and divine symbolism.
+- Egyptian astronomy and mathematics.
+
+The mod should feel like discovering an ancient civilization that existed long before the player arrived.
+
+**Core design philosophy:**
+
+Exploration should be the primary attraction. The desert should feel beautiful, dangerous, mysterious, and rewarding.
+
+Players should encounter monumental structures, discover ancient writing, uncover lost treasures, earn divine blessings, and eventually journey into the Egyptian underworld.
+
+This should be a large, cohesive mod rather than a collection of unrelated Egyptian-themed blocks.
+
+---
+
+# 2. DESERT OVERWORLD OVERHAUL
+
+The first priority is making Minecraft deserts dramatically more interesting.
+
+Introduce new desert biomes, terrain features, structures, vegetation, and wildlife.
+
+## New Biomes
+
+### Golden Dunes
+- Enormous rolling sand dunes.
+- Occasional sandstone formations.
+- Buried ruins.
+- Scarab beetles.
+- Ancient obelisks.
+- Rare desert flowers.
+
+### Ancient River Valley
+Inspired by the Nile.
+
+- Fertile green riverbanks.
+- Palm forests.
+- Reeds and papyrus.
+- Mud brick ruins.
+- Small settlements.
+- Crocodiles and hippos.
+- Ancient agricultural structures.
+
+### Oasis Gardens
+- Pools of blue water.
+- Palm trees.
+- Lotus flowers.
+- Colorful vegetation.
+- Small waterfalls.
+- Desert wildlife.
+- Rare magical plants.
+
+### Black Sand Wastes
+- Dark volcanic sand.
+- Strange rock formations.
+- Abandoned temples.
+- Hostile supernatural creatures.
+- Rare minerals.
+
+### Painted Desert
+- Red, orange, yellow, and white sandstone.
+- Large rock formations.
+- Ancient cave paintings.
+- Hidden tomb entrances.
+
+### The Great Necropolis
+- Enormous desert graveyard.
+- Ancient burial mounds.
+- Broken statues.
+- Obelisks.
+- Buried tomb entrances.
+- Undead guardians.
+
+### Sacred Highlands
+- Desert mountains.
+- Eagle nests.
+- Abandoned monasteries and shrines.
+- Ancient stone temples.
+- Rare ores.
+
+---
+
+# 3. NEW BLOCKS AND BUILDING MATERIALS
+
+Builders should have an enormous selection of Egyptian architectural blocks.
+
+## Sandstone Variants
+- Ancient Limestone.
+- White Egyptian Limestone.
+- Golden Sandstone.
+- Red Sandstone.
+- Black Basalt.
+- Polished Pharaoh Stone.
+- Carved Hieroglyphic Stone.
+- Cracked Temple Stone.
+- Weathered Pyramid Stone.
+
+## Decorative Blocks
+- Golden Pillars.
+- Lotus Columns.
+- Papyrus Blocks.
+- Pharaoh Statues.
+- Anubis Statues.
+- Sphinx Statues.
+- Winged Sun Disc.
+- Obelisk Blocks.
+- Ornate Temple Doors.
+- Gold-Inlaid Tiles.
+- Painted Temple Walls.
+- Hieroglyphic Bricks.
+- Sacred Fire Braziers.
+- Golden Lanterns.
+- Sarcophagi.
+- Decorative Canopic Jars.
+- Egyptian Banners.
+- Ornamental Fountains.
+
+## Rare Materials
+- Divine Gold.
+- Celestial Electrum.
+- Pharaoh's Jade.
+- Sacred Lapis.
+- Sunstone.
+- Underworld Obsidian.
+- Divine Papyrus.
+- Ancient Amber.
+
+Each material should have building, crafting, and decorative applications.
+
+---
+
+# 4. THE GREAT PYRAMIDS
+
+Pyramids should be some of the largest and most impressive structures in the mod.
+
+Generate several different pyramid types.
+
+## The Great Pyramid
+
+An enormous naturally generated structure.
+
+Exterior:
+- Massive stepped stone base.
+- Limestone exterior.
+- Partially weathered sections.
+- Golden capstone on rare variants.
+- Entrances hidden around the structure.
+- Guardian statues.
+
+Interior:
+- Grand entrance corridor.
+- Descending passage.
+- Grand Gallery.
+- Ancient chambers.
+- Secret passages.
+- Pressure plates.
+- Hidden treasure rooms.
+- Hieroglyphic inscriptions.
+- Ancient mechanisms.
+
+### Pyramid Puzzles
+
+Introduce puzzle mechanics:
+- Rotate mirrors to direct sunlight.
+- Activate symbols in the correct order.
+- Move stone blocks.
+- Find hidden switches.
+- Use light to reveal invisible writing.
+- Align celestial symbols.
+- Discover secret doors.
+
+### Pyramid Rewards
+- Pharaoh armor.
+- Divine relics.
+- Ancient weapons.
+- Scarab treasures.
+- Rare enchantments.
+- Golden artifacts.
+- Ancient crafting recipes.
+
+## Other Pyramid Types
+
+**Burial Pyramids**
+- Smaller structures.
+- Multiple burial chambers.
+- Mummy guardians.
+- Ancient treasures.
+
+**Step Pyramids**
+- Large stepped structures.
+- Exterior temples.
+- Underground passages.
+
+**Black Pyramids**
+- Dark stone.
+- Supernatural guardians.
+- Cursed treasure.
+- Stronger enemies.
+
+**Sun Pyramids**
+- Golden exterior decorations.
+- Solar mechanisms.
+- Sun-themed artifacts.
+
+---
+
+# 5. THE SPHINX
+
+The Great Sphinx should be one of the most iconic structures in the mod.
+
+Generate an enormous sandstone sphinx overlooking a desert plateau.
+
+### Features
+- Monumental lion body.
+- Pharaoh's headdress.
+- Weathered sandstone.
+- Underground chambers.
+- Hidden entrance beneath the paws.
+- Ancient inscriptions.
+- Nearby smaller statues.
+
+### The Riddle of the Sphinx
+
+Players encounter a mysterious guardian that asks riddles.
+
+Possible mechanics:
+- Answer questions about ancient symbols.
+- Find clues in nearby ruins.
+- Activate the correct hieroglyphs.
+- Solve environmental puzzles.
+
+Successful completion grants:
+- Sphinx's Eye.
+- Ancient knowledge.
+- Divine blessing.
+- Access to a hidden treasure chamber.
+
+The Sphinx should have multiple possible encounters rather than simply being a decorative structure.
+
+---
+
+# 6. THE EGYPTIAN GODS AND SHRINES
+
+Build a complete divine shrine system similar to the Asgard mod, but with an entirely different visual and gameplay identity.
+
+Each god should have:
+- A unique shrine.
+- Distinct architecture.
+- Sacred offerings.
+- A blessing system.
+- Unique divine crafting materials.
+- Special potions or artifacts.
+- Potential boss encounters.
+
+## RA — GOD OF THE SUN
+
+Shrine:
+- Golden obelisk.
+- Sun disc.
+- Solar symbols.
+- Golden sandstone pillars.
+
+Blessings:
+- Solar protection.
+- Fire resistance.
+- Increased daytime strength.
+- Sunlight regeneration.
+
+Artifacts:
+- Eye of Ra.
+- Solar Amulet.
+- Sunfire Staff.
+
+## ANUBIS — GOD OF THE DEAD
+
+Shrine:
+- Black and gold sandstone.
+- Jackal statues.
+- Canopic jars.
+- Burial offerings.
+
+Blessings:
+- Protection from undead.
+- Increased resistance.
+- Soul perception.
+- Ability to detect nearby tombs.
+
+Artifacts:
+- Anubis Mask.
+- Jackal Staff.
+- Amulet of the Afterlife.
+
+## HORUS — GOD OF THE SKY
+
+Shrine:
+- Massive falcon statue.
+- Blue and gold decorations.
+- Winged sun disc.
+
+Blessings:
+- Increased movement speed.
+- Improved vision.
+- Reduced fall damage.
+- Temporary flight ability.
+
+Artifacts:
+- Eye of Horus.
+- Falcon Wings.
+- Sky Guardian Bow.
+
+## ISIS — GODDESS OF MAGIC
+
+Shrine:
+- Beautiful temple.
+- Winged statues.
+- Lotus gardens.
+- Magical blue crystals.
+
+Blessings:
+- Magical regeneration.
+- Enhanced potion effects.
+- Increased enchantment power.
+
+Artifacts:
+- Isis's Scepter.
+- Wings of Isis.
+- Divine Healing Amulet.
+
+## OSIRIS — GOD OF THE AFTERLIFE
+
+Shrine:
+- Green and gold stone.
+- Ancient throne.
+- Papyrus decorations.
+
+Blessings:
+- Regeneration.
+- Protection from death-related effects.
+- Increased experience.
+
+Artifacts:
+- Osiris's Crown.
+- Staff of Renewal.
+- Green Heart Amulet.
+
+## SET — GOD OF CHAOS AND DESERT STORMS
+
+Shrine:
+- Red sandstone.
+- Strange desert animal statues.
+- Dark red flames.
+
+Blessings:
+- Increased attack damage.
+- Sandstorm resistance.
+- Chance to knock enemies back.
+
+Artifacts:
+- Staff of Set.
+- Chaos Amulet.
+- Desert Storm Blade.
+
+## BASTET — GODDESS OF CATS AND PROTECTION
+
+Shrine:
+- Beautiful golden cat statues.
+- Lotus gardens.
+- Small fountains.
+- Purple and gold decorations.
+
+Blessings:
+- Increased luck.
+- Faster movement.
+- Protection from hostile animals.
+
+Artifacts:
+- Bastet's Necklace.
+- Golden Cat Mask.
+- Claws of Bastet.
+
+## THOTH — GOD OF KNOWLEDGE
+
+Shrine:
+- Tall library-like temple.
+- Ibis statues.
+- Ancient scrolls.
+- Celestial maps.
+
+Blessings:
+- Increased experience.
+- Better treasure discovery.
+- Enhanced enchantments.
+
+Artifacts:
+- Thoth's Quill.
+- Book of Wisdom.
+- Moonlight Compass.
+
+## KHONSU — GOD OF THE MOON
+
+Shrine:
+- Moonstone columns.
+- Crescent moon symbols.
+- Blue glowing lights.
+
+Blessings:
+- Night vision.
+- Increased nighttime movement speed.
+- Lunar regeneration.
+
+Artifacts:
+- Crescent Staff.
+- Moonstone Amulet.
+- Lunar Bow.
+
+---
+
+# 7. DIVINE OFFERING SYSTEM
+
+Introduce an offering mechanic.
+
+Players interact with shrines and place specific items on offering altars.
+
+Examples:
+
+| God | Offerings |
+|---|---|
+| Ra | Gold, Sunflowers, Golden Apples |
+| Anubis | Bone, Gold, Soul-related items |
+| Horus | Feathers, Emeralds, Lapis |
+| Isis | Flowers, Potions, Diamonds |
+| Osiris | Wheat, Green Dye, Emeralds |
+| Set | Redstone, Blaze Powder, Nether Wart |
+| Bastet | Fish, Gold Nuggets, Flowers |
+| Thoth | Books, Ink Sacs, Paper |
+| Khonsu | Moon-related materials, Amethyst |
+
+Offerings increase divine favor.
+
+### Divine Favor Progression
+
+Four stages:
+
+1. Stranger.
+2. Recognized.
+3. Favored.
+4. Chosen.
+
+Each stage unlocks:
+- New blessings.
+- Better shrine interactions.
+- Unique crafting recipes.
+- Divine quests.
+- Special artifacts.
+
+---
+
+# 8. POTIONS AND ELIXIRS OF EGYPT
+
+Create a dedicated Egyptian alchemy system.
+
+## New Potions
+
+| Potion | Effect |
+|---|---|
+| Tears of Isis | Powerful regeneration |
+| Blood of Ra | Strength and fire resistance |
+| Breath of Horus | Speed and reduced fall damage |
+| Anubis's Veil | Temporary invisibility |
+| Osiris's Renewal | Regeneration and resistance |
+| Set's Fury | Increased attack damage |
+| Bastet's Grace | Luck and movement speed |
+| Thoth's Wisdom | Experience boost |
+| Moonlight Elixir | Night vision |
+| Nectar of the Lotus | Removes negative effects |
+| Pharaoh's Vitality | Increased health |
+| Elixir of the Duat | Temporary protection against undead |
+
+## Alchemy Ingredients
+
+- Blue Lotus.
+- White Lotus.
+- Red Lotus.
+- Sacred Papyrus.
+- Golden Date.
+- Sunflower Essence.
+- Moonflower.
+- Scarab Shell.
+- Phoenix Feather.
+- Crocodile Scale.
+- Sphinx Dust.
+- Divine Resin.
+- Sacred Myrrh.
+- Frankincense.
+- Natron Salt.
+- Sunstone Powder.
+
+## New Crafting Stations
+
+**Egyptian Alchemy Table**
+- Mix ingredients.
+- Discover recipes.
+- Produce divine elixirs.
+
+**Sacred Brazier**
+- Burn offerings.
+- Create incense.
+- Activate magical effects.
+
+**Canopic Altar**
+- Craft special soul-related materials.
+- Used for advanced divine crafting.
+
+---
+
+# 9. MYTHOLOGICAL CREATURES AND MOBS
+
+Creatures should be one of the largest parts of the mod.
+
+They should have unique models, animations, behaviors, drops, and spawn conditions.
+
+## Friendly Creatures
+
+### Sacred Cats
+- Spawn around temples and villages.
+- Different Egyptian-inspired coat patterns.
+- Can be tamed with fish.
+- Occasionally bring gifts.
+- Some are associated with Bastet shrines.
+
+### Sacred Ibises
+- Spawn near rivers and temples.
+- Beautiful white and black feathers.
+- Can be bred.
+- Rarely drop special feathers.
+
+### Desert Foxes
+- Spawn in desert biomes.
+- Small and quick.
+- Can be tamed.
+- Occasionally dig up buried items.
+
+### Sacred Scarabs
+- Small colorful beetles.
+- Spawn around ancient ruins.
+- Can be collected.
+- Certain variants produce rare materials.
+
+### Temple Monkeys
+- Spawn near ancient structures.
+- Curious and mischievous.
+- Can steal dropped items.
+- Can be befriended with dates.
+
+### Sacred Falcons
+- Fly around temples and cliffs.
+- Can be trained as companions.
+- Help locate nearby structures.
+
+## Neutral Creatures
+
+### Nile Crocodiles
+- Spawn in rivers and wetlands.
+- Aggressive when approached.
+- Drop crocodile scales.
+
+### Hippopotamuses
+- Spawn near rivers.
+- Usually peaceful.
+- Become extremely dangerous when threatened.
+
+### Desert Scorpions
+- Hide beneath sand.
+- Attack nearby players.
+- Drop venom and chitin.
+
+### Giant Scarabs
+- Larger beetle variants.
+- Defend ancient structures.
+- Drop scarab shells.
+
+### Desert Hyenas
+- Travel in packs.
+- Hunt at night.
+- Guard certain ruins.
+
+## Hostile Supernatural Creatures
+
+### Mummies
+- Ancient undead guardians.
+- Spawn in tombs and pyramids.
+- Slow but durable.
+- Apply a temporary curse.
+
+### Royal Mummies
+- Elite enemies.
+- Gold jewelry and decorated armor.
+- Protect royal burial chambers.
+
+### Anubis Guardians
+- Jackal-headed supernatural warriors.
+- Wield ancient spears.
+- Protect divine temples.
+
+### Ushabti
+- Small magical servant statues.
+- Activate when players approach.
+- Guard tombs.
+- Some variants use bows.
+
+### Ammit
+The Devourer of Souls.
+
+- Massive supernatural creature.
+- Combines crocodile, lion, and hippopotamus characteristics.
+- Guards the deepest portions of the underworld.
+- Uses powerful bite and charge attacks.
+
+### Apep
+The enormous serpent of chaos.
+
+- Appears during rare supernatural events.
+- Associated with darkness and eclipses.
+- Powerful multi-stage boss.
+
+### Serpopards
+- Ancient mythical serpent-leopard creatures.
+- Roam unusual desert regions.
+- Guard sacred ruins.
+
+### Bennu Bird
+- Rare magical bird.
+- Associated with rebirth.
+- Can appear near solar temples.
+- Drops a rare feather.
+
+### Desert Djinn
+- Magical beings appearing during sandstorms.
+- Use wind and sand attacks.
+- Some can be neutral and offer trades.
+
+---
+
+# 10. ANCIENT STRUCTURES AND DUNGEONS
+
+Structure generation should be a major feature.
+
+## Major Structures
+
+### Great Pyramids
+Large multi-room dungeons.
+
+### Sphinx Monuments
+Massive landmarks with riddles and hidden chambers.
+
+### Temple Complexes
+- Giant columns.
+- Courtyards.
+- Statues.
+- Sacred pools.
+- Underground chambers.
+
+### Obelisk Fields
+- Groups of enormous obelisks.
+- Ancient inscriptions.
+- Hidden treasure.
+
+### Royal Necropolises
+- Extensive burial grounds.
+- Royal tombs.
+- Mummy guardians.
+- Ancient treasures.
+
+### Abandoned Egyptian Cities
+- Mud brick houses.
+- Markets.
+- Temples.
+- Palaces.
+- Wells.
+- City walls.
+- Ancient docks.
+
+### Desert Watchtowers
+- Tall sandstone towers.
+- Archers and guardians.
+- Treasure storage.
+
+### Underground Tomb Networks
+- Interconnected chambers.
+- Hidden passages.
+- Ancient traps.
+- Rare artifacts.
+
+### Sun Temples
+- Solar alignment puzzles.
+- Golden statues.
+- Ra-related loot.
+
+### Sacred Cat Sanctuaries
+- Cat statues.
+- Small gardens.
+- Bastet offerings.
+- Sacred cats.
+
+---
+
+# 11. TOMB EXPLORATION AND ARCHAEOLOGY
+
+Create a dedicated archaeology mechanic.
+
+Players should feel like explorers discovering forgotten history.
+
+## Ancient Hieroglyphics
+
+Introduce collectible inscription blocks and tablets.
+
+Players find:
+- Ancient inscriptions.
+- Royal decrees.
+- Religious texts.
+- Tomb maps.
+- Divine prophecies.
+- Historical fragments.
+
+## Translation System
+
+Create a new Ancient Language system.
+
+Players initially cannot understand certain inscriptions.
+
+They must:
+1. Discover hieroglyphic tablets.
+2. Collect translation fragments.
+3. Craft an Ancient Dictionary.
+4. Learn different symbol combinations.
+5. Unlock hidden tomb mechanisms.
+
+## Archaeology Tools
+
+**Brush of the Ancients**
+- Carefully excavates buried artifacts.
+
+**Archaeologist's Compass**
+- Detects nearby buried structures.
+
+**Ancient Surveyor's Tool**
+- Identifies suspicious terrain.
+
+**Hieroglyphic Tablet**
+- Records discovered inscriptions.
+
+**Golden Chisel**
+- Used for recovering rare decorative relics.
+
+---
+
+# 12. TRAPS AND PYRAMID PUZZLES
+
+Pyramids should feel like real dungeons.
+
+Introduce:
+
+- Falling sand traps.
+- Hidden arrow dispensers.
+- Rotating stone walls.
+- Pressure plates.
+- Poison dart mechanisms.
+- Spike floors.
+- Collapsing corridors.
+- Hidden lava chambers.
+- Sealed stone doors.
+- Magical guardian statues.
+- Light reflection puzzles.
+- Hieroglyphic combination locks.
+
+Traps should be readable through environmental clues rather than random unavoidable damage.
+
+---
+
+# 13. THE EGYPTIAN UNDERWORLD — DUAT
+
+A custom dimension inspired by Egyptian mythology.
+
+This should be one of the largest features of the mod.
+
+### Environment
+
+- Endless dark desert.
+- Black and golden sand.
+- Glowing rivers.
+- Enormous ruined temples.
+- Floating monuments.
+- Ancient gates.
+- Giant statues.
+- Strange celestial skies.
+- Rivers of supernatural energy.
+
+### Duat Biomes
+
+**Fields of Reeds**
+- Beautiful supernatural fields.
+- Glowing plants.
+- Peaceful spirits.
+
+**Lake of Fire**
+- Volcanic terrain.
+- Fire guardians.
+- Rare materials.
+
+**Hall of Judgment**
+- Massive monumental architecture.
+- Anubis statues.
+- Scales of Ma'at.
+
+**Desert of Shadows**
+- Dark dunes.
+- Undead guardians.
+- Ancient ruins.
+
+**Serpent Wastes**
+- Giant serpent skeletons.
+- Dangerous creatures.
+- Rare boss encounters.
+
+### The Journey Through Duat
+
+Players must pass through several gates.
+
+Each gate requires:
+- A special relic.
+- Solving a puzzle.
+- Defeating a guardian.
+- Completing a trial.
+
+Eventually players reach the Hall of Judgment.
+
+---
+
+# 14. THE WEIGHING OF THE HEART
+
+Create a unique boss/event encounter based on the Egyptian afterlife.
+
+The player enters the Hall of Judgment.
+
+At its center:
+- Anubis.
+- The Scales of Ma'at.
+- A feather.
+- A supernatural guardian.
+
+### Encounter Mechanics
+
+The player must collect special artifacts and prove themselves worthy.
+
+Possible trials:
+- Combat.
+- Exploration.
+- Knowledge.
+- Courage.
+- Puzzle solving.
+
+The final encounter features Ammit.
+
+Victory grants:
+- Heart of Ma'at.
+- Anubis's Blessing.
+- Access to advanced divine crafting.
+- Special underworld equipment.
+
+This should be a major progression milestone.
+
+---
+
+# 15. LEGENDARY WEAPONS
+
+Introduce powerful weapons associated with the Egyptian gods.
+
+### Staff of Ra
+- Solar energy projectiles.
+- Fire attacks.
+- Stronger during daytime.
+
+### Anubis's Khopesh
+- Curved ancient sword.
+- Bonus damage against undead.
+- Soul-themed special attack.
+
+### Horus's Bow
+- Golden arrows.
+- Improved projectile accuracy.
+- Special aerial attack.
+
+### Set's Chaos Blade
+- Red magical energy.
+- Knockback attacks.
+- Chance to summon a sandstorm.
+
+### Osiris's Crook and Flail
+- Powerful melee weapon.
+- Regeneration effect.
+- Special defensive ability.
+
+### Isis's Scepter
+- Magical projectile.
+- Healing abilities.
+- Enhanced potion effects.
+
+### Thoth's Staff
+- Magical inscriptions.
+- Experience bonuses.
+- Enchantment-related abilities.
+
+### Scorpion King's Spear
+- Poison attacks.
+- Increased damage against large creatures.
+
+---
+
+# 16. DIVINE ARMOR AND ARTIFACTS
+
+Create complete armor sets.
+
+### Pharaoh's Royal Armor
+- Gold and blue decorations.
+- High defense.
+- Increased divine favor.
+
+### Anubis Armor
+- Black and gold.
+- Undead resistance.
+- Soul perception.
+
+### Horus Armor
+- Blue and gold.
+- Improved vision.
+- Movement bonuses.
+
+### Ra Armor
+- Golden armor.
+- Fire resistance.
+- Solar regeneration.
+
+### Osiris Armor
+- Green and gold.
+- Regeneration.
+- Resistance.
+
+### Set Armor
+- Red and dark sandstone aesthetic.
+- Increased attack damage.
+- Sandstorm protection.
+
+### Scarab Armor
+- Beetle-inspired appearance.
+- Increased defense.
+- Special crawling or movement ability.
+
+## Legendary Artifacts
+
+- Eye of Horus.
+- Eye of Ra.
+- Heart of Ma'at.
+- Ankh of Life.
+- Scarab of Rebirth.
+- Book of the Dead.
+- Golden Mask of the Pharaoh.
+- Crown of Osiris.
+- Wings of Isis.
+- Sphinx's Eye.
+- Sun Disc.
+- Canopic Vessels.
+
+Artifacts should provide unique abilities rather than simply increasing generic stats.
+
+---
+
+# 17. DESERT SURVIVAL
+
+Introduce new survival mechanics that make deserts feel different.
+
+### Sandstorms
+
+Random weather events:
+- Reduced visibility.
+- Strong wind particles.
+- Sand accumulation.
+- Special creatures appearing.
+- Rare opportunities to discover buried ruins.
+
+### Heat
+
+Optional temperature mechanic:
+- Exposure during extreme daytime heat.
+- Water becomes important.
+- Shade provides protection.
+- Desert clothing reduces heat exposure.
+
+### Water and Oases
+
+- New water containers.
+- Desert wells.
+- Ancient cisterns.
+- Oasis water sources.
+- Irrigation mechanics.
+
+### Desert Clothing
+
+- Linen robes.
+- Explorer clothing.
+- Nomad head wraps.
+- Pharaoh garments.
+- Special heat-resistant armor.
+
+The system should complement Minecraft survival without making ordinary desert exploration unnecessarily frustrating.
+
+---
+
+# 18. NEW PLANTS AND RESOURCES
+
+### Plants
+- Blue Lotus.
+- White Lotus.
+- Red Lotus.
+- Papyrus.
+- Date Palms.
+- Desert Acacia.
+- Sacred Sycamore.
+- Moonflower.
+- Desert Rose.
+- Sacred Reeds.
+
+### Harvestable Resources
+- Dates.
+- Lotus Seeds.
+- Papyrus Fiber.
+- Myrrh Resin.
+- Frankincense Resin.
+- Natron.
+- Sacred Pollen.
+- Sunflower Essence.
+
+### Special Trees
+
+**Sacred Sycamore**
+- Large desert tree.
+- Ancient Egyptian appearance.
+- Rare sacred wood.
+
+**Date Palm**
+- Produces dates.
+- Can grow around oases.
+
+**Desert Acacia**
+- Produces durable wood.
+- Found in dry river valleys.
+
+---
+
+# 19. NPCS AND ANCIENT SETTLEMENTS
+
+Generate ancient Egyptian-inspired villages and cities.
+
+### NPC Types
+
+**Priests**
+- Sell sacred items.
+- Explain divine shrines.
+- Offer quests.
+
+**Scribes**
+- Translate inscriptions.
+- Sell papyrus and books.
+
+**Merchants**
+- Trade desert materials.
+- Sell rare artifacts.
+
+**Temple Guardians**
+- Protect sacred locations.
+- Can offer challenges.
+
+**Archaeologists**
+- Trade exploration equipment.
+- Provide treasure maps.
+
+**Nomads**
+- Travel through deserts.
+- Trade food and supplies.
+- Share information about nearby ruins.
+
+**Royal Artisans**
+- Craft special decorative equipment.
+- Offer advanced crafting recipes.
+
+---
+
+# 20. QUESTS AND DISCOVERIES
+
+Create an optional exploration quest system.
+
+Example quests:
+
+- Discover the Great Pyramid.
+- Find the Eye of Horus.
+- Translate an ancient inscription.
+- Locate a hidden burial chamber.
+- Recover a lost pharaoh's crown.
+- Discover the Hall of Judgment.
+- Earn Bastet's blessing.
+- Defeat an Anubis Guardian.
+- Recover the Book of the Dead.
+- Find all nine divine shrines.
+
+Quests should reward exploration rather than forcing players into repetitive grinding.
+
+---
+
+# 21. RANDOM WORLD EVENTS
+
+**Solar Eclipse**
+- The sky darkens.
+- Strange creatures emerge.
+- Ancient shrines become active.
+
+**The Night of the Dead**
+- Undead creatures appear throughout deserts.
+- Ancient tombs glow.
+- Rare treasures become accessible.
+
+**Sandstorm of Set**
+- A supernatural sandstorm.
+- Desert Djinn appear.
+- Hidden structures may be uncovered.
+
+**The Return of Ra**
+- A spectacular sunrise event.
+- Solar shrines activate.
+- Special buffs become available.
+
+**The Serpent's Shadow**
+- A massive shadow crosses the desert.
+- Apep appears as a rare world encounter.
+
+---
+
+# 22. DECORATION AND BUILDING
+
+This mod should be fantastic for creative builders.
+
+Include complete Egyptian building sets.
+
+### Architecture
+- Pyramid blocks.
+- Temple columns.
+- Lotus capitals.
+- Obelisks.
+- Monumental gates.
+- Sphinx statues.
+- Pharaoh statues.
+- Hieroglyphic walls.
+- Painted ceilings.
+- Gold-lined floors.
+
+### Furniture
+- Royal thrones.
+- Egyptian beds.
+- Decorative chests.
+- Papyrus shelves.
+- Stone tables.
+- Ornate chairs.
+- Braziers.
+- Offering tables.
+- Canopic jar displays.
+
+### Landscaping
+- Palm trees.
+- Lotus ponds.
+- Desert gardens.
+- Sandstone fountains.
+- Obelisk gardens.
+- Sacred statues.
+- Decorative sand formations.
+
+---
+
+# 23. PROGRESSION
+
+The mod should have a natural progression structure.
+
+### Stage 1 — Desert Explorer
+- Discover new biomes.
+- Find small ruins.
+- Collect papyrus and lotus.
+- Encounter new desert wildlife.
+
+### Stage 2 — Tomb Raider
+- Explore burial mounds.
+- Discover pyramids.
+- Solve puzzles.
+- Fight mummies.
+- Recover ancient artifacts.
+
+### Stage 3 — Favored of the Gods
+- Discover divine shrines.
+- Make offerings.
+- Earn blessings.
+- Craft divine potions.
+- Unlock legendary equipment.
+
+### Stage 4 — Master Archaeologist
+- Translate ancient inscriptions.
+- Discover royal tombs.
+- Explore massive temple complexes.
+- Recover legendary relics.
+
+### Stage 5 — Champion of the Duat
+- Enter the underworld.
+- Pass the gates.
+- Defeat supernatural guardians.
+- Face Ammit.
+- Complete the Weighing of the Heart.
+
+### Stage 6 — Divine Champion
+- Unlock the most powerful artifacts.
+- Explore all major structures.
+- Defeat Apep.
+- Master the divine crafting system.
+
+---
+
+# 24. DEVELOPMENT ROADMAP
+
+## Phase 1 — Desert Expansion
+- New desert biomes.
+- New vegetation.
+- Egyptian building blocks.
+- Sandstorms.
+- Desert wildlife.
+- Small ruins.
+
+## Phase 2 — Ancient Architecture
+- Pyramids.
+- Sphinx.
+- Temples.
+- Obelisks.
+- Burial mounds.
+- Ancient cities.
+- Tomb generation.
+
+## Phase 3 — Creatures
+- Mummies.
+- Scarabs.
+- Anubis Guardians.
+- Sacred Cats.
+- Crocodiles.
+- Desert Djinn.
+- Ushabti.
+- Ammit.
+
+## Phase 4 — Divine Systems
+- Nine god shrines.
+- Offering mechanics.
+- Divine favor.
+- Potions.
+- Legendary artifacts.
+- Divine weapons and armor.
+
+## Phase 5 — Archaeology
+- Ancient language.
+- Translation mechanics.
+- Excavation tools.
+- Tomb puzzles.
+- Treasure discovery.
+- Quest progression.
+
+## Phase 6 — Duat Dimension
+- Custom dimension.
+- New biomes.
+- Underworld structures.
+- Divine encounters.
+- Hall of Judgment.
+- Major bosses.
+
+---
+
+# 25. TECHNICAL AND IMPLEMENTATION REQUIREMENTS
+
+The development agent must:
+
+1. Inspect the existing Minecraft modding environment before making changes.
+2. Identify Minecraft version, loader, mappings, and existing dependencies.
+3. Use the appropriate Forge, NeoForge, or Fabric APIs.
+4. Build modular registries for blocks, items, entities, effects, structures, and world generation.
+5. Keep biome and structure generation configurable.
+6. Implement custom mob models, animations, and AI.
+7. Use data-driven recipes, loot tables, and progression where practical.
+8. Avoid unnecessary dependencies.
+9. Ensure structures generate without corrupting terrain or creating excessive lag.
+10. Make all major systems configurable.
+11. Maintain compatibility with vanilla Minecraft and avoid modifying unrelated game systems.
+12. Test every major feature in-game.
+
+### Required Project Organization
+
+Organize the codebase into logical modules:
+
+- blocks/
+- items/
+- entities/
+- mobs/
+- structures/
+- worldgen/
+- biomes/
+- dimensions/
+- shrines/
+- gods/
+- alchemy/
+- artifacts/
+- weapons/
+- armor/
+- effects/
+- archaeology/
+- puzzles/
+- quests/
+- sounds/
+- particles/
+- loot/
+- recipes/
+- data/
+- client/
+- config/
+
+Create documentation for each major gameplay system.
+
+---
+
+# 26. FINAL DESIGN PRINCIPLES
+
+- Monumental architecture should be a defining feature.
+- The desert must feel alive.
+- Every god needs a unique identity.
+- Every major structure should contain discoveries.
+- Bosses must have unique mechanics.
+- Every rare material should have a purpose.
+- Exploration should be rewarding.
+- Ancient writing and archaeology should be meaningful.
+- Creatures should have distinct behaviors.
+- Building blocks should be useful beyond adventure gameplay.
+- The mod should feel cohesive, polished, and expandable.
+
+**ULTIMATE GOAL:**
+
+Create the definitive Egyptian mythology expansion for Minecraft.
+
+A world where the desert hides forgotten civilizations, pyramids conceal ancient mysteries, the gods still watch over their temples, scarabs crawl through forgotten tombs, and the player can journey beyond death itself into the mysterious realm of Duat.
