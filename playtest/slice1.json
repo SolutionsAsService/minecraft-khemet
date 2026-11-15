@@ -1,0 +1,90 @@
+{
+  "out": "site/img/shots",
+  "setup": [
+    "summon khemet:mummy 134 $G 100",
+    "summon khemet:mummy 141 $G 101",
+    "summon khemet:royal_mummy 137.5 $G 98"
+  ],
+  "settle": 6,
+  "steps": [
+    {
+      "cmds": [
+        "execute as @e[type=khemet:mummy] run data merge entity @s {NoAI:1b,PersistenceRequired:1b}",
+        "execute as @e[type=khemet:royal_mummy] run data merge entity @s {NoAI:1b,PersistenceRequired:1b}"
+      ],
+      "wait": 3
+    },
+    {
+      "tp": [
+        10,
+        "G+8",
+        42,
+        0,
+        17
+      ],
+      "capture": "ra-shrine",
+      "wait": 10
+    },
+    {
+      "tp": [
+        49,
+        "G+7",
+        47,
+        0,
+        21
+      ],
+      "capture": "anubis-shrine"
+    },
+    {
+      "tp": [
+        92,
+        "G+10",
+        34,
+        0,
+        15
+      ],
+      "capture": "obelisk-field"
+    },
+    {
+      "tp": [
+        132,
+        "G+7",
+        48,
+        0,
+        21
+      ],
+      "capture": "desert-ruin"
+    },
+    {
+      "tp": [
+        137.5,
+        "G+1.7",
+        108,
+        180,
+        5
+      ],
+      "capture": "mummies"
+    },
+    {
+      "time": "dusk",
+      "tp": [
+        10,
+        "G+8",
+        42,
+        0,
+        17
+      ],
+      "capture": "ra-shrine-dusk"
+    },
+    {
+      "tp": [
+        49,
+        "G+7",
+        47,
+        0,
+        21
+      ],
+      "capture": "anubis-shrine-dusk"
+    }
+  ]
+}
