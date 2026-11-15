@@ -319,13 +319,14 @@ table.data th {{ width: 8.5em; color: var(--hue); font-weight: 700; }}
 .panel .fig {{ display: block; font-size: 14px; font-weight: 700; margin-top: 2px; }}
 .panel .claim {{ display: none; font-size: 13px; color: var(--muted); margin-top: 1px; }}
 @media (hover: hover) {{ .panel:hover {{ background: color-mix(in srgb, var(--hue) 30%, var(--ground)); }} }}
+@media (min-width: 1100px) {{ .panel .ph {{ aspect-ratio: 7 / 4; }} }}
 @media (min-width: 720px) {{ .panel .claim {{ display: block; }} .panel .name {{ font-size: 16px; }} }}
 @media (max-width: 719px) {{ .cartouche .dot {{ display: inline; }} .panels {{ grid-template-columns: repeat(2, 1fr); gap: 8px; }} .cartouche {{ margin-bottom: 10px; }} .cartouche .sub {{ font-size: 15px; }} .cartouche .sub .more {{ display: none; }}
   .top nav a {{ font-size: 14px; padding: 6px 8px; }} .panel .ph {{ aspect-ratio: 5 / 2; }} .panel .name img {{ display: none; }} .panel .name {{ font-size: 13px; }} .panel .fig {{ font-size: 13px; }} .panel .pn {{ padding: 6px 8px 8px; }} }}
 code, pre {{ font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; overflow-wrap: anywhere; }}
 pre {{ white-space: pre-wrap; background: var(--card); border-left: 4px solid var(--hue); padding: 10px 12px; margin: 10px 0; }}
 .foot {{ border-top: 0; padding: 18px 16px 30px; color: var(--muted); font-size: 14px; max-width: 980px; margin: 0 auto; }}
-.foot p {{ max-width: 46em; }}
+.foot p {{ max-width: 46em; }} .foot a {{ display: inline-block; padding: 3px 0; }}
 @media (forced-colors: active) {{
   .btn, .btn-quiet {{ border: 2px solid ButtonText; }}
   .top nav a[aria-current="page"] {{ border-bottom: 4px solid Highlight; }}
@@ -458,7 +459,7 @@ def n_structs():
 def home_wall():
     panels = [
         ("gods", "Gods", "Ra & Anubis · " + str(len(STAGES)) + " stages", "Make an offering. Be named Chosen.", "gods.html", "panels/ra-shrine", "ra_altar"),
-        ("structures", "Structures", f"{n_structs()} structures", "Found in deserts and badlands.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
+        ("structures", "Structures", f"{n_structs()} structures", "Found in deserts; one also in badlands.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
         ("creatures", "Creatures", "2 mummies", "Wrapped in linen, with glowing eyes.", "creatures.html", "panels/mummies", "mummy-face"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Limestone, gold, basalt and glyphs.", "blocks.html", "panels/blocks", "hieroglyph_stone"),
         ("potions", "Potions", f"{len(POTIONS)} potions · 2 plants", "Lotus, papyrus and five brews.", "potions.html", "panels/plants", "blue_lotus"),
@@ -471,7 +472,7 @@ def home_wall():
                   f'<span class="fig">{esc(figure)}</span><span class="claim">{esc(claim)}</span></span></a></li>')
     return f"""
 <section class="wall" aria-labelledby="h1">
-  <div class="cartouche"><h1 id="h1">Khemet</h1><p class="sub">Sands of the ancient gods. A Minecraft mod<span class="more">: shrines, mummies, obelisks, and the favor of Ra and Anubis</span><span class="dot">.</span></p><a class="btn" href="/install.html">Install</a></div>
+  <div class="cartouche"><h1 id="h1">Khemet</h1><p class="sub">Sands of the ancient gods. A Minecraft mod<span class="more">: shrines, mummies, obelisks, and the favor of Ra and Anubis</span><span class="dot">.</span></p><a class="btn" href="/install.html">Build &amp; install</a></div>
   <ul class="panels">{items}</ul>
   <p class="meta wallnote">Real in-game photos from a flat test world; the sand and sky are vanilla.</p>
 </section>"""
@@ -636,6 +637,7 @@ def chance_of(path, item):
 
 ANKH_RA = chance_of(DATA / "loot_table/chests/ra_shrine.json", "khemet:ankh")
 ANKH_ROY = chance_of(DATA / "loot_table/entities/royal_mummy.json", "khemet:ankh")
+KHOP = chance_of(DATA / "loot_table/chests/anubis_shrine.json", "khemet:khopesh")
 
 
 def build_creatures():
@@ -676,8 +678,8 @@ def build_relics():
   <div class="shots two">{fig("relics", "The Ankh of Life and Anubis's Khopesh, shown large with a Blood of Ra potion.", "The ankh, the khopesh and a potion shown at display size")}{fig("sandstorm", "A sandstorm at the edge of the desert: wind-blown sand (this capture shows only a few particles).", "A few blown sand particles over a desert")}</div>
   <h2>Relics</h2>
   <p class="meta">The numbers here are as written in the code; neither relic has been used in play yet.</p>
-  <ul class="cards"><li class="card">{sprite("ankh", 64, "Ankh of Life")}<div><h3>Ankh of Life</h3><p>Use it to heal {a['heal'] / 2:g} hearts at once and then regenerate ({roman(a['regen_amplifier'] + 1)}, {a['regen_seconds']} seconds). It also clears poison and wither. It wears out after {a['durability']} uses and needs {a['cooldown_ticks'] // 20} seconds between uses. It does nothing at full health.</p><p>{esc(recipe_text('ankh'))}. Found in {ANKH_RA}% of Ra's shrine chests, and dropped by {ANKH_ROY}% of royal mummies.</p></div></li>
-  <li class="card">{sprite("khopesh", 64, "Anubis's Khopesh")}<div><h3>Anubis's Khopesh</h3><p>A curved sword: +{k['damage']:g} attack damage ({k['damage'] + 1:g} with a bare hand's 1) at {4 + k['attack_speed_modifier']:g} swings per second, {k['durability']} durability, and {k['undead_bonus']:g} extra magic damage to the undead.</p><p>{esc(recipe_text('khopesh'))}. Also found in Anubis's shrine.</p></div></li></ul>
+  <ul class="cards"><li class="card">{sprite("ankh", 64, "Ankh of Life")}<div><h3>Ankh of Life</h3><p>Use it to heal {a['heal'] / 2:g} hearts at once and then regenerate ({roman(a['regen_amplifier'] + 1)}, {a['regen_seconds']} seconds). It also clears poison and wither. It wears out after {a['durability']} uses and needs {a['cooldown_ticks'] // 20} seconds between uses. At full health it does nothing, unless you are poisoned or withered.</p><p>{esc(recipe_text('ankh'))}. Found in {ANKH_RA}% of Ra's shrine chests, and dropped by {ANKH_ROY}% of royal mummies.</p></div></li>
+  <li class="card">{sprite("khopesh", 64, "Anubis's Khopesh")}<div><h3>Anubis's Khopesh</h3><p>A curved sword: +{k['damage']:g} attack damage ({k['damage'] + 1:g} with a bare hand's 1) at {4 + k['attack_speed_modifier']:g} swings per second, {k['durability']} durability, and {k['undead_bonus']:g} extra magic damage to the undead.</p><p>{esc(recipe_text('khopesh'))}. Found in {KHOP}% of Anubis's shrine chests.</p></div></li></ul>
   <h2>Sandstorms</h2>
   <p>As written in the code (a sandstorm has been started with the command, but not yet seen to start by itself): in daytime, in clear weather, there is a 1 in {s['chance_in']} chance every 10 seconds (about once every {per_min:.0f} minutes) that a sandstorm starts if any player is in a desert. It lasts {s['duration_seconds'] // 60}:{s['duration_seconds'] % 60:02d}. Anyone in a desert or badlands under open sky is slowed ({'Slowness ' + roman(s['slowness_amplifier'] + 1)}) and blown with sand; stand under a roof and nothing happens. Operators can start and stop one with <code>/khemet sandstorm start</code> and <code>stop</code>.</p>
   {status(["The Ankh and the Khopesh load, show their icons, and are photographed at display size.", "A sandstorm applied Slowness to a player in the open, and none under a roof (measured on the player's effects)."],

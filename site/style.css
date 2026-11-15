@@ -86,13 +86,14 @@ table.data th { width: 8.5em; color: var(--hue); font-weight: 700; }
 .panel .fig { display: block; font-size: 14px; font-weight: 700; margin-top: 2px; }
 .panel .claim { display: none; font-size: 13px; color: var(--muted); margin-top: 1px; }
 @media (hover: hover) { .panel:hover { background: color-mix(in srgb, var(--hue) 30%, var(--ground)); } }
+@media (min-width: 1100px) { .panel .ph { aspect-ratio: 7 / 4; } }
 @media (min-width: 720px) { .panel .claim { display: block; } .panel .name { font-size: 16px; } }
 @media (max-width: 719px) { .cartouche .dot { display: inline; } .panels { grid-template-columns: repeat(2, 1fr); gap: 8px; } .cartouche { margin-bottom: 10px; } .cartouche .sub { font-size: 15px; } .cartouche .sub .more { display: none; }
   .top nav a { font-size: 14px; padding: 6px 8px; } .panel .ph { aspect-ratio: 5 / 2; } .panel .name img { display: none; } .panel .name { font-size: 13px; } .panel .fig { font-size: 13px; } .panel .pn { padding: 6px 8px 8px; } }
 code, pre { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; overflow-wrap: anywhere; }
 pre { white-space: pre-wrap; background: var(--card); border-left: 4px solid var(--hue); padding: 10px 12px; margin: 10px 0; }
 .foot { border-top: 0; padding: 18px 16px 30px; color: var(--muted); font-size: 14px; max-width: 980px; margin: 0 auto; }
-.foot p { max-width: 46em; }
+.foot p { max-width: 46em; } .foot a { display: inline-block; padding: 3px 0; }
 @media (forced-colors: active) {
   .btn, .btn-quiet { border: 2px solid ButtonText; }
   .top nav a[aria-current="page"] { border-bottom: 4px solid Highlight; }

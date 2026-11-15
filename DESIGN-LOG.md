@@ -150,3 +150,19 @@ Statements of meaning (round): the wall reads as a sign for the mod; the honest 
 | Bringhurst: F4 six-hue frieze is crude | ADAPT (M5): a single-hue gold ruled band |
 | Bringhurst: F5 + F6 faces drift, figures not tabular | ADAPT (M5): one serif variable, lining and tabular figures |
 | Bringhurst: F7 apostrophes unverified | ADAPT (M5): verified in the build output |
+
+### Panel, WHOLE (reconvened seats), round R2  (artifact examined: site/ after move M5, rendered; evidence file `panel/R2/evidence.md`)
+| Critic | Anchor used | Observed in the work | Verdict | Requested change |
+|---|---|---|---|---|
+| Mace | Principles of Universal Design | 14 real Tab presses per page, every control a 3px solid outline, not clipped; forced-colors screenshot keeps ring, button borders, panel edges, current-page underline; dusk alts differ | PASS | none required (optional: footer link targets) |
+| Krug | Don't Make Me Think | both first screens show title, "A Minecraft mod", an Install button and six arrowed panels; probe traced Gods to the favor ladder | OBJECT (narrow) | the button says "Install" but the page is build-from-source |
+| Cairo | How Charts Lie | wall bottom 733.8 of 800 and 752.1 of 812 with the caption; a corrupted fixture fails the probe; recomputed every stat, drop, weight, spacing, size and the Ankh numbers | OBJECT | home card says badlands for all structures; Khopesh chest chance omitted; Ankh "does nothing at full health" false when poisoned |
+
+#### Resolutions, round R2
+| Seat: finding | Resolution |
+|---|---|
+| Krug: "Install" over-promises a download | ADAPT (M6): the button reads "Build & install" |
+| Cairo: home card "deserts and badlands" is true only of Anubis's shrine | ADAPT (M6): "Found in deserts; one also in badlands." |
+| Cairo: Khopesh chest chance omitted | ADAPT (M6): computed from the loot table and printed (30%) |
+| Cairo: Ankh "does nothing at full health" false when poisoned or withered | ADAPT (M6): reworded to match AnkhItem.java |
+| Mace: optional footer link targets | ADAPT (M6): footer links padded to a larger target |
