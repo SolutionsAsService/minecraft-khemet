@@ -1,7 +1,9 @@
 package dev.shadw.khemet;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ZombieRenderer;
 import net.minecraft.client.renderer.entity.state.ZombieRenderState;
@@ -30,6 +32,8 @@ public class KhemetClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		// plants have transparent pixels: without a cutout layer they render with a black background
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(), KhemetBlocks.BLUE_LOTUS, KhemetBlocks.PAPYRUS);
 		EntityRendererRegistry.register(KhemetEntities.MUMMY, ctx -> new SkinnedZombieRenderer(ctx, texture("mummy")));
 		EntityRendererRegistry.register(KhemetEntities.ROYAL_MUMMY, ctx -> new SkinnedZombieRenderer(ctx, texture("royal_mummy")));
 	}

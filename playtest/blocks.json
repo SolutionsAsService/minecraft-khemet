@@ -1,0 +1,70 @@
+{
+  "out": "site/img/shots",
+  "settle": 6,
+  "setup": [
+    "forceload add -4 190 30 215",
+    "setblock 0 $G 200 khemet:ancient_limestone",
+    "setblock 2 $G 200 khemet:white_limestone",
+    "setblock 4 $G 200 khemet:golden_sandstone",
+    "setblock 6 $G 200 khemet:black_basalt",
+    "setblock 8 $G 200 khemet:polished_pharaoh_stone",
+    "setblock 10 $G 200 khemet:hieroglyph_stone",
+    "setblock 12 $G 200 khemet:cracked_temple_stone",
+    "setblock 14 $G 200 khemet:weathered_pyramid_stone",
+    "setblock 16 $G 200 khemet:gold_inlaid_tile",
+    "setblock 18 $G 200 khemet:painted_temple_wall",
+    "setblock 20 $G 200 khemet:hieroglyph_bricks",
+    "setblock 22 $G 200 khemet:obelisk_block",
+    "setblock 3 $G 204 khemet:golden_pillar[axis=y]",
+    "setblock 3 -57 204 khemet:golden_pillar[axis=y]",
+    "setblock 5 $G 204 khemet:lotus_column[axis=y]",
+    "setblock 5 -57 204 khemet:lotus_column[axis=y]",
+    "setblock 7 $G 204 khemet:sacred_brazier",
+    "setblock 9 $G 204 khemet:ra_altar",
+    "setblock 11 $G 204 khemet:anubis_altar",
+    "setblock 2 $G 208 khemet:blue_lotus",
+    "setblock 3 $G 208 khemet:papyrus",
+    "setblock 4 $G 208 khemet:blue_lotus",
+    "setblock 5 $G 208 khemet:papyrus",
+    "setblock 6 $G 208 khemet:blue_lotus",
+    "setblock 7 $G 208 khemet:papyrus",
+    "setblock 8 $G 208 khemet:blue_lotus",
+    "setblock 9 $G 208 khemet:papyrus"
+  ],
+  "steps": [
+    {
+      "tp": [
+        11,
+        "G+5.5",
+        193,
+        0,
+        27
+      ],
+      "capture": "blocks",
+      "wait": 10
+    },
+    {
+      "tp": [
+        7,
+        "G+2.4",
+        201.5,
+        0,
+        40
+      ],
+      "capture": "plants",
+      "wait": 8
+    },
+    {
+      "time": "dusk",
+      "tp": [
+        11,
+        "G+5.5",
+        193,
+        0,
+        27
+      ],
+      "capture": "blocks-dusk",
+      "wait": 8
+    }
+  ]
+}
