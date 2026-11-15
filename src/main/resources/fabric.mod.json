@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "khemet",
+  "version": "${version}",
+  "name": "Khemet",
+  "description": "Sands of the Ancient Gods: Egyptian mythology for Minecraft. Egyptian building blocks, river plants, divine potions, the shrines of Ra and Anubis with offerings and divine favor, mummies, sandstorms.",
+  "authors": [
+    "SolutionsAsService"
+  ],
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.shadw.khemet.Mod"
+    ],
+    "client": [
+      "dev.shadw.khemet.KhemetClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
