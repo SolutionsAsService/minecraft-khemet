@@ -298,7 +298,7 @@ table.data th {{ width: 8.5em; color: var(--hue); font-weight: 700; }}
 .ladder {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 14px 0; padding: 0; list-style: none; max-width: 640px; }}
 .ladder li {{ background: var(--card); border-top: 6px solid var(--gods); padding: 8px 8px 10px; text-align: center; }}
 .ladder li:nth-child(2) {{ border-top-width: 10px; }} .ladder li:nth-child(3) {{ border-top-width: 14px; }} .ladder li:nth-child(4) {{ border-top-width: 18px; }}
-.ladder b {{ display: block; font-size: 24px; font-family: Georgia, serif; }} .ladder span {{ font-size: 13px; color: var(--muted); }}
+.ladder b {{ display: block; font-size: 24px; }} .ladder span {{ font-size: 13px; color: var(--muted); }}
 .sec {{ margin-top: 40px; scroll-margin-top: 12px; }}
 /* the landing: a register wall of six photograph panels under a cartouche */
 .wall {{ max-width: 1060px; margin: 0 auto; padding: 14px 14px 10px; }}
@@ -313,7 +313,7 @@ table.data th {{ width: 8.5em; color: var(--hue); font-weight: 700; }}
 .panel .ph.art {{ display: flex; align-items: center; justify-content: center; gap: 14px; }}
 .panel .ph.art img {{ width: 56px; height: 56px; image-rendering: pixelated; }}
 .panel .pn {{ display: block; padding: 7px 10px 9px; }}
-.panel .name {{ display: flex; align-items: center; gap: 8px; font-family: Georgia, serif; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--hue); font-size: 15px; line-height: 1.15; }}
+.panel .name {{ display: flex; align-items: center; gap: 8px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--hue); font-size: 15px; line-height: 1.15; }}
 .panel .name img {{ width: 22px; height: 22px; image-rendering: pixelated; flex: none; }}
 .panel .name::after {{ content: "\\2192"; margin-left: auto; color: var(--text); }}
 .panel .fig {{ display: block; font-size: 14px; font-weight: 700; margin-top: 2px; }}
@@ -431,9 +431,9 @@ STAGES = CONTENT["favor"]["stages"]
 GODS = [("ra", "ra_shrine", "Ra", "God of the Sun", "gods"), ("anubis", "anubis_shrine", "Anubis", "God of the Dead", "gods")]
 STRUCTS = [
     ("ra_shrine", "The shrine of Ra", "A stepped limestone and golden-sandstone dais under a golden obelisk, with a gold-rimmed sun disc standing behind it, four golden pillars with braziers on top, and the altar of Ra in front.", ("ra-shrine", "ra-shrine-dusk")),
-    ("anubis_shrine", "The shrine of Anubis", "A black-basalt court with a gold trim: two jackal statues in gold collars, four canopic jars, a sarcophagus of dark slabs, soul campfires at the corners, and the altar of Anubis. Mummies guard it.", ("anubis-shrine", "anubis-shrine-dusk")),
+    ("anubis_shrine", "The shrine of Anubis", "A black-basalt court with a gold trim: two jackal statues in gold collars, four canopic jars, a sarcophagus of dark slabs, soul campfires at the corners, and the altar of Anubis. Mummies are set to guard it.", ("anubis-shrine", "anubis-shrine-dusk")),
     ("obelisk_field", "The obelisk field", "Five obelisks of different heights on a pharaoh-stone floor drifted with sand: slender shafts of carved stone banded in gold, each capped with a golden pyramidion that gives light, and a small chest.", ("obelisk-field",)),
-    ("desert_ruin", "The desert ruin", "A broken temple court: walls of weathered and cracked stone worn to different heights, lotus columns and golden pillars (some fallen), a painted wall of glyphs, a chest, and sand drifted in. Mummies haunt it.", ("desert-ruin",)),
+    ("desert_ruin", "The desert ruin", "A broken temple court: walls of weathered and cracked stone worn to different heights, lotus columns and golden pillars (some fallen), a painted wall of glyphs, a chest, and sand drifted in. Mummies are set to haunt it.", ("desert-ruin",)),
 ]
 CHEST_LABEL = {"ra_shrine": "Ra's shrine", "anubis_shrine": "Anubis's shrine", "obelisk_field": "an obelisk field", "desert_ruin": "a desert ruin"}
 STONE_NOTES = {
@@ -517,7 +517,7 @@ def build_blocks():
     body = f"""
 <section class="page">
   <p class="eyebrow">Blocks</p><h1>Stone for the Black Land</h1><div class="rule"></div>
-  <p class="lede">Twelve building stones, two pillars and a brazier, all drawn for the mod. Every stone can be cut from sandstone at a stonecutter (the table below says from what).</p>
+  <p class="lede">Twelve building stones, two pillars and a brazier, all drawn for the mod. Every stone has a stonecutter recipe, from sandstone or a sibling stone (the cards say which). The recipes are written and checked by a linter, and not yet cut in play.</p>
   <div class="shots two">{fig("blocks", "The twelve stones in a row, with the pillars, the brazier and the two altars behind.", "Twelve Egyptian building blocks in a row on desert sand: cream, white, gold, black, patterned and hieroglyph-carved stones")}{fig("blocks-dusk", "The same row at dusk.", "The same twelve blocks at dusk under a darkening sky")}</div>
   <h2>The twelve stones</h2><ul class="cards">{cards}</ul>
   <h2>Pillars and the brazier</h2><ul class="cards">{oc}</ul>
@@ -544,7 +544,7 @@ def build_potions():
     body = f"""
 <section class="page">
   <p class="eyebrow">Plants &amp; potions</p><h1>Lotus, papyrus and five brews</h1><div class="rule"></div>
-  <p class="lede">Two river plants and five divine potions, each brewed from an Awkward Potion and one ingredient found in the desert structures.</p>
+  <p class="lede">Two river plants and five divine potions, each set to be brewed from an Awkward Potion and one ingredient found in the desert structures. The recipes are registered; none has been brewed in play yet.</p>
   <div class="shots two">{fig("plants", "Blue lotus and papyrus on sand, in front of the altars of Ra and Anubis, a brazier and a lotus column.", "Blue lotus and papyrus plants on desert sand")}{fig("relics", "Blood of Ra, held large, beside the Ankh and the Khopesh.", "A Blood of Ra potion shown large beside two relics")}</div>
   <h2>Plants</h2><ul class="cards">{plants}</ul>
   <h2>The five potions</h2><ul class="cards">{rows}</ul>
@@ -577,12 +577,12 @@ def build_gods():
 <section class="page">
   <p class="eyebrow">Gods</p><h1>Ra and Anubis</h1><div class="rule"></div>
   <p class="meta">The gods here are game material: a simplified retelling for a Minecraft mod, made with respect for the ancient Egyptian world it draws on, and not a statement about religion.</p>
-  <p class="lede">Each god has a shrine and an altar. Hold an offering, use the altar, and the god takes one item, adds to your favor, and gives you a blessing. Favor is saved with you, and kept through death.</p>
+  <p class="lede">Each god has a shrine and an altar. Hold an offering, use the altar, and the god takes one item, adds to your favor, and gives you a blessing (tested through the matching command; the click itself is not yet tried). Favor is saved with you, and was measured to survive death.</p>
   <h2>Favor</h2>{favor_ladder()}
   <p>Use an altar with an empty hand to see your favor and what the god wants. <code>/khemet favor</code> lists your standing with every god.</p>
   {secs}
   <p class="meta">Seven more gods are in the design (Horus, Isis, Osiris, Set, Bastet, Thoth, Khonsu); slice one has two.</p>
-  {status(["Offering, refusal of the wrong item, favor kept per god, and all four stage names (Ra reached Chosen at 25 favor), through the command that runs the same code as the altar.", "The blessings stack by stage: at Recognized, Ra gave Fire Resistance and Strength; at Favored, Regeneration and Resistance joined them; at Chosen (28 favor) Regeneration II, Fire Resistance and a longer Strength were active.", "Both shrines generate on their own and are photographed."],
+  {status(["Offering, refusal of the wrong item, favor kept per god, and all four stage names (Ra reached Chosen at 25 favor), through the command that runs the same code as the altar.", "The blessings stack by stage: at Recognized, Ra gave Fire Resistance and Strength; at Favored, Regeneration and Resistance joined them; at Chosen (28 favor) Regeneration II, Fire Resistance and a longer Strength were active.", "Both shrines generate on their own and are photographed.", "Favor stayed at 28 (Chosen) after the player was killed and respawned."],
           ["Using an altar block with a held item (the click path).", "Favor kept across a server restart (it is saved with the player; not yet restarted to check).", "Anubis's blessings and his stages beyond Stranger were not individually inspected."])}
 </section>"""
     return page("Gods: the shrines and favor of Ra and Anubis", "Ra and Anubis in the Khemet mod: their altars, offerings, four stages of divine favor and the blessings each stage gives.", body, "gods", "gods.html", "gods")

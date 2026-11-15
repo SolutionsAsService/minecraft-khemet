@@ -65,7 +65,7 @@ table.data th { width: 8.5em; color: var(--hue); font-weight: 700; }
 .ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 14px 0; padding: 0; list-style: none; max-width: 640px; }
 .ladder li { background: var(--card); border-top: 6px solid var(--gods); padding: 8px 8px 10px; text-align: center; }
 .ladder li:nth-child(2) { border-top-width: 10px; } .ladder li:nth-child(3) { border-top-width: 14px; } .ladder li:nth-child(4) { border-top-width: 18px; }
-.ladder b { display: block; font-size: 24px; font-family: Georgia, serif; } .ladder span { font-size: 13px; color: var(--muted); }
+.ladder b { display: block; font-size: 24px; } .ladder span { font-size: 13px; color: var(--muted); }
 .sec { margin-top: 40px; scroll-margin-top: 12px; }
 /* the landing: a register wall of six photograph panels under a cartouche */
 .wall { max-width: 1060px; margin: 0 auto; padding: 14px 14px 10px; }
@@ -80,7 +80,7 @@ table.data th { width: 8.5em; color: var(--hue); font-weight: 700; }
 .panel .ph.art { display: flex; align-items: center; justify-content: center; gap: 14px; }
 .panel .ph.art img { width: 56px; height: 56px; image-rendering: pixelated; }
 .panel .pn { display: block; padding: 7px 10px 9px; }
-.panel .name { display: flex; align-items: center; gap: 8px; font-family: Georgia, serif; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--hue); font-size: 15px; line-height: 1.15; }
+.panel .name { display: flex; align-items: center; gap: 8px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--hue); font-size: 15px; line-height: 1.15; }
 .panel .name img { width: 22px; height: 22px; image-rendering: pixelated; flex: none; }
 .panel .name::after { content: "\2192"; margin-left: auto; color: var(--text); }
 .panel .fig { display: block; font-size: 14px; font-weight: 700; margin-top: 2px; }

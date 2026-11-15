@@ -166,3 +166,84 @@ Statements of meaning (round): the wall reads as a sign for the mod; the honest 
 | Cairo: Khopesh chest chance omitted | ADAPT (M6): computed from the loot table and printed (30%) |
 | Cairo: Ankh "does nothing at full health" false when poisoned or withered | ADAPT (M6): reworded to match AnkhItem.java |
 | Mace: optional footer link targets | ADAPT (M6): footer links padded to a larger target |
+
+(R2, second batch, on the state after M6 and the S4 push)
+| Critic | Anchor used | Observed in the work | Verdict | Requested change |
+|---|---|---|---|---|
+| Debord | The Society of the Spectacle, thesis 1 | caption on both viewports; Relics discloses the sparse photo and the untested sandstorm start; Gods states Chosen reached through the command; lead sentences on Gods, Structures, Blocks and Potions still state design as fact | OBJECT | apply "as written, not yet seen in play" to those leads; cut "kept through death" until tested |
+| Bringhurst | The Elements of Typographic Style | gold ruled band, plain oval cartouche, one-word panel names aligned; `font-family: Georgia` still set on `.panel .name` and `.ladder b` beside the `--serif` variable | OBJECT | replace both with `var(--serif)` |
+
+#### Resolutions, round R2 (second batch)
+| Seat: finding | Resolution |
+|---|---|
+| Debord: lead sentences state design as fact (Gods, Structures, Blocks, Potions) | ADAPT (M7): reworded as set / written / not yet tried |
+| Debord: "kept through death" untested | OVERRULE (premise refuted: Ra favor was 28 "Chosen" before the player was killed and 28 after the respawn, measured), and the measurement is added to the Gods status |
+| Bringhurst: Georgia overrides the serif variable | ADAPT (M7): both declarations removed; the computed font-family of h1, h2, `.panel .name` and `.ladder b` is "Iowan Old Style" at 1280 (the stack's first family) |
+| Bringhurst: panel figures are proportional | DEFERRED: they are single short lines, not stacked in columns; the tables and ladder use tabular lining figures |
+
+## Move M5 / M6 / M7 and the S4 push (what was done, after the fact, with the measurements)
+- **M5 (ADAPT of R1):** every R1 finding with its resolution above: nav labels and panel names shortened, figure names the gods, an Install button, a glossary, plain recipes, claims qualified or computed from the data, one-hue frieze, cartouche bar removed, forced-colors block, focus ring. Depends on M1-M4. Measured after: landing 734/800 and 752/812 with the caption (a first version of the caption pushed the phone wall to 819 of 812 and was shortened), floor 16 of 16 clean, 0 straight apostrophes, real Tab presses show a 3px ring on every control.
+- **M6 (ADAPT of R2):** "Build & install", badlands stated for the one structure that has it, the Khopesh chest chance computed and printed (30%), the Ankh's full-health rule matched to the code.
+- **S4 ambition push (the wall's photographs taller):** desktop photographs 166 -> 189 px (+14%), wall bottom 734 -> 781 of 800, phone unchanged at 752 of 812, no sideways scroll. Judged in round R2's second batch (no objection to it).
+- **M7 (ADAPT of R2, second batch):** Georgia overrides removed (computed value checked), lead sentences reworded, the death test added to the Status.
+
+## Frontier (final)
+| Candidate | Reached via | From anchor | Status |
+|---|---|---|---|
+| Landing as a register wall | breaks | Learning from Las Vegas | TAKEN (M2) |
+| One hue per category, measured | grounds | Visual Hierarchy | TAKEN (M1, changed to amethyst after a measured delta-E of 23.8) |
+| Eight pages on one grid | grounds | Grid Systems in Graphic Design | TAKEN (M3) |
+| Restraint inside the tiles (the Vignelli Canon counterpoint) | dotted edge from Make It Bigger | The Vignelli Canon | TAKEN (applied in M5: one-word panel names, a single-hue rule, no ornament bar) |
+| Honest status bands | project | none | TAKEN (M4; widened in M5 and M7) |
+| Light theme | project | none | DEFERRED (out of scope for slice one; the footer says dark only) |
+| Translations | Holmes F5 | Mismatch | DEFERRED (English only, disclosed) |
+
+## Stop test
+- **S1** Frontier has no OPEN items: met (taken or deferred with reasons).
+- **S2** a WHOLE round with PASS from every required critic: **not met.** Mace passed in R2; Krug, Cairo, Debord and Bringhurst objected in R2 and their findings were answered by M6 and M7, which were applied and measured but not re-judged by those seats. Shklovsky and Garland (picked by the picker) were not seated.
+- **S3** two consecutive quiet WHOLE rounds: **not met.**
+- **S4** ambition push, measured: met (above).
+- **S5** every dotted edge leaving a used anchor applied or declined: met (Make It Bigger to The Vignelli Canon applied in M5).
+**The run is incomplete under the bound.** Resume point: reconvene Krug, Cairo, Debord and Bringhurst (and seat Shklovsky and Garland) on the state after M7 (commit `main`, site/), then run a second quiet WHOLE round.
+
+## Anchor Ledger
+| Anchor | Role | Status | Evidence | Note |
+|---|---|---|---|---|
+| Make It Bigger (Paula Scher) | Stance | KEEP | survived Krug's R1 "does not say it is a mod" objection by gaining a tagline and a button without shrinking the wall | the wall grew 14% in S4 |
+| Visual Hierarchy (Arnheim, Dondis) | Rule | KEEP | survived R1's "no first action" and "unlinked tiles" | arrows, a button, a gold signal |
+| Grid Systems in Graphic Design (Josef Müller-Brockmann) | Rule | KEEP | survived Bringhurst's R1 untidy-names finding | one-word names on one grid |
+| Learning from Las Vegas (Venturi, Scott Brown, Izenour) | Breaker | KEEP | survived Debord's R1 "the wall sells a world" | answered with a caption, not by dropping the wall |
+| The Vignelli Canon (Massimo Vignelli) | Counterpoint | ADAPT | applied as restraint in M5 | frieze reduced to one hue, ornament bar removed |
+
+## Double loop
+The criterion (MAYA) held, and the graph held. The panel's most productive seats were the measurement and claims seats, and every one of their strongest findings was something I wrote carelessly, not something the design got wrong: a Royal Mummy guard sentence copied from the Mummy row, a "one serif variable" claim made from the source and not the computed value, a caption that broke the fold. The process rule "assert on the computed value" already says this; I did not follow it for the font claim. Graph amendment: none to the nodes. Process amendment: for any site that prints facts, the build should compute every sentence that names a source (done for most; the font and the fold are now measured), and Cairo should sit from R0, not R1, because his findings cost the least to fix early.
+
+## Carry-forward Ledger (facts about the medium, read before a later run on this site)
+- A later same-specificity CSS rule beats an earlier one, even if the earlier one uses `var()`: `.panel .name { font-family: Georgia }` defined after the `--serif` rule won, shown only by the computed `font-family` (M7).
+- In a Python f-string or plain string that emits CSS, `"\2192"` is an octal escape and renders a control character plus "92"; write `"\\2192"` (the arrow rendered as "DC1 92" until the built CSS was inspected).
+- Measure the figure including its caption: a one-line caption inside the measured container moved the phone wall's bottom from 752 to 819 against an 812 fold (M5).
+- A CIE76 gate caught carnelian at delta-E 23.8 from red ochre; amethyst `#DE86C6` passed at 44.9 (M1).
+- 640x320 JPEG panels at quality 80 weigh about 28-34 KB each against 100-300 KB for the PNG captures; six together are 169 KB (M2).
+- `page.emulateMedia({ forcedColors: 'active' })` in Playwright shows whether rings, borders and underlines survive forced colours.
+- `check_floor.py` needs `/root/.claude/tools/measure.py`, which is not installed in this environment; Playwright probes stood in.
+
+## Compliance Check
+- [x] Tooling inventory: sub-agent tool for the panel; `pick_panel.py` for the seats; no graph tool (Mermaid text and tables in this log); Playwright and ImageMagick for measurement; `import_log.py` not run (below).
+- [x] Mode stated with the reason (Adaptive: a public of players and builders).
+- [~] Panel seated from `pick_panel.py`: 8 picked, 6 sat in R1 (Shklovsky and Garland not seated, a bounded run because earlier runs in this session hit agent rate limits); every seat briefed from its `seats/` file. The bound was my own, not the person's words.
+- [x] Seed with exact labels, one dotted-edge counterpoint, a living Frontier (above).
+- [x] Run type stated (Full, with Landing rules), no freeze broken.
+- [~] Mobile Floor measured (16 rows, Playwright) at the final state; `check_floor.py` could not run. What needs a phone: nothing measured on a real phone.
+- [x] Shadw- and Vercel-configured: root and inner `vercel.json`, `fluid.json`, root redirect, root-anchored `.vercelignore`, absolute `og:image` on the shadw.app address; checked by the build, which passed.
+- [x] Palette derived from the topic (six canonical colours of Egyptian art), min delta-E 44.9, contrast >= 5.24:1 on ground and card; the palette is dark only, and light mode was not checked; no meaning rests on hue alone (each category has a name, a figure and an icon).
+- [x] Landing leads with one bold graphic summarising every topic (the wall), measured complete at both sizes (781/800 and 752/812).
+- [x] At least one BREAK move taken (M2).
+- [x] A Decision Record before each of M1-M4; M5-M7 are recorded after the fact in this log (not before), which is a deviation, stated here.
+- [x] A Panel Report per round, each critic citing something observable.
+- [x] Every OBJECT resolved as ADAPT, OVERRULE or DEFERRED, with a reason.
+- [ ] WHOLE rounds run to the stop conditions: S2 and S3 not met (above).
+- [x] Every figure the artifact displays re-measured at the final state (landing, floor, fonts, text figures against the data by Cairo in R2 and by the build).
+- [x] Anchor Ledger complete; the live graph is the table above (no graph tool).
+- [x] Double-loop paragraph written.
+- [ ] Run recorded in the ledger (`import_log.py`, `rate_seats.py` not run: the dada repository's ledger was not updated in this session).
+- [x] Final reply states the mode, the tools, the stop conditions and everything skipped.
