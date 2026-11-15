@@ -221,9 +221,9 @@ def spawn_rules():
 
 # ---------- page shell ----------
 
-NAV = [("index.html", "Home", "home"), ("blocks.html", "Blocks", "blocks"), ("potions.html", "Plants & potions", "potions"),
+NAV = [("index.html", "Home", "home"), ("blocks.html", "Blocks", "blocks"), ("potions.html", "Potions", "potions"),
        ("gods.html", "Gods", "gods"), ("structures.html", "Structures", "structures"), ("creatures.html", "Creatures", "creatures"),
-       ("relics.html", "Relics & weather", "relics"), ("install.html", "Install", "install")]
+       ("relics.html", "Relics", "relics"), ("install.html", "Install", "install")]
 
 
 def typo(markup):
@@ -240,6 +240,7 @@ def css():
   --ground: {GROUND}; --card: {CARD}; --text: {TEXT}; --muted: {MUTED}; --signal: {SIGNAL};
 {hv}
   --hue: var(--signal);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
 }}
 * {{ box-sizing: border-box; }}
 html {{ -webkit-text-size-adjust: 100%; }}
@@ -249,9 +250,12 @@ a {{ color: var(--signal); }}
 a:focus-visible, .btn:focus-visible {{ outline: 3px solid var(--text); outline-offset: 3px; }}
 .skip {{ position: absolute; left: 12px; top: -60px; background: var(--signal); color: #000; padding: 10px 14px; z-index: 9; }}
 .skip:focus {{ top: 10px; }}
-.serif, h1, h2, h3, .brand {{ font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }}
-.frieze {{ height: 10px; background: repeating-linear-gradient(90deg, var(--gods) 0 14px, var(--ground) 14px 16px, var(--signal) 16px 30px, var(--ground) 30px 32px,
-  var(--structures) 32px 46px, var(--ground) 46px 48px, var(--potions) 48px 62px, var(--ground) 62px 64px, var(--creatures) 64px 78px, var(--ground) 78px 80px); }}
+.skip:focus-visible {{ outline: 3px solid #000; outline-offset: 2px; }}
+.serif, h1, h2, h3, .brand, .panel .name, .ladder b {{ font-family: var(--serif); }}
+.frieze {{ height: 12px; background:
+  linear-gradient(var(--signal), var(--signal)) 0 0 / 100% 2px no-repeat,
+  linear-gradient(var(--signal), var(--signal)) 0 100% / 100% 2px no-repeat,
+  repeating-linear-gradient(90deg, var(--signal) 0 6px, transparent 6px 12px) 0 50% / 100% 4px no-repeat; }}
 .top {{ display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2px 14px; padding: 6px 16px; background: #0c0a08; }}
 .brand {{ font-weight: 800; letter-spacing: .22em; color: var(--text); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }}
 .top nav {{ display: flex; flex-wrap: wrap; gap: 0 2px; }}
@@ -278,6 +282,7 @@ h3 {{ font-size: 20px; margin: 0 0 4px; }}
 .shot figcaption {{ color: var(--muted); font-size: 14px; margin-top: 6px; }}
 @media (min-width: 760px) {{ .shots.two {{ grid-template-columns: 1fr 1fr; }} }}
 table.data {{ width: 100%; border-collapse: collapse; background: var(--card); margin: 12px 0 8px; font-size: 15px; }}
+table.data td, .ladder b {{ font-variant-numeric: lining-nums tabular-nums; }}
 table.data th, table.data td {{ text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid #3a322a; overflow-wrap: anywhere; }}
 table.data th {{ width: 8.5em; color: var(--hue); font-weight: 700; }}
 .sr {{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }}
@@ -286,6 +291,8 @@ table.data th {{ width: 8.5em; color: var(--hue); font-weight: 700; }}
 .card {{ display: flex; gap: 14px; align-items: flex-start; background: var(--card); border: 3px solid #000; border-left: 6px solid var(--hue); padding: 12px; }}
 .card img.px {{ flex: none; width: 64px; height: 64px; image-rendering: pixelated; background: #000; padding: 4px; border: 2px solid #3a322a; }}
 .card h3 {{ margin: 0; }} .card p {{ margin: 2px 0 0; font-size: 15px; color: var(--muted); }}
+.wallnote {{ margin: 8px 0 0; font-size: 13px; }}
+.gloss {{ max-width: 44em; }} .gloss dt {{ font-family: var(--serif); font-weight: 700; color: var(--signal); margin-top: 10px; }} .gloss dd {{ margin: 2px 0 0; color: var(--text); }}
 .status {{ border: 3px solid var(--hue); background: var(--card); padding: 12px 16px; margin: 26px 0 0; }}
 .status h2 {{ font-size: 20px; margin: 0 0 6px; }} .status p, .status li {{ font-size: 15px; max-width: 46em; }} .status ul {{ margin: 6px 0; padding-left: 20px; }}
 .ladder {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 14px 0; padding: 0; list-style: none; max-width: 640px; }}
@@ -297,7 +304,8 @@ table.data th {{ width: 8.5em; color: var(--hue); font-weight: 700; }}
 .wall {{ max-width: 1060px; margin: 0 auto; padding: 14px 14px 10px; }}
 .cartouche {{ display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px; margin: 4px 0 14px; }}
 .cartouche h1 {{ margin: 0; border: 3px solid var(--signal); border-radius: 999px; padding: 4px 30px 4px 26px; position: relative; font-size: clamp(30px, 5.4vw, 58px); }}
-.cartouche h1::after {{ content: ""; position: absolute; right: 12px; top: 8px; bottom: 8px; border-right: 3px solid var(--signal); }}
+.cartouche .dot {{ display: none; }}
+.cartouche .btn {{ margin-left: 4px; }}
 .cartouche .sub {{ margin: 0; color: var(--muted); font-size: 16px; max-width: 28em; }}
 .panels {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0; padding: 0; list-style: none; }}
 .panel {{ display: block; text-decoration: none; color: var(--text); background: color-mix(in srgb, var(--hue) 18%, var(--ground)); border: 3px solid var(--hue); height: 100%; }}
@@ -307,16 +315,24 @@ table.data th {{ width: 8.5em; color: var(--hue); font-weight: 700; }}
 .panel .pn {{ display: block; padding: 7px 10px 9px; }}
 .panel .name {{ display: flex; align-items: center; gap: 8px; font-family: Georgia, serif; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--hue); font-size: 15px; line-height: 1.15; }}
 .panel .name img {{ width: 22px; height: 22px; image-rendering: pixelated; flex: none; }}
+.panel .name::after {{ content: "\\2192"; margin-left: auto; color: var(--text); }}
 .panel .fig {{ display: block; font-size: 14px; font-weight: 700; margin-top: 2px; }}
 .panel .claim {{ display: none; font-size: 13px; color: var(--muted); margin-top: 1px; }}
 @media (hover: hover) {{ .panel:hover {{ background: color-mix(in srgb, var(--hue) 30%, var(--ground)); }} }}
 @media (min-width: 720px) {{ .panel .claim {{ display: block; }} .panel .name {{ font-size: 16px; }} }}
-@media (max-width: 719px) {{ .panels {{ grid-template-columns: repeat(2, 1fr); gap: 8px; }} .cartouche {{ margin-bottom: 10px; }} .cartouche .sub {{ font-size: 15px; }} .cartouche .sub .more {{ display: none; }}
+@media (max-width: 719px) {{ .cartouche .dot {{ display: inline; }} .panels {{ grid-template-columns: repeat(2, 1fr); gap: 8px; }} .cartouche {{ margin-bottom: 10px; }} .cartouche .sub {{ font-size: 15px; }} .cartouche .sub .more {{ display: none; }}
   .top nav a {{ font-size: 14px; padding: 6px 8px; }} .panel .ph {{ aspect-ratio: 5 / 2; }} .panel .name img {{ display: none; }} .panel .name {{ font-size: 13px; }} .panel .fig {{ font-size: 13px; }} .panel .pn {{ padding: 6px 8px 8px; }} }}
 code, pre {{ font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; overflow-wrap: anywhere; }}
 pre {{ white-space: pre-wrap; background: var(--card); border-left: 4px solid var(--hue); padding: 10px 12px; margin: 10px 0; }}
 .foot {{ border-top: 0; padding: 18px 16px 30px; color: var(--muted); font-size: 14px; max-width: 980px; margin: 0 auto; }}
 .foot p {{ max-width: 46em; }}
+@media (forced-colors: active) {{
+  .btn, .btn-quiet {{ border: 2px solid ButtonText; }}
+  .top nav a[aria-current="page"] {{ border-bottom: 4px solid Highlight; }}
+  a:focus-visible, .btn:focus-visible {{ outline: 3px solid CanvasText; }}
+  .panel {{ border: 3px solid CanvasText; }}
+  .frieze {{ background: none; border-top: 2px solid CanvasText; border-bottom: 2px solid CanvasText; }}
+}}
 @media (prefers-reduced-motion: no-preference) {{ html {{ scroll-behavior: smooth; }} }}
 """
 
@@ -376,6 +392,14 @@ def sprite(rel, size=64, alt=""):
     return f'<img class="px" src="/img/tex/{rel}.png" width="{size}" height="{size}" alt="{esc(alt)}">'
 
 
+RECIPE_TEXT = {
+    "golden_pillar": "Crafting: three Golden Sandstone in a column make three pillars",
+    "lotus_column": "Crafting: White Limestone above and below a Blue Lotus makes two columns",
+    "sacred_brazier": "Crafting: Black Basalt across the bottom row and both sides of the middle row, Coal in the middle, a Gold Ingot in each top corner",
+    "khopesh": "Crafting: Gold Ingots in a curve (two on top, one below on the right) over a Stick",
+}
+
+
 def recipe_text(name):
     p = DATA / "recipe" / f"{name}.json"
     if not p.exists():
@@ -388,6 +412,8 @@ def recipe_text(name):
         from collections import Counter
         c = Counter(names(i) for i in d["ingredients"])
         return "Shapeless: " + ", ".join(f"{n} ×{k}" if k > 1 else n for n, k in c.items())
+    if name in RECIPE_TEXT:
+        return RECIPE_TEXT[name]
     key = {k: names(v) for k, v in d.get("key", {}).items()}
     return "Crafting: " + " / ".join("".join(r) for r in d["pattern"]).replace(" ", "·") + "; " + ", ".join(f"{k} = {v}" for k, v in key.items())
 
@@ -431,12 +457,12 @@ def n_structs():
 
 def home_wall():
     panels = [
-        ("gods", "Gods & shrines", f"{len(GODS)} gods · {len(STAGES)} stages", "Make an offering. Be named Chosen.", "gods.html", "panels/ra-shrine", "ra_altar"),
-        ("structures", "Structures", f"{n_structs()} structures", "Found in deserts, and located by the game.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
-        ("creatures", "Creatures", "2 mummies", "Wrapped in linen. Weakening to the touch.", "creatures.html", "panels/mummies", "mummy-face"),
+        ("gods", "Gods", "Ra & Anubis · " + str(len(STAGES)) + " stages", "Make an offering. Be named Chosen.", "gods.html", "panels/ra-shrine", "ra_altar"),
+        ("structures", "Structures", f"{n_structs()} structures", "Found in deserts and badlands.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
+        ("creatures", "Creatures", "2 mummies", "Wrapped in linen, with glowing eyes.", "creatures.html", "panels/mummies", "mummy-face"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Limestone, gold, basalt and glyphs.", "blocks.html", "panels/blocks", "hieroglyph_stone"),
-        ("potions", "Plants & potions", f"{len(POTIONS)} potions · 2 plants", "Lotus, papyrus and five brews.", "potions.html", "panels/plants", "blue_lotus"),
-        ("relics", "Relics & weather", "2 relics · sandstorms", "An ankh, a khopesh, and a storm.", "relics.html", "panels/relics", "ankh"),
+        ("potions", "Potions", f"{len(POTIONS)} potions · 2 plants", "Lotus, papyrus and five brews.", "potions.html", "panels/plants", "blue_lotus"),
+        ("relics", "Relics", "2 relics · sandstorms", "An ankh and a khopesh, shown large.", "relics.html", "panels/relics", "ankh"),
     ]
     items = ""
     for hue, name, figure, claim, href, img, icon in panels:
@@ -445,8 +471,9 @@ def home_wall():
                   f'<span class="fig">{esc(figure)}</span><span class="claim">{esc(claim)}</span></span></a></li>')
     return f"""
 <section class="wall" aria-labelledby="h1">
-  <div class="cartouche"><h1 id="h1">Khemet</h1><p class="sub">Sands of the ancient gods.<span class="more"> A Minecraft mod: shrines, mummies, obelisks, and the favor of Ra and Anubis.</span></p></div>
+  <div class="cartouche"><h1 id="h1">Khemet</h1><p class="sub">Sands of the ancient gods. A Minecraft mod<span class="more">: shrines, mummies, obelisks, and the favor of Ra and Anubis</span><span class="dot">.</span></p><a class="btn" href="/install.html">Install</a></div>
   <ul class="panels">{items}</ul>
+  <p class="meta wallnote">Real in-game photos from a flat test world; the sand and sky are vanilla.</p>
 </section>"""
 
 
@@ -461,13 +488,20 @@ def build_index():
 <section class="page">
   <p class="lede">Khemet is the Egyptian sibling of the Asgard mod: the same stack and the same ideas (shrines, offerings, relics, creatures, ancient structures), with a different land. This is slice one of a much larger <a href="https://github.com/SolutionsAsService/minecraft-khemet/blob/main/design/master-prompt.md">design</a>.</p>
   <p class="action"><a class="btn" href="/gods.html">Meet the gods</a> <a class="btn btn-alt" href="/install.html">Install</a> <a class="btn btn-quiet" href="/structures.html">Find a shrine</a></p>
+  <h2>New here?</h2>
+  <dl class="gloss">
+    <dt>Khemet</dt><dd>Kemet, \u201cthe Black Land\u201d, is what the ancient Egyptians called their own country: the dark, fertile silt the Nile left each year. The desert beyond it was Deshret, \u201cthe Red Land\u201d.</dd>
+    <dt>A Minecraft mod</dt><dd>An add-on that changes the game. This one adds new blocks, plants, potions, creatures and buildings.</dd>
+    <dt>A shrine and an altar</dt><dd>A shrine is a building for a god. Its altar is a block: you hold an offering (say, a gold ingot) and use it, and the god gives you a blessing.</dd>
+    <dt>Favor</dt><dd>A score each god keeps for you. More offerings, more favor, stronger blessings.</dd>
+  </dl>
   <h2>Divine favor</h2>
   <p>Each god takes offerings at its altar. Every offering adds favor, and favor moves you up four stages; each stage adds a blessing.</p>
   {favor_ladder()}
-  <p class="meta">The points are the thresholds in the mod's own data file. Photographs on this site are real captures from a Minecraft 1.21.4 client in a flat desert test world; the structures, blocks and creatures are the mod, the sand and the sky are vanilla.</p>
+  <p class="meta">The points are the thresholds in the mod's own data file.</p>
   {status(["The mod loads on a Fabric server with no data errors.", "All four structures generate on their own in a desert world, and the game's /locate finds them.",
            "Favor, the stage thresholds and the blessings work through the same code the altars use.", "The sandstorm slows a player in the open and not under a roof."],
-          ["Using an altar by hand (the same code path was tested through a command).", "Brewing the potions.", "The Ankh and the Khopesh in play.", "A sandstorm starting on its own."])}
+          ["Using an altar by hand (the same code path was tested through a command).", "Brewing the potions.", "The Ankh and the Khopesh in play.", "A sandstorm starting on its own.", "Mummies spawning on their own."])}
 </section>"""
     return page("Khemet: Egyptian gods, shrines and mummies for Minecraft", "A Minecraft mod: Egyptian stone and plants, five divine potions, the shrines of Ra and Anubis with offerings and divine favor, four desert structures, mummies and sandstorms.", body, "home", "index.html", None)
 
@@ -483,7 +517,7 @@ def build_blocks():
 <section class="page">
   <p class="eyebrow">Blocks</p><h1>Stone for the Black Land</h1><div class="rule"></div>
   <p class="lede">Twelve building stones, two pillars and a brazier, all drawn for the mod. Every stone can be cut from sandstone at a stonecutter (the table below says from what).</p>
-  <div class="shots two">{fig("blocks", "The twelve stones in a row, with the pillars, the brazier and the two altars behind.", "Twelve Egyptian building blocks in a row on desert sand")}{fig("blocks-dusk", "The same row at dusk.", "The same blocks at dusk")}</div>
+  <div class="shots two">{fig("blocks", "The twelve stones in a row, with the pillars, the brazier and the two altars behind.", "Twelve Egyptian building blocks in a row on desert sand: cream, white, gold, black, patterned and hieroglyph-carved stones")}{fig("blocks-dusk", "The same row at dusk.", "The same twelve blocks at dusk under a darkening sky")}</div>
   <h2>The twelve stones</h2><ul class="cards">{cards}</ul>
   <h2>Pillars and the brazier</h2><ul class="cards">{oc}</ul>
   <p class="meta">The two altars (Ra and Anubis) are on the <a href="/gods.html">Gods</a> page.</p>
@@ -541,13 +575,14 @@ def build_gods():
     body = f"""
 <section class="page">
   <p class="eyebrow">Gods</p><h1>Ra and Anubis</h1><div class="rule"></div>
+  <p class="meta">The gods here are game material: a simplified retelling for a Minecraft mod, made with respect for the ancient Egyptian world it draws on, and not a statement about religion.</p>
   <p class="lede">Each god has a shrine and an altar. Hold an offering, use the altar, and the god takes one item, adds to your favor, and gives you a blessing. Favor is saved with you, and kept through death.</p>
   <h2>Favor</h2>{favor_ladder()}
   <p>Use an altar with an empty hand to see your favor and what the god wants. <code>/khemet favor</code> lists your standing with every god.</p>
   {secs}
   <p class="meta">Seven more gods are in the design (Horus, Isis, Osiris, Set, Bastet, Thoth, Khonsu); slice one has two.</p>
-  {status(["Offering, refusal of the wrong item, favor kept per god, and the stage names at 3, 10 and 25 favor, all through the command that runs the same code as the altar.", "The blessings stack by stage: at Recognized, Ra gave Fire Resistance and Strength; at Favored, Regeneration and Resistance joined them.", "Both shrines generate on their own and are photographed."],
-          ["Using an altar block with a held item (the click path).", "Favor kept across a server restart (it is saved with the player; not yet restarted to check).", "Anubis's blessings were not individually inspected."])}
+  {status(["Offering, refusal of the wrong item, favor kept per god, and all four stage names (Ra reached Chosen at 25 favor), through the command that runs the same code as the altar.", "The blessings stack by stage: at Recognized, Ra gave Fire Resistance and Strength; at Favored, Regeneration and Resistance joined them; at Chosen (28 favor) Regeneration II, Fire Resistance and a longer Strength were active.", "Both shrines generate on their own and are photographed."],
+          ["Using an altar block with a held item (the click path).", "Favor kept across a server restart (it is saved with the player; not yet restarted to check).", "Anubis's blessings and his stages beyond Stranger were not individually inspected."])}
 </section>"""
     return page("Gods: the shrines and favor of Ra and Anubis", "Ra and Anubis in the Khemet mod: their altars, offerings, four stages of divine favor and the blessings each stage gives.", body, "gods", "gods.html", "gods")
 
@@ -559,8 +594,9 @@ def build_structures():
         sset = jread(DATA / "worldgen/structure_set" / f"{slug}.json")["placement"]
         biomes = ", ".join(b.replace("#minecraft:is_", "").replace("minecraft:", "") for b in jread(DATA / "tags/worldgen/biome/has_structure" / f"{slug}.json")["values"])
         spawns = jread(DATA / "worldgen/structure" / f"{slug}.json").get("spawn_overrides", {})
-        sp = ", ".join(f"{label(s['type'])} ({s['minCount']} to {s['maxCount']})" for c in spawns.values() for s in c["spawns"]) or "none"
-        figs = "".join(fig(n, title + (" at dusk." if n.endswith("dusk") else "."), title + " in a desert") for n in shots)
+        sp = ", ".join(f"{label(s['type'])} ({s['minCount'] if s['minCount'] == s['maxCount'] else str(s['minCount']) + ' to ' + str(s['maxCount'])})" for c in spawns.values() for s in c["spawns"]) or "none"
+        sp = (sp + ". Set in the structure's data; not yet watched in play.") if sp != "none" else sp
+        figs = "".join(fig(n, title + (" at dusk." if n.endswith("dusk") else " by day."), title + (" at dusk, under an orange sky" if n.endswith("dusk") else " by day, on desert sand")) for n in shots)
         secs += f"""<section class="sec" id="{slug}"><h2>{esc(title)}</h2><p>{esc(blurb)}</p><div class="shots two">{figs}</div>
   <table class="data"><caption class="sr">{esc(title)}: facts</caption><tbody>
   <tr><th scope="row">Size</th><td>{sx} by {sz} blocks, {sy} high; {variants(slug)} variants</td></tr>
@@ -579,15 +615,40 @@ def build_structures():
     return page("Structures: shrines, obelisks and ruins in the desert", "The four desert structures of the Khemet mod: the shrines of Ra and Anubis, the obelisk field and the desert ruin.", body, "structures", "structures.html", "structures")
 
 
+def guard_list(key):
+    out = []
+    for slug, title, *_ in STRUCTS:
+        spawns = jread(DATA / "worldgen/structure" / f"{slug}.json").get("spawn_overrides", {})
+        if any(s["type"] == f"khemet:{key}" for c in spawns.values() for s in c["spawns"]):
+            out.append(title.replace("The ", "the ", 1))
+    return out
+
+
+def chance_of(path, item):
+    for pool in jread(path)["pools"]:
+        for e in pool["entries"]:
+            if e.get("name") == item:
+                for c in pool.get("conditions", []):
+                    if c.get("condition") == "minecraft:random_chance":
+                        return round(c["chance"] * 100)
+    return None
+
+
+ANKH_RA = chance_of(DATA / "loot_table/chests/ra_shrine.json", "khemet:ankh")
+ANKH_ROY = chance_of(DATA / "loot_table/entities/royal_mummy.json", "khemet:ankh")
+
+
 def build_creatures():
     m = java_attrs("Mummy")
     r = {**m, **java_attrs("RoyalMummy")}
     sp = spawn_rules()
     cards = ""
-    for key, name, a, blurb, shotn in (("mummy", "Mummy", m, "A tomb guardian wrapped in linen with glowing amber eyes. Slow and durable, its touch leaves a 10-second Weakness, and dry linen burns twice as hard: fire does double damage. It does not burn in sunlight.", "mummies"),
-                                       ("royal_mummy", "Royal Mummy", r, "An elite mummy from a royal burial, in a striped headdress, a collar of gold and turquoise and gold armour. More health, harder hits, and better drops, including a small chance at an Ankh.", None)):
+    for key, name, a, blurb, shotn in (("mummy", "Mummy", m, "A tomb guardian wrapped in linen with glowing amber eyes. As written in the code (not yet seen in a fight): slow and durable, its touch leaves a 10-second Weakness, and dry linen burns twice as hard, so fire does double damage. It does not burn in sunlight.", "mummies"),
+                                       ("royal_mummy", "Royal Mummy", r, "An elite mummy from a royal burial, in a striped headdress, a collar of gold and turquoise and gold armour. More health, harder hits, and better drops, including a {ANKH_ROY}% chance at an Ankh (from the loot table).".replace("{ANKH_ROY}", str(ANKH_ROY)) + "", None)):
         rule = sp.get(key.upper())
-        spawn = f"Deserts: {rule['lo']} to {rule['hi']} at a time, spawn weight {rule['weight']}. Also guards Anubis's shrine and the desert ruins." if rule else ""
+        guards = guard_list(key)
+        count = "singly" if rule and rule["lo"] == rule["hi"] else (f"{rule['lo']} to {rule['hi']} at a time" if rule else "")
+        spawn = (f"Deserts: {count}, spawn weight {rule['weight']}. Set to guard " + (" and ".join(guards) if guards else "nothing else") + " (in the data; not yet watched).") if rule else ""
         loot = ", ".join(label(e["name"]) for pool in jread(DATA / "loot_table/entities" / f"{key}.json")["pools"] for e in pool["entries"] if e.get("type") == "minecraft:item")
         cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{esc(blurb)}</p>{fig(shotn, "A pair of mummies and a royal mummy, in a desert test world with their AI off for the photograph.", "Two mummies and a royal mummy standing on desert sand") if shotn else ""}
   <table class="data"><caption class="sr">{name}: facts</caption><tbody>
@@ -614,10 +675,11 @@ def build_relics():
   <p class="eyebrow">Relics &amp; weather</p><h1>An ankh, a khopesh, and a storm</h1><div class="rule"></div>
   <div class="shots two">{fig("relics", "The Ankh of Life and Anubis's Khopesh, shown large with a Blood of Ra potion.", "The ankh, the khopesh and a potion shown at display size")}{fig("sandstorm", "A sandstorm at the edge of the desert: wind-blown sand (this capture shows only a few particles).", "A few blown sand particles over a desert")}</div>
   <h2>Relics</h2>
-  <ul class="cards"><li class="card">{sprite("ankh", 64, "Ankh of Life")}<div><h3>Ankh of Life</h3><p>Use it to heal {a['heal'] / 2:g} hearts at once and then regenerate ({roman(a['regen_amplifier'] + 1)}, {a['regen_seconds']} seconds). It also clears poison and wither. It wears out after {a['durability']} uses and needs {a['cooldown_ticks'] // 20} seconds between uses. It does nothing at full health.</p><p>{esc(recipe_text('ankh'))}. Also found in Ra's shrine, and rarely dropped by royal mummies.</p></div></li>
+  <p class="meta">The numbers here are as written in the code; neither relic has been used in play yet.</p>
+  <ul class="cards"><li class="card">{sprite("ankh", 64, "Ankh of Life")}<div><h3>Ankh of Life</h3><p>Use it to heal {a['heal'] / 2:g} hearts at once and then regenerate ({roman(a['regen_amplifier'] + 1)}, {a['regen_seconds']} seconds). It also clears poison and wither. It wears out after {a['durability']} uses and needs {a['cooldown_ticks'] // 20} seconds between uses. It does nothing at full health.</p><p>{esc(recipe_text('ankh'))}. Found in {ANKH_RA}% of Ra's shrine chests, and dropped by {ANKH_ROY}% of royal mummies.</p></div></li>
   <li class="card">{sprite("khopesh", 64, "Anubis's Khopesh")}<div><h3>Anubis's Khopesh</h3><p>A curved sword: +{k['damage']:g} attack damage ({k['damage'] + 1:g} with a bare hand's 1) at {4 + k['attack_speed_modifier']:g} swings per second, {k['durability']} durability, and {k['undead_bonus']:g} extra magic damage to the undead.</p><p>{esc(recipe_text('khopesh'))}. Also found in Anubis's shrine.</p></div></li></ul>
   <h2>Sandstorms</h2>
-  <p>In daytime, in clear weather, there is a 1 in {s['chance_in']} chance every 10 seconds (about once every {per_min:.0f} minutes) that a sandstorm starts if any player is in a desert. It lasts {s['duration_seconds'] // 60}:{s['duration_seconds'] % 60:02d}. Anyone in a desert or badlands under open sky is slowed ({'Slowness ' + roman(s['slowness_amplifier'] + 1)}) and blown with sand; stand under a roof and nothing happens. Operators can start and stop one with <code>/khemet sandstorm start</code> and <code>stop</code>.</p>
+  <p>As written in the code (a sandstorm has been started with the command, but not yet seen to start by itself): in daytime, in clear weather, there is a 1 in {s['chance_in']} chance every 10 seconds (about once every {per_min:.0f} minutes) that a sandstorm starts if any player is in a desert. It lasts {s['duration_seconds'] // 60}:{s['duration_seconds'] % 60:02d}. Anyone in a desert or badlands under open sky is slowed ({'Slowness ' + roman(s['slowness_amplifier'] + 1)}) and blown with sand; stand under a roof and nothing happens. Operators can start and stop one with <code>/khemet sandstorm start</code> and <code>stop</code>.</p>
   {status(["The Ankh and the Khopesh load, show their icons, and are photographed at display size.", "A sandstorm applied Slowness to a player in the open, and none under a roof (measured on the player's effects)."],
           ["Using the Ankh, and the Khopesh's undead bonus, in play.", "A sandstorm starting on its own (it has been started with the command).", "Sandstorm visuals: the particles are sparse, as the photograph shows, and the sky does not darken."])}
 </section>"""
@@ -630,6 +692,7 @@ def build_install():
 <section class="page">
   <p class="eyebrow">Install</p><h1>Install Khemet</h1><div class="rule"></div>
   <p class="lede">Khemet is a Fabric mod for Minecraft {esc(mf['game_versions'][0])}. No release jar is published yet, so you build it.</p>
+  <p class="meta">Words used here: a <b>mod</b> is an add-on for the game; a <b>jar</b> is the mod\u2019s file; <b>Fabric</b> is the program that loads mods; an <b>operator</b> is a player allowed to use admin commands.</p>
   <h2>You need</h2><ul><li>Minecraft Java Edition {esc(mf['game_versions'][0])} (not Bedrock)</li><li><a href="https://fabricmc.net">Fabric</a> Loader 0.16 or later, and Fabric API</li><li>Java 21 and Gradle 8 (the repository has no Gradle wrapper)</li></ul>
   <h2>Build</h2>
   <pre><code>git clone https://github.com/SolutionsAsService/minecraft-khemet
