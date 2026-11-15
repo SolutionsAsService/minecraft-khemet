@@ -33,7 +33,7 @@ white (gypsum), black (carbon), red (ochre), yellow (orpiment/ochre), blue (Egyp
 itself was named by two of them: *Kemet*, the Black Land of the Nile's silt, and *Deshret*, the Red Land of the desert. The site takes
 that system: the page ground is Kemet black; the signal colour (links, buttons, the argument) is gold-yellow; and each topic category
 gets one of the others: Blocks = limestone white, Gods and shrines = Egyptian blue, Structures = red ochre, Plants and potions =
-malachite green, Creatures = turquoise (faience, the sixth Egyptian pigment-material), Relics and weather = carnelian orange. Values and
+malachite green, Creatures = turquoise (faience, the sixth Egyptian pigment-material), Relics and weather = amethyst (a gem of Egyptian jewellery; first drafted as carnelian orange, which measured only delta-E 23.8 from the red ochre, so it was changed). Values and
 the measured ΔE and contrast are printed by the build (it fails below ΔE 30, below 3:1 for marks, below 4.5:1 for text).
 
 **Initial Frontier.**

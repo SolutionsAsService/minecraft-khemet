@@ -1,0 +1,7 @@
+{
+  "project": "minecraft-khemet",
+  "static_dir": "site",
+  "routes": [
+    { "pattern": "/", "target": "static" }
+  ]
+}

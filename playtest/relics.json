@@ -1,0 +1,43 @@
+{
+  "out": "site/img/shots",
+  "settle": 4,
+  "setup": [
+    "kill @e[type=minecraft:item_display]",
+    "summon minecraft:item_display 14 -55.2 200 {item:{id:\"khemet:ankh\",count:1},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[3f,3f,3f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 17 -55.2 200 {item:{id:\"khemet:khopesh\",count:1},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[3f,3f,3f],translation:[0f,0f,0f]}}",
+    "summon minecraft:item_display 11 -55.2 200 {item:{id:\"minecraft:potion\",count:1,components:{\"minecraft:potion_contents\":{potion:\"khemet:blood_of_ra\"}}},billboard:\"fixed\",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[3f,3f,3f],translation:[0f,0f,0f]}}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        14.5,
+        "G+2.2",
+        196.5,
+        0,
+        4
+      ],
+      "capture": "relics",
+      "wait": 8
+    },
+    {
+      "cmds": [
+        "khemet sandstorm start"
+      ],
+      "tp": [
+        260,
+        "G+2",
+        300,
+        60,
+        6
+      ],
+      "capture": "sandstorm",
+      "wait": 14
+    },
+    {
+      "cmds": [
+        "khemet sandstorm stop"
+      ],
+      "wait": 1
+    }
+  ]
+}
