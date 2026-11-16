@@ -1,5 +1,6 @@
 package dev.shadw.khemet.mobs;
 
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ZombieRenderer;
@@ -31,8 +32,15 @@ public final class GeneratedMobsClient {
 
 	/** Registers the renderers. Call from the client entrypoint. */
 	public static void initClient() {
-		EntityRendererRegistry.register(GeneratedMobs.FORGOTTEN_PHARAOH, ctx -> new SkinnedZombieRenderer(ctx, texture("forgotten_pharaoh")));
-		EntityRendererRegistry.register(GeneratedMobs.SCARAB, ctx -> new SkinnedZombieRenderer(ctx, texture("scarab")));
-		EntityRendererRegistry.register(GeneratedMobs.TOMB_GUARDIAN, ctx -> new SkinnedZombieRenderer(ctx, texture("tomb_guardian")));
+		EntityModelLayerRegistry.registerModelLayer(ForgottenPharaohModel.LAYER, ForgottenPharaohModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.FORGOTTEN_PHARAOH, ForgottenPharaohRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(MummyModel.LAYER, MummyModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.MUMMY, MummyRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(RoyalMummyModel.LAYER, RoyalMummyModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.ROYAL_MUMMY, RoyalMummyRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(ScarabModel.LAYER, ScarabModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.SCARAB, ScarabRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(TombGuardianModel.LAYER, TombGuardianModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.TOMB_GUARDIAN, TombGuardianRenderer::new);
 	}
 }

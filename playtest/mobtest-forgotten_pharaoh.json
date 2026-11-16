@@ -8,7 +8,7 @@
   "hostile": true,
   "reach_distance": 12,
   "reach_seconds": 4.0,
-  "approach_blocks_per_second": 2.23,
+  "approach_blocks_per_second": 2.55,
   "mob_effects_seen": [
     "minecraft:speed"
   ],
@@ -19,6 +19,8 @@
     "minecraft:weakness"
   ],
   "drops": [
-    "minecraft:diamond x1"
+    "khemet:sunstone_powder x1",
+    "minecraft:diamond x3",
+    "minecraft:gold_ingot x10"
   ]
 }

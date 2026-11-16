@@ -11,11 +11,11 @@
   "approach_blocks_per_second": 1.24,
   "mob_effects_seen": [],
   "player_health_before": 200.0,
-  "first_hit_damage": 2.0,
-  "player_health_after_8s": 188.5,
+  "first_hit_damage": 1.0,
+  "player_health_after_8s": 189.5,
   "effects_on_player": [],
   "drops": [
     "minecraft:gold_ingot x3",
-    "minecraft:bone x3"
+    "minecraft:bone x2"
   ]
 }

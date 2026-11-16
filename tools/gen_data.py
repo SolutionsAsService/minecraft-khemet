@@ -80,13 +80,7 @@ def main():
     }
     for name, pools in chests.items():
         write(K / "loot_table/chests" / f"{name}.json", {"type": "minecraft:chest", "pools": pools})
-    write(K / "loot_table/entities/mummy.json", {"type": "minecraft:entity", "pools": [
-        pool([item("minecraft:bone", 4, 0, 2), item("minecraft:string", 4, 1, 3), item("minecraft:rotten_flesh", 4, 0, 2)], 1, 2),
-        chance([item("khemet:natron_salt", 1, 1, 2)], 0.3), chance([item("minecraft:gold_nugget", 1, 1, 4)], 0.3)]})
-    write(K / "loot_table/entities/royal_mummy.json", {"type": "minecraft:entity", "pools": [
-        pool([item("minecraft:bone", 4, 1, 3), item("minecraft:string", 4, 2, 4), item("minecraft:gold_nugget", 5, 3, 8)], 2, 3),
-        chance([item("minecraft:gold_ingot", 1, 1, 3)], 0.6), chance([item("khemet:sunstone_powder", 1)], 0.35),
-        chance([item("khemet:sacred_myrrh", 1)], 0.25), chance([item("khemet:ankh", 1)], 0.04)]})
+    # entity loot tables are written by `shadw-mod mob gen` from mobs/*.json
     # recipes
     rec = K / "recipe"
     for n, src in (("ancient_limestone", "minecraft:sandstone"), ("weathered_pyramid_stone", "minecraft:sandstone"), ("hieroglyph_stone", "minecraft:sandstone"),

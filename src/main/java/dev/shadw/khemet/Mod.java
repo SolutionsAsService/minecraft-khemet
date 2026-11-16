@@ -44,7 +44,6 @@ public class Mod implements ModInitializer {
 	public void onInitialize() {
 		KhemetBlocks.init();
 		KhemetItems.init();
-		KhemetEntities.init();
 		GeneratedMobs.init();
 		Favor.init();
 		KhemetCommands.init();
@@ -112,8 +111,6 @@ public class Mod implements ModInitializer {
 			}
 		});
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> {
-			entries.accept(KhemetEntities.MUMMY_SPAWN_EGG);
-			entries.accept(KhemetEntities.ROYAL_MUMMY_SPAWN_EGG);
 			GeneratedMobs.EGGS.forEach(entries::accept);
 		});
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> entries.accept(KhemetItems.KHOPESH));

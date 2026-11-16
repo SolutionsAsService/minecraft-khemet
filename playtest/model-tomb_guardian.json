@@ -1,0 +1,89 @@
+{
+  "out": "playtest/models",
+  "settle": 8,
+  "steps": [
+    {
+      "tp": [
+        0,
+        "G+-0.27",
+        -14.0,
+        180,
+        6
+      ],
+      "capture": "tomb_guardian-front",
+      "wait": 6
+    },
+    {
+      "tp": [
+        4.199999999999999,
+        "G+-0.27",
+        -15.8,
+        145,
+        6
+      ],
+      "capture": "tomb_guardian-three-quarter",
+      "wait": 6
+    },
+    {
+      "tp": [
+        6.0,
+        "G+-0.27",
+        -20,
+        90,
+        6
+      ],
+      "capture": "tomb_guardian-side",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+-0.27",
+        -26.0,
+        0,
+        6
+      ],
+      "capture": "tomb_guardian-back",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+0.68",
+        -17.2,
+        180,
+        0
+      ],
+      "capture": "tomb_guardian-face",
+      "wait": 6
+    },
+    {
+      "tp": [
+        2.2399999999999998,
+        "G+0.68",
+        -18.04,
+        153,
+        0
+      ],
+      "capture": "tomb_guardian-face-side",
+      "wait": 6
+    }
+  ],
+  "setup": [
+    "forceload add -20 -40 20 0",
+    "kill @e[type=slime]",
+    "kill @e[type=item]",
+    "gamerule doMobSpawning false",
+    "kill @e[type=khemet:satyr]",
+    "kill @e[type=khemet:gorgon]",
+    "kill @e[type=khemet:hoplite]",
+    "kill @e[type=khemet:cyclops]",
+    "kill @e[type=khemet:minotaur]",
+    "kill @e[type=khemet:mummy]",
+    "kill @e[type=khemet:royal_mummy]",
+    "kill @e[type=khemet:scarab]",
+    "kill @e[type=khemet:tomb_guardian]",
+    "kill @e[type=khemet:forgotten_pharaoh]",
+    "summon khemet:tomb_guardian 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ]
+}

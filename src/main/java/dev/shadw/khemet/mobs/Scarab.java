@@ -54,7 +54,6 @@ public class Scarab extends Zombie {
 				.add(Attributes.ATTACK_DAMAGE, 2.0)
 				.add(Attributes.ARMOR, 0.0)
 				.add(Attributes.MOVEMENT_SPEED, 0.31)
-				.add(Attributes.SCALE, 0.55)
 				.add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0.0);
 	}
 

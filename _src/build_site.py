@@ -460,7 +460,7 @@ def home_wall():
     panels = [
         ("gods", "Gods", "Ra & Anubis · " + str(len(STAGES)) + " stages", "Make an offering. Be named Chosen.", "gods.html", "panels/ra-shrine", "ra_altar"),
         ("structures", "Structures", f"{n_structs()} structures", "Found in deserts; one also in badlands.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
-        ("creatures", "Creatures", "2 mummies", "Wrapped in linen, with glowing eyes.", "creatures.html", "panels/mummies", "mummy-face"),
+        ("creatures", "Creatures", "5 creatures", "Linen, stone, shell and a crown.", "creatures.html", "panels/creatures-all", "mummy-face"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Limestone, gold, basalt and glyphs.", "blocks.html", "panels/blocks", "hieroglyph_stone"),
         ("potions", "Potions", f"{len(POTIONS)} potions · 2 plants", "Lotus, papyrus and five brews.", "potions.html", "panels/plants", "blue_lotus"),
         ("relics", "Relics", "2 relics · sandstorms", "An ankh and a khopesh, shown large.", "relics.html", "panels/relics", "ankh"),
@@ -640,33 +640,53 @@ ANKH_ROY = chance_of(DATA / "loot_table/entities/royal_mummy.json", "khemet:ankh
 KHOP = chance_of(DATA / "loot_table/chests/anubis_shrine.json", "khemet:khopesh")
 
 
+MOBS = {p.stem: jread(p) for p in sorted((ASSETS / "mobs").glob("*.json"))}   # the creature specs, copied by `shadw-mod mob gen`
+
+
 def build_creatures():
-    m = java_attrs("Mummy")
-    r = {**m, **java_attrs("RoyalMummy")}
-    sp = spawn_rules()
     cards = ""
-    for key, name, a, blurb, shotn in (("mummy", "Mummy", m, "A tomb guardian wrapped in linen with glowing amber eyes. As written in the code (not yet seen in a fight): slow and durable, its touch leaves a 10-second Weakness, and dry linen burns twice as hard, so fire does double damage. It does not burn in sunlight.", "mummies"),
-                                       ("royal_mummy", "Royal Mummy", r, "An elite mummy from a royal burial, in a striped headdress, a collar of gold and turquoise and gold armour. More health, harder hits, and better drops, including a {ANKH_ROY}% chance at an Ankh (from the loot table).".replace("{ANKH_ROY}", str(ANKH_ROY)) + "", None)):
-        rule = sp.get(key.upper())
-        guards = guard_list(key)
-        count = "singly" if rule and rule["lo"] == rule["hi"] else (f"{rule['lo']} to {rule['hi']} at a time" if rule else "")
-        spawn = (f"Deserts: {count}, spawn weight {rule['weight']}. Set to guard " + (" and ".join(guards) if guards else "nothing else") + " (in the data; not yet watched).") if rule else ""
-        loot = ", ".join(label(e["name"]) for pool in jread(DATA / "loot_table/entities" / f"{key}.json")["pools"] for e in pool["entries"] if e.get("type") == "minecraft:item")
-        cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{esc(blurb)}</p>{fig(shotn, "A pair of mummies and a royal mummy, in a desert test world with their AI off for the photograph.", "Two mummies and a royal mummy standing on desert sand") if shotn else ""}
+    info = (("mummy", "A tomb guardian wrapped in bands of linen, hunched with its arms out, with tattered ends streaming and one glowing amber eye in a gap. Its touch leaves Weakness, and dry linen burns twice as hard. It does not burn in sunlight.", "mummy"),
+            ("royal_mummy", "An elite mummy from a royal burial in a striped nemes headdress with a cobra, a false beard, the broad collar of gold, turquoise and lapis, gold armbands and a short golden khopesh.", "royal_mummy"),
+            ("scarab", "A small sacred beetle with a turquoise shell striped in gold, red eyes, antennae and six legs in a tripod gait. Fast, fragile, and its bite poisons.", "scarab"),
+            ("tomb_guardian", "A jackal-headed stone warrior with a black head, tall ears and glowing cyan eyes, a gold collar and kilt, an ankh cut into its chest, and a was-sceptre. Armoured and slow; it slams the ground.", "tomb_guardian"),
+            ("forgotten_pharaoh", "The undead king: a golden death-mask under the double crown (white hedjet inside the red deshret), a nemes and uraeus, the broad collar, crook and flail crossed on the chest and a shroud of tattered linen. A boss with a bar: it hunts through walls, charges, slams, enrages below half health, and its blows leave Weakness II. It is not placed by anything yet.", "forgotten_pharaoh"))
+    for key, blurb, shotn in info:
+        spec = MOBS[key]
+        a = spec["attributes"]
+        name = spec["name"]
+        sp = spec.get("spawn")
+        spawn = (f"Deserts: {sp['min'] if sp['min'] == sp['max'] else str(sp['min']) + ' to ' + str(sp['max'])} at a time, weight {sp['weight']}." if sp else "None: no structure or biome places it yet (an egg and /summon only).")
+        guards = []
+        for slug, title, *_ in STRUCTS:
+            ov = jread(DATA / "worldgen/structure" / f"{slug}.json").get("spawn_overrides", {})
+            if any(x["type"] == f"khemet:{key}" for c in ov.values() for x in c["spawns"]):
+                guards.append(title.replace("The ", "the ", 1))
+        if guards:
+            spawn += " Set to guard " + " and ".join(guards) + " (in the data; not yet watched)."
+        loot = ", ".join(label(d["item"]) for d in spec["drops"])
+        fx = ", ".join(f"{label(b['effect'])} {roman(b.get('amplifier', 0) + 1)} for {b.get('seconds', 5)} s" for b in spec["behaviours"] if b["type"] == "on_hit_effect")
+        meas = jread(REPO / "playtest" / f"mobtest-{key}.json") if (REPO / "playtest" / f"mobtest-{key}.json").exists() else None
+        mrow = ""
+        if meas and meas.get("first_hit_damage") is not None:
+            reach = f"reached a player {meas['reach_distance']} blocks away in {meas['reach_seconds']} s" if meas.get("reach_seconds") else "did not reach the player in the test"
+            mrow = f'<tr><th scope="row">Measured</th><td>In a flat desert test world: {esc(reach)}; first hit took {meas["first_hit_damage"]:g} health on Easy; effects on the player: {esc(", ".join(label(e) for e in meas["effects_on_player"]) or "none")}. (One run each; <code>shadw-mod playtest mobtest</code>.)</td></tr>'
+        cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{blurb}</p><div class="shots two">{fig(key + "-three-quarter", name + ", three-quarter view, with its AI off for the photograph.", name + " standing on desert sand")}{fig(key + "-face-side", name + ", close up.", name + " close up")}</div>
   <table class="data"><caption class="sr">{name}: facts</caption><tbody>
-  <tr><th scope="row">Stats</th><td>{a['health']:g} health ({a['health'] / 2:g} hearts), {a['damage']:g} attack damage, {a['armour']:g} armour{(', knockback resistance ' + format(a['knockback'], 'g')) if 'knockback' in a else ''}</td></tr>
+  <tr><th scope="row">Stats</th><td>{a['health']:g} health ({a['health'] / 2:g} hearts), {a.get('damage', 0):g} attack damage, {a.get('armor', 0):g} armour{(', ' + fx + ' on hit') if fx else ''}</td></tr>
   <tr><th scope="row">Spawns</th><td>{esc(spawn)}</td></tr>
   <tr><th scope="row">Drops</th><td>{esc(loot)}</td></tr>
+  {mrow}
   <tr><th scope="row">Spawn egg</th><td>In the Spawn Eggs tab, and <code>/summon khemet:{key}</code></td></tr></tbody></table></section>"""
     body = f"""
 <section class="page">
-  <p class="eyebrow">Creatures</p><h1>The wrapped guardians</h1><div class="rule"></div>
-  <p class="lede">The first two creatures of the design's Phase 3. They use the zombie model with skins painted for the mod.</p>
+  <p class="eyebrow">Creatures</p><h1>Linen, stone, shell and a crown</h1><div class="rule"></div>
+  <p class="lede">Five creatures, each with its own model: built from many small moving parts, with a texture packed and painted by the mod's generator, from a small data file (<code>mobs/*.json</code>).</p>
+  <div class="shots two">{fig("creatures-all", "From the left: scarab, mummy, royal mummy, tomb guardian, the Forgotten Pharaoh (with his boss bar), with their AI off for the photograph.", "Five Egyptian creatures in a row on desert sand")}</div>
   {cards}
-  {status(["Both load, render with their skins (wrapped linen, glowing eyes; the royal mummy in gold) and are summoned and photographed.", "The stats are the ones in the code, read at build time."],
-          ["Mummies spawning on their own over a night in a desert.", "The Weakness touch and the double fire damage in a fight.", "Their drops (the table is written, not yet watched).", "Custom models and animations: they reuse the zombie's."])}
+  {status(["All five load, render with their own models and are photographed. A test harness measured each in a running game: time to reach a player, the first hit, the effects, and its drops.", "The mummy and royal mummy were moved from hand-written classes to data files and behave as before (Weakness on hit, as measured)."],
+          ["Mummies, scarabs and guardians spawning on their own over a night, and a real fight with any of them.", "The Forgotten Pharaoh's whole fight, and anywhere to find him: nothing places him yet.", "How the models move in a fight (animation was checked only in still photographs)."])}
 </section>"""
-    return page("Creatures: mummies and royal mummies", "The mummy and the royal mummy of the Khemet mod: stats, spawns, drops and what they do.", body, "creatures", "creatures.html", "creatures")
+    return page("Creatures: mummies, scarab, tomb guardian and the Forgotten Pharaoh", "The five creatures of the Khemet mod with their own models: stats, spawns, drops and measured behaviour.", body, "creatures", "creatures.html", "creatures")
 
 
 def build_relics():
@@ -731,14 +751,14 @@ def prepare_assets():
         shutil.copyfile(ASSETS / "textures/item" / f"{p['ingredient']}.png", tex / f"item-{p['ingredient']}.png")
     for n in ("ankh", "khopesh"):
         shutil.copyfile(ASSETS / "textures/item" / f"{n}.png", tex / f"{n}.png")
-    convert(ASSETS / "textures/entity/mummy.png", "-crop", "8x8+8+8", "+repage", "-filter", "point", "-resize", "88x88", tex / "mummy-face.png")
+    convert(SITE / "img/shots/royal_mummy-face.png", "-gravity", "center", "-crop", "360x360+0+0", "+repage", "-resize", "88x88", tex / "mummy-face.png")
     panels = SITE / "img/panels"
     shutil.rmtree(panels, ignore_errors=True)
     panels.mkdir(parents=True, exist_ok=True)
-    for name in ("ra-shrine", "anubis-shrine", "mummies", "blocks", "plants", "relics"):
+    for name in ("ra-shrine", "anubis-shrine", "creatures-all", "blocks", "plants", "relics"):
         src = SITE / "img/shots" / f"{name}.png"
         if src.exists():
-            convert(src, "-resize", "640x320^", "-gravity", "center", "-extent", "640x320", "-quality", "80", panels / f"{name}.jpg")
+            convert(src, "-gravity", "south", "-crop", "854x420+0+0", "+repage", "-resize", "640x320^", "-gravity", "center", "-extent", "640x320", "-quality", "80", panels / f"{name}.jpg")   # the top 60 px can hold a boss bar
         else:
             raise SystemExit(f"missing photograph for the landing: {src}")
     og = SITE / "img/og.png"

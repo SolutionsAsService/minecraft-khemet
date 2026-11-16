@@ -335,7 +335,7 @@ def khopesh():
     return p
 
 
-EGGS = {"mummy": ((214, 205, 170), (255, 190, 50)), "royal_mummy": ((236, 190, 60), (38, 67, 155))}
+EGGS = {}   # spawn eggs belong to `shadw-mod mob gen` (mobs/*.json)
 
 LANG = {
     "item.khemet.ankh": "Ankh of Life",
@@ -490,8 +490,7 @@ def main():
         wj(ASSETS / f"models/item/{name}_spawn_egg.json", {"parent": "minecraft:item/template_spawn_egg"})
         wj(ASSETS / f"items/{name}_spawn_egg.json", {"model": {"type": "minecraft:model", "model": f"{NS}:item/{name}_spawn_egg",
             "tints": [{"type": "minecraft:constant", "value": tint(a)}, {"type": "minecraft:constant", "value": tint(b)}]}})
-    mummy(False).save(ASSETS / "textures/entity/mummy.png")
-    mummy(True).save(ASSETS / "textures/entity/royal_mummy.png")
+    # creature textures belong to `shadw-mod mob gen` (mobs/*.json)
     wj(HERE / "content_lang.json", LANG)
     print("content assets written")
 

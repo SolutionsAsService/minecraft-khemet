@@ -1,0 +1,27 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -20 -40 40 0",
+    "kill @e[type=!minecraft:player]",
+    "gamerule doMobSpawning false",
+    "summon khemet:scarab -8.4 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon khemet:mummy -4.2 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon khemet:royal_mummy 0.0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon khemet:tomb_guardian 4.2 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}",
+    "summon khemet:forgotten_pharaoh 8.4 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ],
+  "steps": [
+    {
+      "tp": [
+        0,
+        "G+0.4",
+        -6.5,
+        180,
+        3
+      ],
+      "capture": "creatures-all",
+      "wait": 9
+    }
+  ]
+}

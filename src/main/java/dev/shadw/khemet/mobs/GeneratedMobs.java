@@ -24,9 +24,17 @@ public final class GeneratedMobs {
 			b -> b.spawnRestriction(SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules)
 					.defaultAttributes(ForgottenPharaoh::createAttributes)).sized(0.6F, 1.95F).clientTrackingRange(12));
 	public static final Item FORGOTTEN_PHARAOH_SPAWN_EGG = egg("forgotten_pharaoh_spawn_egg", FORGOTTEN_PHARAOH);
+	public static final EntityType<Mummy> MUMMY = register("mummy", FabricEntityType.Builder.createMob(Mummy::new, MobCategory.MONSTER,
+			b -> b.spawnRestriction(SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules)
+					.defaultAttributes(Mummy::createAttributes)).sized(0.6F, 1.95F).clientTrackingRange(8));
+	public static final Item MUMMY_SPAWN_EGG = egg("mummy_spawn_egg", MUMMY);
+	public static final EntityType<RoyalMummy> ROYAL_MUMMY = register("royal_mummy", FabricEntityType.Builder.createMob(RoyalMummy::new, MobCategory.MONSTER,
+			b -> b.spawnRestriction(SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules)
+					.defaultAttributes(RoyalMummy::createAttributes)).sized(0.6F, 1.95F).clientTrackingRange(8));
+	public static final Item ROYAL_MUMMY_SPAWN_EGG = egg("royal_mummy_spawn_egg", ROYAL_MUMMY);
 	public static final EntityType<Scarab> SCARAB = register("scarab", FabricEntityType.Builder.createMob(Scarab::new, MobCategory.MONSTER,
 			b -> b.spawnRestriction(SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules)
-					.defaultAttributes(Scarab::createAttributes)).sized(0.6F, 1.95F).clientTrackingRange(8));
+					.defaultAttributes(Scarab::createAttributes)).sized(0.9F, 0.6F).clientTrackingRange(8));
 	public static final Item SCARAB_SPAWN_EGG = egg("scarab_spawn_egg", SCARAB);
 	public static final EntityType<TombGuardian> TOMB_GUARDIAN = register("tomb_guardian", FabricEntityType.Builder.createMob(TombGuardian::new, MobCategory.MONSTER,
 			b -> b.spawnRestriction(SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules)
@@ -34,7 +42,7 @@ public final class GeneratedMobs {
 	public static final Item TOMB_GUARDIAN_SPAWN_EGG = egg("tomb_guardian_spawn_egg", TOMB_GUARDIAN);
 
 	/** The spawn eggs, for the creative tab. */
-	public static final List<Item> EGGS = List.of(FORGOTTEN_PHARAOH_SPAWN_EGG, SCARAB_SPAWN_EGG, TOMB_GUARDIAN_SPAWN_EGG);
+	public static final List<Item> EGGS = List.of(FORGOTTEN_PHARAOH_SPAWN_EGG, MUMMY_SPAWN_EGG, ROYAL_MUMMY_SPAWN_EGG, SCARAB_SPAWN_EGG, TOMB_GUARDIAN_SPAWN_EGG);
 
 	private GeneratedMobs() {}
 
@@ -50,6 +58,8 @@ public final class GeneratedMobs {
 
 	/** Registers the natural spawns. Call from the main entrypoint. */
 	public static void init() {
+		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("minecraft:desert"))), MobCategory.MONSTER, MUMMY, 12, 1, 3);
+		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("minecraft:desert"))), MobCategory.MONSTER, ROYAL_MUMMY, 1, 1, 1);
 		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("minecraft:desert"))), MobCategory.MONSTER, SCARAB, 10, 2, 5);
 		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("minecraft:desert"))), MobCategory.MONSTER, TOMB_GUARDIAN, 2, 1, 1);
 	}

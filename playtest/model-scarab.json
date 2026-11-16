@@ -1,0 +1,89 @@
+{
+  "out": "playtest/models",
+  "settle": 8,
+  "steps": [
+    {
+      "tp": [
+        0,
+        "G+-0.90",
+        -17.4,
+        180,
+        6
+      ],
+      "capture": "scarab-front",
+      "wait": 6
+    },
+    {
+      "tp": [
+        1.8199999999999998,
+        "G+-0.90",
+        -18.18,
+        145,
+        6
+      ],
+      "capture": "scarab-three-quarter",
+      "wait": 6
+    },
+    {
+      "tp": [
+        2.6,
+        "G+-0.90",
+        -20,
+        90,
+        6
+      ],
+      "capture": "scarab-side",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+-0.90",
+        -22.6,
+        0,
+        6
+      ],
+      "capture": "scarab-back",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+-0.50",
+        -18.7,
+        180,
+        0
+      ],
+      "capture": "scarab-face",
+      "wait": 6
+    },
+    {
+      "tp": [
+        1.04,
+        "G+-0.50",
+        -19.09,
+        153,
+        0
+      ],
+      "capture": "scarab-face-side",
+      "wait": 6
+    }
+  ],
+  "setup": [
+    "forceload add -20 -40 20 0",
+    "kill @e[type=slime]",
+    "kill @e[type=item]",
+    "gamerule doMobSpawning false",
+    "kill @e[type=khemet:satyr]",
+    "kill @e[type=khemet:gorgon]",
+    "kill @e[type=khemet:hoplite]",
+    "kill @e[type=khemet:cyclops]",
+    "kill @e[type=khemet:minotaur]",
+    "kill @e[type=khemet:mummy]",
+    "kill @e[type=khemet:royal_mummy]",
+    "kill @e[type=khemet:scarab]",
+    "kill @e[type=khemet:tomb_guardian]",
+    "kill @e[type=khemet:forgotten_pharaoh]",
+    "summon khemet:scarab 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ]
+}
