@@ -1,4 +1,6 @@
 {
+  "entity.khemet.chariot": "Chariot",
+  "item.khemet.chariot_spawn_egg": "Chariot Spawn Egg",
   "entity.khemet.cobra": "Cobra",
   "item.khemet.cobra_spawn_egg": "Cobra Spawn Egg",
   "entity.khemet.crocodile": "Crocodile",

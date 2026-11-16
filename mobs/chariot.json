@@ -1,0 +1,3535 @@
+{
+  "id": "chariot",
+  "name": "Chariot",
+  "base": "zombie",
+  "hostile": false,
+  "external": {
+    "class": "dev.shadw.khemet.Chariot",
+    "type": "dev.shadw.khemet.KhemetVehicles.CHARIOT"
+  },
+  "attributes": {
+    "health": 40,
+    "speed": 0.32
+  },
+  "drops": [
+    {
+      "item": "khemet:chariot",
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "egg": [
+    "#2a58b0",
+    "#e0b838"
+  ],
+  "model": {
+    "shadow": 1.2,
+    "paints": {
+      "linen": {
+        "type": "cloth",
+        "base": "#d4caa8",
+        "trim": "#a89870"
+      },
+      "linen_dark": {
+        "type": "cloth",
+        "base": "#b8aa84",
+        "trim": "#8a7c58"
+      },
+      "dry": {
+        "type": "skin",
+        "base": "#7a5c40",
+        "shade": 6
+      },
+      "gold": {
+        "type": "metal",
+        "base": "#e0b838",
+        "dark": "#8a6a14",
+        "light": "#fff0a0"
+      },
+      "lapis": {
+        "type": "metal",
+        "base": "#2a58b0",
+        "dark": "#142c68",
+        "light": "#6a98e8"
+      },
+      "turq": {
+        "type": "metal",
+        "base": "#2ab0a0",
+        "dark": "#126058",
+        "light": "#7ae8d8"
+      },
+      "nemes": {
+        "type": "cloth",
+        "base": "#e0b838",
+        "trim": "#2a58b0"
+      },
+      "stone": {
+        "type": "ridged",
+        "base": "#b8aa84",
+        "dark": "#80724c",
+        "light": "#d8ccaa"
+      },
+      "basalt": {
+        "type": "skin",
+        "base": "#24242c",
+        "shade": 4
+      },
+      "black_gold": {
+        "type": "scales",
+        "base": "#2a2a32",
+        "dark": "#101014",
+        "light": "#4a4a56",
+        "cell": 4
+      },
+      "white_crown": {
+        "type": "cloth",
+        "base": "#f0ece0",
+        "trim": "#c8c0a8"
+      },
+      "red_crown": {
+        "type": "cloth",
+        "base": "#b03028",
+        "trim": "#701810"
+      },
+      "wood": {
+        "type": "ridged",
+        "base": "#8a6a3a",
+        "dark": "#4a3418",
+        "light": "#b8924e"
+      },
+      "eye": {
+        "type": "plain",
+        "base": "#ffd040"
+      },
+      "iron": {
+        "type": "metal",
+        "base": "#8a8e96",
+        "dark": "#4a4e56",
+        "light": "#d0d4dc"
+      },
+      "shell": {
+        "type": "scales",
+        "base": "#1c6a78",
+        "dark": "#0c3a48",
+        "light": "#3fd0b8",
+        "cell": 4
+      },
+      "croc": {
+        "type": "scales",
+        "base": "#4a5a38",
+        "dark": "#26301c",
+        "light": "#7a8a58",
+        "cell": 3
+      },
+      "croc_belly": {
+        "type": "skin",
+        "base": "#b8b084",
+        "shade": 5
+      },
+      "cobra": {
+        "type": "scales",
+        "base": "#8a7a3a",
+        "dark": "#40361a",
+        "light": "#c8b862",
+        "cell": 3
+      },
+      "cobra_hood": {
+        "type": "scales",
+        "base": "#b09a48",
+        "dark": "#40361a",
+        "light": "#e0d078",
+        "cell": 3
+      },
+      "cobra_belly": {
+        "type": "skin",
+        "base": "#e4d8a0",
+        "shade": 4
+      },
+      "fang": {
+        "type": "plain",
+        "base": "#f0ece0"
+      },
+      "tongue": {
+        "type": "plain",
+        "base": "#c02830"
+      },
+      "tan": {
+        "type": "skin",
+        "base": "#c88a4a",
+        "shade": 5
+      },
+      "sun": {
+        "type": "metal",
+        "base": "#f0b020",
+        "dark": "#a05a08",
+        "light": "#fff4b0"
+      },
+      "sun_red": {
+        "type": "metal",
+        "base": "#d03a18",
+        "dark": "#7a1808",
+        "light": "#ff8a50"
+      },
+      "shell_gold": {
+        "type": "metal",
+        "base": "#d8b030",
+        "dark": "#80640e",
+        "light": "#fff0a0"
+      },
+      "bug": {
+        "type": "skin",
+        "base": "#14343c",
+        "shade": 4
+      },
+      "red": {
+        "type": "plain",
+        "base": "#d83020"
+      },
+      "horse": {
+        "type": "fur",
+        "base": "#8a5a34",
+        "dark": "#4a2c14",
+        "light": "#b88a58"
+      },
+      "horse_belly": {
+        "type": "fur",
+        "base": "#a47a50",
+        "dark": "#6a4a28",
+        "light": "#c8a074"
+      },
+      "horse_mane": {
+        "type": "fur",
+        "base": "#1c1812",
+        "dark": "#0a0806",
+        "light": "#3a3024"
+      },
+      "horse_hoof": {
+        "type": "plain",
+        "base": "#2a2218"
+      },
+      "horse_nose": {
+        "type": "skin",
+        "base": "#4a3828",
+        "shade": 3
+      },
+      "harness": {
+        "type": "cloth",
+        "base": "#b03028",
+        "trim": "#e0b838"
+      },
+      "hgold": {
+        "type": "metal",
+        "base": "#e0b838",
+        "dark": "#8a6a14",
+        "light": "#fff0a0"
+      },
+      "cwood": {
+        "type": "ridged",
+        "base": "#8a6a3a",
+        "dark": "#4a3418",
+        "light": "#b08a52"
+      },
+      "cpaint": {
+        "type": "cloth",
+        "base": "#2a58b0",
+        "trim": "#e0b838"
+      }
+    },
+    "parts": [
+      {
+        "name": "car",
+        "parent": "root",
+        "pivot": [
+          0,
+          0,
+          6
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -10,
+              -10.5,
+              -9
+            ],
+            "size": [
+              20,
+              1.6,
+              18
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          },
+          {
+            "from": [
+              -10.4,
+              -9.8,
+              -9.4
+            ],
+            "size": [
+              20.8,
+              0.8,
+              18.8
+            ],
+            "grow": 0.0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -10.5,
+              -16.5,
+              -9
+            ],
+            "size": [
+              1.4,
+              6,
+              18
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          },
+          {
+            "from": [
+              9.1,
+              -16.5,
+              -9
+            ],
+            "size": [
+              1.4,
+              6,
+              18
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          },
+          {
+            "from": [
+              -10.6,
+              -17.4,
+              -9.2
+            ],
+            "size": [
+              1.6,
+              1.0,
+              18.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              9.0,
+              -17.4,
+              -9.2
+            ],
+            "size": [
+              1.6,
+              1.0,
+              18.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -10.5,
+              -22,
+              -9.6
+            ],
+            "size": [
+              21,
+              11.5,
+              1.6
+            ],
+            "grow": 0,
+            "paint": "cpaint"
+          },
+          {
+            "from": [
+              -10.8,
+              -22.6,
+              -9.8
+            ],
+            "size": [
+              21.6,
+              1.0,
+              2.0
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -10.8,
+              -12.4,
+              -9.8
+            ],
+            "size": [
+              21.6,
+              1.0,
+              2.0
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -2.2,
+              -19.2,
+              -10.4
+            ],
+            "size": [
+              4.4,
+              4.4,
+              0.8
+            ],
+            "grow": 0.0,
+            "paint": "hgold",
+            "decals": [
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 1,
+                "w": 2,
+                "h": 2,
+                "color": "#d03a18"
+              }
+            ]
+          },
+          {
+            "from": [
+              -9.5,
+              -12.6,
+              8.4
+            ],
+            "size": [
+              19,
+              2.2,
+              1.0
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "pole",
+        "parent": "root",
+        "pivot": [
+          0,
+          0,
+          6
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.0,
+              -9.8,
+              -34
+            ],
+            "size": [
+              2.0,
+              2.0,
+              26
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          },
+          {
+            "from": [
+              -12,
+              -11.4,
+              -33
+            ],
+            "size": [
+              24,
+              1.8,
+              1.8
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "wheel_l",
+        "parent": "root",
+        "pivot": [
+          12.5,
+          -8.0,
+          6
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.2,
+              -2.0,
+              -2.0
+            ],
+            "size": [
+              2.4,
+              4.0,
+              4.0
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -0.6,
+              -7.2,
+              -0.8
+            ],
+            "size": [
+              1.2,
+              14.4,
+              1.6
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          },
+          {
+            "from": [
+              -0.6,
+              -0.8,
+              -7.2
+            ],
+            "size": [
+              1.2,
+              1.6,
+              14.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "rim_l0",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "rim_l1",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          45,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "rim_l2",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          90,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "rim_l3",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          135,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "rim_l4",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          180,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "rim_l5",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          225,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "rim_l6",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          270,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "rim_l7",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          315,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "spoke_l1",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          45,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.5,
+              -7.2,
+              -0.7
+            ],
+            "size": [
+              1.0,
+              14.4,
+              1.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "spoke_l3",
+        "parent": "wheel_l",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          135,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.5,
+              -7.2,
+              -0.7
+            ],
+            "size": [
+              1.0,
+              14.4,
+              1.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "wheel_r",
+        "parent": "root",
+        "pivot": [
+          -12.5,
+          -8.0,
+          6
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.2,
+              -2.0,
+              -2.0
+            ],
+            "size": [
+              2.4,
+              4.0,
+              4.0
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -0.6,
+              -7.2,
+              -0.8
+            ],
+            "size": [
+              1.2,
+              14.4,
+              1.6
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          },
+          {
+            "from": [
+              -0.6,
+              -0.8,
+              -7.2
+            ],
+            "size": [
+              1.2,
+              1.6,
+              14.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "rim_r0",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "rim_r1",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          45,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "rim_r2",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          90,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "rim_r3",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          135,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "rim_r4",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          180,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "rim_r5",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          225,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "rim_r6",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          270,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "rim_r7",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          315,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.1,
+              -8.4,
+              -3.2
+            ],
+            "size": [
+              2.2,
+              1.6,
+              6.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "spoke_r1",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          45,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.5,
+              -7.2,
+              -0.7
+            ],
+            "size": [
+              1.0,
+              14.4,
+              1.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "spoke_r3",
+        "parent": "wheel_r",
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          135,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.5,
+              -7.2,
+              -0.7
+            ],
+            "size": [
+              1.0,
+              14.4,
+              1.4
+            ],
+            "grow": 0,
+            "paint": "cwood"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_",
+        "parent": "root",
+        "pivot": [
+          7.0,
+          0.0,
+          -17.0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": []
+      },
+      {
+        "name": "pony_l_body",
+        "parent": "pony_l_",
+        "pivot": [
+          0.0,
+          -10.760246842278677,
+          0.0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.79,
+              -5.89,
+              -4.96
+            ],
+            "size": [
+              5.58,
+              5.89,
+              11.78
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -2.418,
+              -0.124,
+              -4.712
+            ],
+            "size": [
+              4.836,
+              0.868,
+              11.283999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          },
+          {
+            "from": [
+              -3.0380000000000003,
+              -6.448,
+              -3.1
+            ],
+            "size": [
+              6.0760000000000005,
+              0.744,
+              5.58
+            ],
+            "grow": 0.0,
+            "paint": "harness"
+          },
+          {
+            "from": [
+              -3.1,
+              -6.882,
+              -3.3480000000000003
+            ],
+            "size": [
+              6.2,
+              0.62,
+              1.116
+            ],
+            "grow": 0.0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -3.1,
+              -6.882,
+              2.108
+            ],
+            "size": [
+              6.2,
+              0.62,
+              1.116
+            ],
+            "grow": 0.0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -3.286,
+              -1.1780000000000002,
+              -1.24
+            ],
+            "size": [
+              6.572,
+              0.496,
+              3.1
+            ],
+            "grow": 0.0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_chest",
+        "parent": "pony_l_body",
+        "pivot": [
+          0.0,
+          0.0,
+          -4.96
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -3.224,
+              -6.138,
+              -1.984
+            ],
+            "size": [
+              6.448,
+              6.758,
+              3.968
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -2.604,
+              0.124,
+              -1.736
+            ],
+            "size": [
+              5.208,
+              0.868,
+              3.472
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_neck",
+        "parent": "pony_l_chest",
+        "pivot": [
+          0.0,
+          -5.021999999999999,
+          -1.364
+        ],
+        "rot": [
+          34,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.736,
+              -7.4399999999999995,
+              -1.984
+            ],
+            "size": [
+              3.472,
+              7.4399999999999995,
+              3.968
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -1.9839999999999998,
+              -7.192,
+              -2.17
+            ],
+            "size": [
+              3.9679999999999995,
+              4.0920000000000005,
+              4.34
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          },
+          {
+            "from": [
+              -0.558,
+              -7.563999999999999,
+              1.7360000000000002
+            ],
+            "size": [
+              1.116,
+              7.811999999999999,
+              1.488
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          },
+          {
+            "from": [
+              -1.55,
+              -1.8599999999999999,
+              -2.48
+            ],
+            "size": [
+              3.1,
+              3.41,
+              0.744
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_head",
+        "parent": "pony_l_neck",
+        "pivot": [
+          0.0,
+          -7.0680000000000005,
+          0.186
+        ],
+        "rot": [
+          -28,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.6740000000000002,
+              -1.922,
+              -3.41
+            ],
+            "size": [
+              3.3480000000000003,
+              3.844,
+              4.34
+            ],
+            "grow": 0.0,
+            "paint": "horse",
+            "decals": [
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
+                "y": 2,
+                "w": 1,
+                "h": 1,
+                "color": "#101010"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 2,
+                "w": 1,
+                "h": 1,
+                "color": "#101010"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
+                "y": 3,
+                "w": 1,
+                "h": 1,
+                "color": "#2a1c10"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 3,
+                "w": 1,
+                "h": 1,
+                "color": "#2a1c10"
+              }
+            ]
+          },
+          {
+            "from": [
+              -1.984,
+              -0.992,
+              -1.24
+            ],
+            "size": [
+              3.968,
+              2.604,
+              1.55
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          },
+          {
+            "from": [
+              -0.744,
+              -2.232,
+              -3.968
+            ],
+            "size": [
+              1.488,
+              1.24,
+              1.116
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_snout",
+        "parent": "pony_l_head",
+        "pivot": [
+          0.0,
+          0.248,
+          -3.41
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.24,
+              -1.302,
+              -4.34
+            ],
+            "size": [
+              2.48,
+              2.0460000000000003,
+              4.34
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -1.054,
+              0.558,
+              -4.154
+            ],
+            "size": [
+              2.108,
+              0.372,
+              3.968
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_nose",
+        "parent": "pony_l_snout",
+        "pivot": [
+          0.0,
+          -1.116,
+          -4.216
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.806,
+              -0.248,
+              -0.682
+            ],
+            "size": [
+              1.612,
+              0.9299999999999999,
+              0.868
+            ],
+            "grow": 0.0,
+            "paint": "horse_nose"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_jaw",
+        "parent": "pony_l_head",
+        "pivot": [
+          0.0,
+          0.9299999999999999,
+          -1.55
+        ],
+        "rot": [
+          2,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.054,
+              0.0,
+              -4.65
+            ],
+            "size": [
+              2.108,
+              0.806,
+              4.65
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_ear_r",
+        "parent": "pony_l_head",
+        "pivot": [
+          -0.992,
+          -1.798,
+          -0.8059999999999999
+        ],
+        "rot": [
+          -8,
+          0,
+          10
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.558,
+              -1.984,
+              -0.372
+            ],
+            "size": [
+              1.116,
+              1.984,
+              0.744
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -0.248,
+              -1.6740000000000002,
+              -0.403
+            ],
+            "size": [
+              0.496,
+              1.364,
+              0.248
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_ear_l",
+        "parent": "pony_l_head",
+        "pivot": [
+          0.992,
+          -1.798,
+          -0.8059999999999999
+        ],
+        "rot": [
+          -8,
+          0,
+          -10
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.558,
+              -1.984,
+              -0.372
+            ],
+            "size": [
+              1.116,
+              1.984,
+              0.744
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -0.248,
+              -1.6740000000000002,
+              -0.403
+            ],
+            "size": [
+              0.496,
+              1.364,
+              0.248
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_leg_fr",
+        "parent": "pony_l_body",
+        "pivot": [
+          -1.8599999999999999,
+          -0.31,
+          -4.216
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.054,
+              0.0,
+              -1.054
+            ],
+            "size": [
+              2.108,
+              4.34,
+              2.108
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_shin_fr",
+        "parent": "pony_l_leg_fr",
+        "pivot": [
+          0.0,
+          4.092,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.8059999999999999,
+              0.0,
+              -0.8059999999999999
+            ],
+            "size": [
+              1.6119999999999999,
+              4.34,
+              1.6119999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_paw_fr",
+        "parent": "pony_l_shin_fr",
+        "pivot": [
+          0.0,
+          4.154,
+          0.0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.116,
+              0.0,
+              -1.9219999999999997
+            ],
+            "size": [
+              2.232,
+              0.868,
+              3.1
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          },
+          {
+            "from": [
+              -1.116,
+              0.558,
+              -2.17
+            ],
+            "size": [
+              2.232,
+              0.31,
+              0.372
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_leg_fl",
+        "parent": "pony_l_body",
+        "pivot": [
+          1.8599999999999999,
+          -0.31,
+          -4.216
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.054,
+              0.0,
+              -1.054
+            ],
+            "size": [
+              2.108,
+              4.34,
+              2.108
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_shin_fl",
+        "parent": "pony_l_leg_fl",
+        "pivot": [
+          0.0,
+          4.092,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.8059999999999999,
+              0.0,
+              -0.8059999999999999
+            ],
+            "size": [
+              1.6119999999999999,
+              4.34,
+              1.6119999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_paw_fl",
+        "parent": "pony_l_shin_fl",
+        "pivot": [
+          0.0,
+          4.154,
+          0.0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.116,
+              0.0,
+              -1.9219999999999997
+            ],
+            "size": [
+              2.232,
+              0.868,
+              3.1
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          },
+          {
+            "from": [
+              -1.116,
+              0.558,
+              -2.17
+            ],
+            "size": [
+              2.232,
+              0.31,
+              0.372
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_leg_br",
+        "parent": "pony_l_body",
+        "pivot": [
+          -1.8599999999999999,
+          -0.868,
+          5.828
+        ],
+        "rot": [
+          -18,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.178,
+              0.0,
+              -1.426
+            ],
+            "size": [
+              2.356,
+              4.34,
+              2.852
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_shin_br",
+        "parent": "pony_l_leg_br",
+        "pivot": [
+          0.0,
+          4.092,
+          0.0
+        ],
+        "rot": [
+          34,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.9299999999999999,
+              0.0,
+              -0.9299999999999999
+            ],
+            "size": [
+              1.8599999999999999,
+              4.836,
+              1.8599999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_paw_br",
+        "parent": "pony_l_shin_br",
+        "pivot": [
+          0.0,
+          4.65,
+          0.0
+        ],
+        "rot": [
+          -16,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.24,
+              0.0,
+              -2.046
+            ],
+            "size": [
+              2.48,
+              0.868,
+              3.3480000000000003
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          },
+          {
+            "from": [
+              -1.24,
+              0.558,
+              -2.294
+            ],
+            "size": [
+              2.48,
+              0.31,
+              0.372
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_leg_bl",
+        "parent": "pony_l_body",
+        "pivot": [
+          1.8599999999999999,
+          -0.868,
+          5.828
+        ],
+        "rot": [
+          -18,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.178,
+              0.0,
+              -1.426
+            ],
+            "size": [
+              2.356,
+              4.34,
+              2.852
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_shin_bl",
+        "parent": "pony_l_leg_bl",
+        "pivot": [
+          0.0,
+          4.092,
+          0.0
+        ],
+        "rot": [
+          34,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.9299999999999999,
+              0.0,
+              -0.9299999999999999
+            ],
+            "size": [
+              1.8599999999999999,
+              4.836,
+              1.8599999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_paw_bl",
+        "parent": "pony_l_shin_bl",
+        "pivot": [
+          0.0,
+          4.65,
+          0.0
+        ],
+        "rot": [
+          -16,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.24,
+              0.0,
+              -2.046
+            ],
+            "size": [
+              2.48,
+              0.868,
+              3.3480000000000003
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          },
+          {
+            "from": [
+              -1.24,
+              0.558,
+              -2.294
+            ],
+            "size": [
+              2.48,
+              0.31,
+              0.372
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_tail0",
+        "parent": "pony_l_body",
+        "pivot": [
+          0.0,
+          -4.96,
+          6.51
+        ],
+        "rot": [
+          30,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.744,
+              0.0,
+              -0.744
+            ],
+            "size": [
+              1.488,
+              3.1,
+              1.488
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_tail1",
+        "parent": "pony_l_tail0",
+        "pivot": [
+          0.0,
+          3.1,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.992,
+              0.0,
+              -0.992
+            ],
+            "size": [
+              1.984,
+              3.7199999999999998,
+              1.984
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_tail2",
+        "parent": "pony_l_tail1",
+        "pivot": [
+          0.0,
+          3.7199999999999998,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.9299999999999999,
+              0.0,
+              -0.9299999999999999
+            ],
+            "size": [
+              1.8599999999999999,
+              3.7199999999999998,
+              1.8599999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_l_tail3",
+        "parent": "pony_l_tail2",
+        "pivot": [
+          0.0,
+          3.7199999999999998,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.62,
+              0.0,
+              -0.62
+            ],
+            "size": [
+              1.24,
+              3.1,
+              1.24
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_",
+        "parent": "root",
+        "pivot": [
+          -7.0,
+          0.0,
+          -17.0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": []
+      },
+      {
+        "name": "pony_r_body",
+        "parent": "pony_r_",
+        "pivot": [
+          0.0,
+          -10.760246842278677,
+          0.0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -2.79,
+              -5.89,
+              -4.96
+            ],
+            "size": [
+              5.58,
+              5.89,
+              11.78
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -2.418,
+              -0.124,
+              -4.712
+            ],
+            "size": [
+              4.836,
+              0.868,
+              11.283999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          },
+          {
+            "from": [
+              -3.0380000000000003,
+              -6.448,
+              -3.1
+            ],
+            "size": [
+              6.0760000000000005,
+              0.744,
+              5.58
+            ],
+            "grow": 0.0,
+            "paint": "harness"
+          },
+          {
+            "from": [
+              -3.1,
+              -6.882,
+              -3.3480000000000003
+            ],
+            "size": [
+              6.2,
+              0.62,
+              1.116
+            ],
+            "grow": 0.0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -3.1,
+              -6.882,
+              2.108
+            ],
+            "size": [
+              6.2,
+              0.62,
+              1.116
+            ],
+            "grow": 0.0,
+            "paint": "hgold"
+          },
+          {
+            "from": [
+              -3.286,
+              -1.1780000000000002,
+              -1.24
+            ],
+            "size": [
+              6.572,
+              0.496,
+              3.1
+            ],
+            "grow": 0.0,
+            "paint": "hgold"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_chest",
+        "parent": "pony_r_body",
+        "pivot": [
+          0.0,
+          0.0,
+          -4.96
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -3.224,
+              -6.138,
+              -1.984
+            ],
+            "size": [
+              6.448,
+              6.758,
+              3.968
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -2.604,
+              0.124,
+              -1.736
+            ],
+            "size": [
+              5.208,
+              0.868,
+              3.472
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_neck",
+        "parent": "pony_r_chest",
+        "pivot": [
+          0.0,
+          -5.021999999999999,
+          -1.364
+        ],
+        "rot": [
+          34,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.736,
+              -7.4399999999999995,
+              -1.984
+            ],
+            "size": [
+              3.472,
+              7.4399999999999995,
+              3.968
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -1.9839999999999998,
+              -7.192,
+              -2.17
+            ],
+            "size": [
+              3.9679999999999995,
+              4.0920000000000005,
+              4.34
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          },
+          {
+            "from": [
+              -0.558,
+              -7.563999999999999,
+              1.7360000000000002
+            ],
+            "size": [
+              1.116,
+              7.811999999999999,
+              1.488
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          },
+          {
+            "from": [
+              -1.55,
+              -1.8599999999999999,
+              -2.48
+            ],
+            "size": [
+              3.1,
+              3.41,
+              0.744
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_head",
+        "parent": "pony_r_neck",
+        "pivot": [
+          0.0,
+          -7.0680000000000005,
+          0.186
+        ],
+        "rot": [
+          -28,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.6740000000000002,
+              -1.922,
+              -3.41
+            ],
+            "size": [
+              3.3480000000000003,
+              3.844,
+              4.34
+            ],
+            "grow": 0.0,
+            "paint": "horse",
+            "decals": [
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
+                "y": 2,
+                "w": 1,
+                "h": 1,
+                "color": "#101010"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 2,
+                "w": 1,
+                "h": 1,
+                "color": "#101010"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
+                "y": 3,
+                "w": 1,
+                "h": 1,
+                "color": "#2a1c10"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 3,
+                "w": 1,
+                "h": 1,
+                "color": "#2a1c10"
+              }
+            ]
+          },
+          {
+            "from": [
+              -1.984,
+              -0.992,
+              -1.24
+            ],
+            "size": [
+              3.968,
+              2.604,
+              1.55
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          },
+          {
+            "from": [
+              -0.744,
+              -2.232,
+              -3.968
+            ],
+            "size": [
+              1.488,
+              1.24,
+              1.116
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_snout",
+        "parent": "pony_r_head",
+        "pivot": [
+          0.0,
+          0.248,
+          -3.41
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.24,
+              -1.302,
+              -4.34
+            ],
+            "size": [
+              2.48,
+              2.0460000000000003,
+              4.34
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -1.054,
+              0.558,
+              -4.154
+            ],
+            "size": [
+              2.108,
+              0.372,
+              3.968
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_nose",
+        "parent": "pony_r_snout",
+        "pivot": [
+          0.0,
+          -1.116,
+          -4.216
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.806,
+              -0.248,
+              -0.682
+            ],
+            "size": [
+              1.612,
+              0.9299999999999999,
+              0.868
+            ],
+            "grow": 0.0,
+            "paint": "horse_nose"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_jaw",
+        "parent": "pony_r_head",
+        "pivot": [
+          0.0,
+          0.9299999999999999,
+          -1.55
+        ],
+        "rot": [
+          2,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.054,
+              0.0,
+              -4.65
+            ],
+            "size": [
+              2.108,
+              0.806,
+              4.65
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_ear_r",
+        "parent": "pony_r_head",
+        "pivot": [
+          -0.992,
+          -1.798,
+          -0.8059999999999999
+        ],
+        "rot": [
+          -8,
+          0,
+          10
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.558,
+              -1.984,
+              -0.372
+            ],
+            "size": [
+              1.116,
+              1.984,
+              0.744
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -0.248,
+              -1.6740000000000002,
+              -0.403
+            ],
+            "size": [
+              0.496,
+              1.364,
+              0.248
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_ear_l",
+        "parent": "pony_r_head",
+        "pivot": [
+          0.992,
+          -1.798,
+          -0.8059999999999999
+        ],
+        "rot": [
+          -8,
+          0,
+          -10
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.558,
+              -1.984,
+              -0.372
+            ],
+            "size": [
+              1.116,
+              1.984,
+              0.744
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          },
+          {
+            "from": [
+              -0.248,
+              -1.6740000000000002,
+              -0.403
+            ],
+            "size": [
+              0.496,
+              1.364,
+              0.248
+            ],
+            "grow": 0.0,
+            "paint": "horse_belly"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_leg_fr",
+        "parent": "pony_r_body",
+        "pivot": [
+          -1.8599999999999999,
+          -0.31,
+          -4.216
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.054,
+              0.0,
+              -1.054
+            ],
+            "size": [
+              2.108,
+              4.34,
+              2.108
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_shin_fr",
+        "parent": "pony_r_leg_fr",
+        "pivot": [
+          0.0,
+          4.092,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.8059999999999999,
+              0.0,
+              -0.8059999999999999
+            ],
+            "size": [
+              1.6119999999999999,
+              4.34,
+              1.6119999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_paw_fr",
+        "parent": "pony_r_shin_fr",
+        "pivot": [
+          0.0,
+          4.154,
+          0.0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.116,
+              0.0,
+              -1.9219999999999997
+            ],
+            "size": [
+              2.232,
+              0.868,
+              3.1
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          },
+          {
+            "from": [
+              -1.116,
+              0.558,
+              -2.17
+            ],
+            "size": [
+              2.232,
+              0.31,
+              0.372
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_leg_fl",
+        "parent": "pony_r_body",
+        "pivot": [
+          1.8599999999999999,
+          -0.31,
+          -4.216
+        ],
+        "rot": [
+          4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.054,
+              0.0,
+              -1.054
+            ],
+            "size": [
+              2.108,
+              4.34,
+              2.108
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_shin_fl",
+        "parent": "pony_r_leg_fl",
+        "pivot": [
+          0.0,
+          4.092,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.8059999999999999,
+              0.0,
+              -0.8059999999999999
+            ],
+            "size": [
+              1.6119999999999999,
+              4.34,
+              1.6119999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_paw_fl",
+        "parent": "pony_r_shin_fl",
+        "pivot": [
+          0.0,
+          4.154,
+          0.0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.116,
+              0.0,
+              -1.9219999999999997
+            ],
+            "size": [
+              2.232,
+              0.868,
+              3.1
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          },
+          {
+            "from": [
+              -1.116,
+              0.558,
+              -2.17
+            ],
+            "size": [
+              2.232,
+              0.31,
+              0.372
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_leg_br",
+        "parent": "pony_r_body",
+        "pivot": [
+          -1.8599999999999999,
+          -0.868,
+          5.828
+        ],
+        "rot": [
+          -18,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.178,
+              0.0,
+              -1.426
+            ],
+            "size": [
+              2.356,
+              4.34,
+              2.852
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_shin_br",
+        "parent": "pony_r_leg_br",
+        "pivot": [
+          0.0,
+          4.092,
+          0.0
+        ],
+        "rot": [
+          34,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.9299999999999999,
+              0.0,
+              -0.9299999999999999
+            ],
+            "size": [
+              1.8599999999999999,
+              4.836,
+              1.8599999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_paw_br",
+        "parent": "pony_r_shin_br",
+        "pivot": [
+          0.0,
+          4.65,
+          0.0
+        ],
+        "rot": [
+          -16,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.24,
+              0.0,
+              -2.046
+            ],
+            "size": [
+              2.48,
+              0.868,
+              3.3480000000000003
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          },
+          {
+            "from": [
+              -1.24,
+              0.558,
+              -2.294
+            ],
+            "size": [
+              2.48,
+              0.31,
+              0.372
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_leg_bl",
+        "parent": "pony_r_body",
+        "pivot": [
+          1.8599999999999999,
+          -0.868,
+          5.828
+        ],
+        "rot": [
+          -18,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.178,
+              0.0,
+              -1.426
+            ],
+            "size": [
+              2.356,
+              4.34,
+              2.852
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_shin_bl",
+        "parent": "pony_r_leg_bl",
+        "pivot": [
+          0.0,
+          4.092,
+          0.0
+        ],
+        "rot": [
+          34,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.9299999999999999,
+              0.0,
+              -0.9299999999999999
+            ],
+            "size": [
+              1.8599999999999999,
+              4.836,
+              1.8599999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_paw_bl",
+        "parent": "pony_r_shin_bl",
+        "pivot": [
+          0.0,
+          4.65,
+          0.0
+        ],
+        "rot": [
+          -16,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.24,
+              0.0,
+              -2.046
+            ],
+            "size": [
+              2.48,
+              0.868,
+              3.3480000000000003
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          },
+          {
+            "from": [
+              -1.24,
+              0.558,
+              -2.294
+            ],
+            "size": [
+              2.48,
+              0.31,
+              0.372
+            ],
+            "grow": 0.0,
+            "paint": "horse_hoof"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_tail0",
+        "parent": "pony_r_body",
+        "pivot": [
+          0.0,
+          -4.96,
+          6.51
+        ],
+        "rot": [
+          30,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.744,
+              0.0,
+              -0.744
+            ],
+            "size": [
+              1.488,
+              3.1,
+              1.488
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_tail1",
+        "parent": "pony_r_tail0",
+        "pivot": [
+          0.0,
+          3.1,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.992,
+              0.0,
+              -0.992
+            ],
+            "size": [
+              1.984,
+              3.7199999999999998,
+              1.984
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_tail2",
+        "parent": "pony_r_tail1",
+        "pivot": [
+          0.0,
+          3.7199999999999998,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.9299999999999999,
+              0.0,
+              -0.9299999999999999
+            ],
+            "size": [
+              1.8599999999999999,
+              3.7199999999999998,
+              1.8599999999999999
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      },
+      {
+        "name": "pony_r_tail3",
+        "parent": "pony_r_tail2",
+        "pivot": [
+          0.0,
+          3.7199999999999998,
+          0.0
+        ],
+        "rot": [
+          -4,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.62,
+              0.0,
+              -0.62
+            ],
+            "size": [
+              1.24,
+              3.1,
+              1.24
+            ],
+            "grow": 0.0,
+            "paint": "horse_mane"
+          }
+        ]
+      }
+    ],
+    "anim": [
+      {
+        "part": "wheel_l",
+        "type": "spin",
+        "axis": "x",
+        "rate": 1.3
+      },
+      {
+        "part": "wheel_r",
+        "type": "spin",
+        "axis": "x",
+        "rate": 1.3
+      },
+      {
+        "part": "pony_l_head",
+        "type": "look",
+        "amount": 0.8
+      },
+      {
+        "part": "pony_l_ear_r",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.05,
+        "freq": 0.11,
+        "phase": 2.0
+      },
+      {
+        "part": "pony_l_ear_l",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.05,
+        "freq": 0.11,
+        "phase": 0
+      },
+      {
+        "part": "pony_l_leg_fr",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.8,
+        "phase": 3.141592653589793
+      },
+      {
+        "part": "pony_l_shin_fr",
+        "type": "walk",
+        "axis": "x",
+        "amp": -0.32000000000000006,
+        "phase": 4.141592653589793
+      },
+      {
+        "part": "pony_l_leg_fl",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.8,
+        "phase": 0.0
+      },
+      {
+        "part": "pony_l_shin_fl",
+        "type": "walk",
+        "axis": "x",
+        "amp": -0.32000000000000006,
+        "phase": 1.0
+      },
+      {
+        "part": "pony_l_leg_br",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.8,
+        "phase": 0.0
+      },
+      {
+        "part": "pony_l_shin_br",
+        "type": "walk",
+        "axis": "x",
+        "amp": -0.32000000000000006,
+        "phase": 1.0
+      },
+      {
+        "part": "pony_l_leg_bl",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.8,
+        "phase": 3.141592653589793
+      },
+      {
+        "part": "pony_l_shin_bl",
+        "type": "walk",
+        "axis": "x",
+        "amp": -0.32000000000000006,
+        "phase": 4.141592653589793
+      },
+      {
+        "part": "pony_l_tail0",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.12,
+        "freq": 0.13,
+        "phase": 0.0,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "pony_l_tail1",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.15,
+        "freq": 0.14,
+        "phase": 0.8,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "pony_l_tail2",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.18,
+        "freq": 0.15,
+        "phase": 1.6,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "pony_l_tail3",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.21,
+        "freq": 0.16,
+        "phase": 2.4000000000000004,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "pony_r_head",
+        "type": "look",
+        "amount": 0.8
+      },
+      {
+        "part": "pony_r_ear_r",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.05,
+        "freq": 0.11,
+        "phase": 2.0
+      },
+      {
+        "part": "pony_r_ear_l",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.05,
+        "freq": 0.11,
+        "phase": 0
+      },
+      {
+        "part": "pony_r_leg_fr",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.8,
+        "phase": 3.141592653589793
+      },
+      {
+        "part": "pony_r_shin_fr",
+        "type": "walk",
+        "axis": "x",
+        "amp": -0.32000000000000006,
+        "phase": 4.141592653589793
+      },
+      {
+        "part": "pony_r_leg_fl",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.8,
+        "phase": 0.0
+      },
+      {
+        "part": "pony_r_shin_fl",
+        "type": "walk",
+        "axis": "x",
+        "amp": -0.32000000000000006,
+        "phase": 1.0
+      },
+      {
+        "part": "pony_r_leg_br",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.8,
+        "phase": 0.0
+      },
+      {
+        "part": "pony_r_shin_br",
+        "type": "walk",
+        "axis": "x",
+        "amp": -0.32000000000000006,
+        "phase": 1.0
+      },
+      {
+        "part": "pony_r_leg_bl",
+        "type": "walk",
+        "axis": "x",
+        "amp": 0.8,
+        "phase": 3.141592653589793
+      },
+      {
+        "part": "pony_r_shin_bl",
+        "type": "walk",
+        "axis": "x",
+        "amp": -0.32000000000000006,
+        "phase": 4.141592653589793
+      },
+      {
+        "part": "pony_r_tail0",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.12,
+        "freq": 0.13,
+        "phase": 0.0,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "pony_r_tail1",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.15,
+        "freq": 0.14,
+        "phase": 0.8,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "pony_r_tail2",
+        "type": "sway",
+        "axis": "z",
+        "amp": 0.18,
+        "freq": 0.15,
+        "phase": 1.6,
+        "walk_amp": 0.15
+      },
+      {
+        "part": "pony_r_tail3",
+        "type": "sway",
+        "axis": "x",
+        "amp": 0.21,
+        "freq": 0.16,
+        "phase": 2.4000000000000004,
+        "walk_amp": 0.15
+      }
+    ]
+  },
+  "skin": {
+    "model": true
+  }
+}

@@ -32,6 +32,8 @@ public final class GeneratedMobsClient {
 
 	/** Registers the renderers. Call from the client entrypoint. */
 	public static void initClient() {
+		EntityModelLayerRegistry.registerModelLayer(ChariotModel.LAYER, ChariotModel::createBodyLayer);
+		EntityRendererRegistry.register(dev.shadw.khemet.KhemetVehicles.CHARIOT, ChariotRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(CobraModel.LAYER, CobraModel::createBodyLayer);
 		EntityRendererRegistry.register(GeneratedMobs.COBRA, CobraRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(CrocodileModel.LAYER, CrocodileModel::createBodyLayer);

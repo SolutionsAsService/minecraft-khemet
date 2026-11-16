@@ -60,3 +60,4 @@ python3 _src/build_site.py                                    # the site
 ## Credit
 
 All work in this repository is credited only to SolutionsAsService.
+\n\n**The Chariot** (craftable: leather, three acacia planks, a gold ingot, two sticks): a war chariot for two with a team of ponies drawn in front; use it to board, look where you want to go.\n

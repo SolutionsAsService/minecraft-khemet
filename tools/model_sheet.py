@@ -7,7 +7,7 @@ import json
 import sys
 
 # id: (height in blocks, head-centre height, full-view distance, face distance)
-SIZES = {"mummy": (1.95, 1.7, 4.4, 1.9), "royal_mummy": (2.1, 1.85, 4.6, 2.0), "scarab": (0.7, 0.5, 2.6, 0.9, 0.35), "tomb_guardian": (2.7, 2.3, 6.0, 2.8), "forgotten_pharaoh": (3.2, 2.8, 7.0, 3.3),
+SIZES = {"chariot": (1.6, 1.0, 7.0, 2.6, 0.0), "mummy": (1.95, 1.7, 4.4, 1.9), "royal_mummy": (2.1, 1.85, 4.6, 2.0), "scarab": (0.7, 0.5, 2.6, 0.9, 0.35), "tomb_guardian": (2.7, 2.3, 6.0, 2.8), "forgotten_pharaoh": (3.2, 2.8, 7.0, 3.3),
          "cobra": (1.1, 0.95, 3.2, 1.3), "crocodile": (1.1, 0.5, 5.0, 1.6, 1.4), "sun_pharaoh": (3.2, 2.7, 7.0, 3.3)}
 
 

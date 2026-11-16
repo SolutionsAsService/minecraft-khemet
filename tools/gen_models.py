@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
-from shadwlib.figure import Rig, box, rect, face  # noqa: E402
+from shadwlib.figure import Rig, box, rect, face, merge  # noqa: E402
 
 LINEN = {"type": "cloth", "base": "#d4caa8", "trim": "#a89870"}
 PAINTS = {
@@ -265,7 +265,49 @@ def sun_pharaoh():
     return r.model(0.9)
 
 
+# ======================= CHARIOT (a craftable vehicle: the class is hand-written, only the model is generated) =======================
+def chariot():
+    paints = dict(PAINTS, **{
+        "horse": {"type": "fur", "base": "#8a5a34", "dark": "#4a2c14", "light": "#b88a58"}, "horse_belly": {"type": "fur", "base": "#a47a50", "dark": "#6a4a28", "light": "#c8a074"},
+        "horse_mane": {"type": "fur", "base": "#1c1812", "dark": "#0a0806", "light": "#3a3024"}, "horse_hoof": {"type": "plain", "base": "#2a2218"}, "horse_nose": {"type": "skin", "base": "#4a3828", "shade": 3},
+        "harness": {"type": "cloth", "base": "#b03028", "trim": "#e0b838"}, "hgold": {"type": "metal", "base": "#e0b838", "dark": "#8a6a14", "light": "#fff0a0"},
+        "cwood": {"type": "ridged", "base": "#8a6a3a", "dark": "#4a3418", "light": "#b08a52"}, "cpaint": {"type": "cloth", "base": "#2a58b0", "trim": "#e0b838"},
+    })
+    r = Rig(paints)
+    # the carriage: an open-backed D of gilded wood, a floor, low side rails and a high front guard painted lapis with a gold border
+    r.part("car", "root", (0, 0, 6), (0, 0, 0), [
+        box((-10, -10.5, -9), (20, 1.6, 18), "cwood"), box((-10.4, -9.8, -9.4), (20.8, 0.8, 18.8), "hgold", 0.0),
+        box((-10.5, -16.5, -9), (1.4, 6, 18), "cwood"), box((9.1, -16.5, -9), (1.4, 6, 18), "cwood"),
+        box((-10.6, -17.4, -9.2), (1.6, 1.0, 18.4), "hgold"), box((9.0, -17.4, -9.2), (1.6, 1.0, 18.4), "hgold"),
+        box((-10.5, -22, -9.6), (21, 11.5, 1.6), "cpaint"), box((-10.8, -22.6, -9.8), (21.6, 1.0, 2.0), "hgold"), box((-10.8, -12.4, -9.8), (21.6, 1.0, 2.0), "hgold"),
+        box((-2.2, -19.2, -10.4), (4.4, 4.4, 0.8), "hgold", 0.0, [rect("front", 1, 1, 2, 2, "#d03a18")]),            # a sun disc on the guard
+        box((-9.5, -12.6, 8.4), (19, 2.2, 1.0), "cwood")])                                                           # the low rear step
+    r.part("pole", "root", (0, 0, 6), (0, 0, 0), [box((-1.0, -9.8, -34), (2.0, 2.0, 26), "cwood"), box((-12, -11.4, -33), (24, 1.8, 1.8), "hgold")])           # the pole and the yoke
+    # two wheels of eight rim segments and spokes, which turn as the chariot moves
+    for side, sx in (("l", 1), ("r", -1)):
+        r.part(f"wheel_{side}", "root", (sx * 12.5, -8.0, 6), (0, 0, 0), [box((-1.2, -2.0, -2.0), (2.4, 4.0, 4.0), "hgold"), box((-0.6, -7.2, -0.8), (1.2, 14.4, 1.6), "cwood"), box((-0.6, -0.8, -7.2), (1.2, 1.6, 14.4), "cwood")])
+        r.anim(f"wheel_{side}", "spin", axis="x", rate=1.3)
+        for k in range(8):
+            r.part(f"rim_{side}{k}", f"wheel_{side}", (0, 0, 0), (k * 45, 0, 0), [box((-1.1, -8.4, -3.2), (2.2, 1.6, 6.4), "hgold" if k % 2 == 0 else "cwood")])
+        for k in (1, 3):
+            r.part(f"spoke_{side}{k}", f"wheel_{side}", (0, 0, 0), (k * 45, 0, 0), [box((-0.5, -7.2, -0.7), (1.0, 14.4, 1.4), "cwood")])
+    # two ponies in harness, drawn from the horse builder and scaled down so the team stays near the chariot's footprint
+    for side, sx in (("l", 1), ("r", -1)):
+        h = Rig(paints)
+        h.horse("horse", "horse_mane", belly="horse_belly", hoof="horse_hoof", nose="horse_nose", saddle="harness", trim="hgold", eye="#2a1c10")
+        merge(r, h.scaled(0.62), f"pony_{side}_", dx=sx * 7.0, dz=-17.0)
+    return r.model(1.2)
+
+
+CHARIOT_SPEC = {"id": "chariot", "name": "Chariot", "base": "zombie", "hostile": False,
+                "external": {"class": "dev.shadw.khemet.Chariot", "type": "dev.shadw.khemet.KhemetVehicles.CHARIOT"},
+                "attributes": {"health": 40, "speed": 0.32},
+                "drops": [{"item": "khemet:chariot", "min": 1, "max": 1}],
+                "egg": ["#2a58b0", "#e0b838"]}
+
+
 SPECS = {
+    "chariot": (chariot, CHARIOT_SPEC),
     "mummy": (mummy, {"id": "mummy", "name": "Mummy", "base": "zombie", "hostile": True, "attributes": {"health": 28, "damage": 4, "armor": 2, "speed": 0.19, "scale": 1.0},
                       "flags": {"sun_sensitive": False, "converts_in_water": False, "baby": False, "reinforcements": False}, "equipment": {},
                       "behaviours": [{"type": "on_hit_effect", "effect": "minecraft:weakness", "seconds": 10, "amplifier": 0}, {"type": "fire_vulnerable", "multiplier": 2.0}],

@@ -261,3 +261,8 @@ parts), a Crocodile (42) and The Sun Pharaoh (47 parts, a boss). Measured once e
 Poison; crocodile 4 s, 4.5; Sun Pharaoh 3 s, 6.5.
 **Not done:** the Serpent Pharaoh, the Golden Pharaoh and the mounts (a rideable scarab, falcon, camel) are not built; the cobra's head reads small from the
 front; the crocodile does not swim; the Sun Pharaoh spawns rarely in deserts and nothing else places it; no panel; animation in stills only.
+
+
+## Run: Extend (a craftable chariot)
+
+**Built:** the war **Chariot**: an item (sprite, model, recipe: leather, three acacia planks, a gold ingot and two sticks) that sets a chariot down; a `Mob` with the riding hooks (use it to board, the first rider drives by look direction, forward and back, sprint for a burst, a second rider can sit behind; it climbs one block, takes no fall damage, and when broken drops the item); a 76-part model (a gilded carriage with a lapis guard and sun disc, two spoked wheels that turn as it moves, a pole and yoke, two harnessed ponies scaled down from the horse builder). **Checked:** builds, loads; the recipe unlocks (`recipe give`), the item is given, the entity summons and the player can be seated by command; photographed from six angles. **Not checked:** crafting by hand, driving, the second seat, the wheels turning in motion, and how the team overhangs the hitbox (the ponies are drawn ahead of a 2-block footprint).

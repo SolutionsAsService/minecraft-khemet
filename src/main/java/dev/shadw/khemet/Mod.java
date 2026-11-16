@@ -45,6 +45,7 @@ public class Mod implements ModInitializer {
 		KhemetBlocks.init();
 		KhemetItems.init();
 		GeneratedMobs.init();
+		KhemetVehicles.init();
 		Favor.init();
 		KhemetCommands.init();
 		Sandstorm.init();
@@ -110,6 +111,7 @@ public class Mod implements ModInitializer {
 				entries.accept(altar);
 			}
 		});
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> entries.accept(KhemetVehicles.CHARIOT_ITEM));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> {
 			GeneratedMobs.EGGS.forEach(entries::accept);
 		});
