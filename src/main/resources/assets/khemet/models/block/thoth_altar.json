@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "khemet:block/thoth_altar_top",
+    "bottom": "khemet:block/thoth_altar_side",
+    "side": "khemet:block/thoth_altar_side"
+  }
+}

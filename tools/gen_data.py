@@ -13,7 +13,7 @@ D = ROOT / "src/main/resources/data"
 K = D / "khemet"
 STONES = ["ancient_limestone", "white_limestone", "golden_sandstone", "black_basalt", "polished_pharaoh_stone", "hieroglyph_stone",
           "cracked_temple_stone", "weathered_pyramid_stone", "gold_inlaid_tile", "painted_temple_wall", "hieroglyph_bricks", "obelisk_block"]
-BLOCKS = STONES + ["golden_pillar", "lotus_column", "sacred_brazier", "ra_altar", "anubis_altar", "blue_lotus", "papyrus"]
+BLOCKS = STONES + ["golden_pillar", "lotus_column", "sacred_brazier", "ra_altar", "anubis_altar", "horus_altar", "isis_altar", "thoth_altar", "bastet_altar", "blue_lotus", "papyrus"]
 
 
 def write(path, obj):
@@ -48,6 +48,10 @@ def drops_self(name):
 
 # structure name: (spacing, separation, salt, biomes, spawn overrides)
 STRUCTS = {
+    "horus_shrine": (34, 10, 8123411, ["minecraft:desert", "#minecraft:is_badlands"], {}),
+    "isis_shrine": (34, 10, 8123412, ["minecraft:desert"], {}),
+    "thoth_shrine": (36, 10, 8123413, ["minecraft:desert"], {}),
+    "bastet_shrine": (32, 10, 8123414, ["minecraft:desert", "minecraft:savanna"], {"monster": {"bounding_box": "piece", "spawns": [{"type": "khemet:scarab", "weight": 10, "minCount": 2, "maxCount": 4}]}}),
     "ra_shrine": (32, 10, 8123401, ["minecraft:desert"], {}),
     "anubis_shrine": (34, 10, 8123402, ["minecraft:desert", "#minecraft:is_badlands"],
                       {"monster": {"bounding_box": "piece", "spawns": [{"type": "khemet:mummy", "weight": 10, "minCount": 2, "maxCount": 3},
@@ -56,7 +60,7 @@ STRUCTS = {
     "desert_ruin": (20, 8, 8123404, ["minecraft:desert"],
                     {"monster": {"bounding_box": "piece", "spawns": [{"type": "khemet:mummy", "weight": 10, "minCount": 1, "maxCount": 2}]}}),
 }
-VARIANTS = {"ra_shrine": 2, "anubis_shrine": 2, "obelisk_field": 2, "desert_ruin": 3}
+VARIANTS = {"horus_shrine": 2, "isis_shrine": 2, "thoth_shrine": 2, "bastet_shrine": 2, "ra_shrine": 2, "anubis_shrine": 2, "obelisk_field": 2, "desert_ruin": 3}
 
 
 def main():
@@ -64,6 +68,14 @@ def main():
         write(K / "loot_table/blocks" / f"{n}.json", drops_self(n))
     # chests
     chests = {
+        "horus_shrine": [pool([item("khemet:falcon_feather", 6, 1, 3), item("minecraft:gold_ingot", 5, 2, 5), item("minecraft:lapis_lazuli", 5, 3, 8), item("minecraft:feather", 4, 2, 6), item("khemet:golden_sandstone", 3, 3, 8),
+                               potion_item("khemet:breath_of_horus", 2)], 4, 6)],
+        "isis_shrine": [pool([item("khemet:sacred_myrrh", 6, 1, 3), item("khemet:blue_lotus", 5, 1, 3), item("minecraft:lapis_lazuli", 4, 2, 6), item("minecraft:golden_apple", 2), item("khemet:white_limestone", 3, 3, 8),
+                              potion_item("khemet:tears_of_isis", 2)], 4, 6)],
+        "thoth_shrine": [pool([item("minecraft:paper", 6, 3, 8), item("minecraft:book", 5, 1, 4), item("khemet:papyrus", 5, 1, 3), item("minecraft:ink_sac", 4, 2, 5), item("khemet:ibis_quill", 4, 1, 2),
+                               potion_item("khemet:thoth_wisdom", 2)], 4, 6)],
+        "bastet_shrine": [pool([item("minecraft:cod", 5, 2, 6), item("minecraft:salmon", 4, 2, 5), item("khemet:golden_date", 5, 1, 3), item("minecraft:string", 4, 2, 6), item("minecraft:gold_nugget", 4, 3, 8),
+                                potion_item("khemet:bastets_grace", 2)], 4, 6)],
         "ra_shrine": [pool([item("khemet:sunstone_powder", 5, 1, 3), item("minecraft:gold_ingot", 6, 2, 6), item("minecraft:golden_apple", 2),
                             item("khemet:golden_date", 4, 1, 3), item("khemet:sacred_myrrh", 3, 1, 2), item("minecraft:sunflower", 4, 2, 5),
                             item("minecraft:lapis_lazuli", 4, 3, 8), potion_item("khemet:blood_of_ra", 2)], 4, 6),
@@ -101,7 +113,7 @@ def main():
           "key": {"G": "minecraft:gold_ingot", "S": "minecraft:stick"}, "result": {"id": "khemet:khopesh", "count": 1}})
     # tags
     tag = D / "minecraft/tags/block"
-    write(tag / "mineable/pickaxe.json", {"replace": False, "values": [f"khemet:{n}" for n in STONES + ["golden_pillar", "lotus_column", "sacred_brazier", "ra_altar", "anubis_altar"]]})
+    write(tag / "mineable/pickaxe.json", {"replace": False, "values": [f"khemet:{n}" for n in STONES + ["golden_pillar", "lotus_column", "sacred_brazier", "ra_altar", "anubis_altar", "horus_altar", "isis_altar", "thoth_altar", "bastet_altar"]]})
     write(tag / "small_flowers.json", {"replace": False, "values": ["khemet:blue_lotus"]})
     # worldgen
     for name, (spacing, sep, salt, biomes, spawns) in STRUCTS.items():
@@ -139,6 +151,10 @@ def main():
     adv("obelisk_field", "root", "khemet:obelisk_block", "A Field of Needles", "Find an obelisk field.", "minecraft:location", loc("obelisk_field"))
     adv("ra_shrine", "obelisk_field", "khemet:ra_altar", "Where the Sun Stands", "Find the shrine of Ra.", "minecraft:location", loc("ra_shrine"))
     adv("anubis_shrine", "desert_ruin", "khemet:anubis_altar", "The Jackal's Court", "Find the shrine of Anubis.", "minecraft:location", loc("anubis_shrine"))
+    adv("horus_shrine", "obelisk_field", "khemet:horus_altar", "The Falcon's Perch", "Find the shrine of Horus.", "minecraft:location", loc("horus_shrine"))
+    adv("isis_shrine", "ra_shrine", "khemet:isis_altar", "Lady of the Throne", "Find the shrine of Isis.", "minecraft:location", loc("isis_shrine"))
+    adv("thoth_shrine", "desert_ruin", "khemet:thoth_altar", "The Scribe's House", "Find the shrine of Thoth.", "minecraft:location", loc("thoth_shrine"))
+    adv("bastet_shrine", "desert_ruin", "khemet:bastet_altar", "Where the Cats Sit", "Find the shrine of Bastet.", "minecraft:location", loc("bastet_shrine"))
     adv("mummy", "desert_ruin", "minecraft:bone", "Unwrapped", "Defeat a mummy.", "minecraft:player_killed_entity", kind("mummy"))
     adv("royal_mummy", "anubis_shrine", "minecraft:golden_helmet", "A Crown Taken", "Defeat a royal mummy.", "minecraft:player_killed_entity", kind("royal_mummy"), "challenge")
     adv("ankh", "ra_shrine", "khemet:ankh", "The Key of Life", "Hold an Ankh of Life.", "minecraft:inventory_changed", have("khemet:ankh"), "challenge")

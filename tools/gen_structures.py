@@ -265,7 +265,113 @@ def desert_ruin(seed):
     return s
 
 
-STRUCTURES = {"ra_shrine": (ra_shrine, 2), "anubis_shrine": (anubis_shrine, 2), "obelisk_field": (obelisk_field, 2), "desert_ruin": (desert_ruin, 3)}
+# ---------- the four newer shrines: a limestone court, a back pylon, four lotus columns, the altar, and a god's own setting ----------
+
+def court_shrine(god, seed, accent, loot, extra):
+    rnd = random.Random(seed * 4421 + len(god) * 17)
+    N, c = 21, 10
+    s = Structure(N, 16, N)
+    ruined = seed == 1
+    for z in range(N):
+        for x in range(N):
+            dx, dz = abs(x - c), abs(z - c)
+            m = max(dx, dz)
+            s.put(x, 0, z, weather(seed, x, 0, z))
+            if m <= 9:
+                s.put(x, 1, z, K("golden_sandstone") if m == 9 else K("white_limestone"))
+            if m <= 7:
+                s.put(x, 2, z, K("gold_inlaid_tile") if (m == 7 or dx == 0 or dz == 0) else K("polished_pharaoh_stone"))
+    # four lotus columns with braziers on top
+    for px, pz in ((c - 6, c - 5), (c + 6, c - 5), (c - 6, c + 5), (c + 6, c + 5)):
+        for y in range(3, 9):
+            if ruined and hole(px + seed, y, pz) < 18 and y > 5:
+                break
+            s.put(px, y, pz, K("lotus_column", axis="y"))
+        else:
+            s.put(px, 9, pz, K("polished_pharaoh_stone")); s.put(px, 10, pz, BRAZIER)
+    # the back pylon: a painted wall with a gold stripe, an accent panel and a doorway-shaped niche for the altar
+    for x in range(c - 5, c + 6):
+        for y in range(3, 11):
+            if ruined and hole(x, y, seed * 9) < 12 and y > 6:
+                continue
+            blk = K("painted_temple_wall") if y % 4 != 0 else K("hieroglyph_bricks")
+            if y == 9:
+                blk = K("golden_sandstone")
+            s.put(x, y, c - 7, blk)
+    for x in range(c - 2, c + 3):
+        for y in range(5, 9):
+            s.put(x, y, c - 7, accent if (x + y) % 2 == 0 or y in (5, 8) else K("polished_pharaoh_stone"))
+    s.put(c, 3, c - 5, K(f"{god}_altar"))
+    s.put(c - 2, 3, c - 5, BRAZIER); s.put(c + 2, 3, c - 5, BRAZIER)
+    blk, tag = chest("south", loot)
+    s.put(c + 4, 3, c - 6, blk, tag)
+    for k in range(5):
+        s.put(rnd.randint(2, N - 3), 1, rnd.randint(2, N - 3), SAND)
+    extra(s, rnd, c)
+    return s
+
+
+def horus_extra(s, rnd, c):
+    # a falcon statue on a plinth: a gold body, lapis wings spread wide, a sun disc over the head
+    s.put(c, 3, c + 3, K("polished_pharaoh_stone")); s.put(c, 4, c + 3, K("polished_pharaoh_stone"))
+    for y in (5, 6):
+        s.put(c, y, c + 3, state("minecraft:gold_block"))
+    s.put(c, 7, c + 3, state("minecraft:gold_block")); s.put(c, 8, c + 3, state("minecraft:red_concrete"))
+    for k in range(1, 5):
+        s.put(c - k, 6, c + 3, state("minecraft:lapis_block") if k % 2 else state("minecraft:gold_block"))
+        s.put(c + k, 6, c + 3, state("minecraft:lapis_block") if k % 2 else state("minecraft:gold_block"))
+        s.put(c - k, 5, c + 3, state("minecraft:blue_stained_glass")); s.put(c + k, 5, c + 3, state("minecraft:blue_stained_glass"))
+
+
+def isis_extra(s, rnd, c):
+    # a lotus pool before the altar, and a statue with spread wings: white limestone, gold and turquoise
+    for dx in range(-2, 3):
+        for dz in range(1, 4):
+            s.put(c + dx, 2, c + dz, state("minecraft:water")) if False else s.put(c + dx, 2, c + dz, state("minecraft:light_blue_glazed_terracotta") if (dx + dz) % 2 else state("minecraft:cyan_terracotta"))
+    s.put(c - 1, 3, c + 2, K("blue_lotus")); s.put(c + 1, 3, c + 3, K("blue_lotus")); s.put(c, 3, c + 2, K("blue_lotus"))
+    for y in range(3, 8):
+        s.put(c, y, c + 5, K("white_limestone") if y < 6 else state("minecraft:gold_block"))
+    for k in range(1, 4):
+        for y in (5, 6):
+            s.put(c - k, y, c + 5, state("minecraft:white_stained_glass") if y == 6 else K("white_limestone"))
+            s.put(c + k, y, c + 5, state("minecraft:white_stained_glass") if y == 6 else K("white_limestone"))
+
+
+def thoth_extra(s, rnd, c):
+    # a library: shelves along the side walls with lecterns, an ibis statue (white and black) and a moon disc over the pylon
+    for z in range(c - 3, c + 4, 2):
+        for y in (3, 4):
+            s.put(c - 8, y, z, state("minecraft:bookshelf")); s.put(c + 8, y, z, state("minecraft:bookshelf"))
+        s.put(c - 7, 3, z, state("minecraft:lectern", facing="east", has_book="false", powered="false")); s.put(c + 7, 3, z, state("minecraft:lectern", facing="west", has_book="false", powered="false"))
+    s.put(c, 3, c + 3, K("polished_pharaoh_stone"))
+    for y in (4, 5, 6):
+        s.put(c, y, c + 3, state("minecraft:white_concrete"))
+    s.put(c, 7, c + 3, state("minecraft:black_concrete")); s.put(c, 7, c + 2, state("minecraft:black_concrete")); s.put(c, 6, c + 2, state("minecraft:black_concrete"))
+    for dy in range(-2, 3):
+        for dx in range(-2, 3):
+            if 1.4 <= math.hypot(dx, dy) <= 2.4:
+                s.put(c + dx, 12 + dy, c - 7, state("minecraft:white_concrete"))
+
+
+def bastet_extra(s, rnd, c):
+    # rows of cat statues (black concrete, sitting, with gold collars) lining the court, and a fish pond
+    for z in (c - 2, c + 1, c + 4):
+        for x in (c - 6, c + 6):
+            s.put(x, 3, z, state("minecraft:polished_blackstone")); s.put(x, 4, z, state("minecraft:black_concrete")); s.put(x, 5, z, state("minecraft:black_concrete"))
+            s.put(x, 6, z, state("minecraft:black_concrete")); s.put(x - 1 if x < c else x + 1, 6, z, state("minecraft:black_concrete")) if False else None
+            s.put(x, 7, z, state("minecraft:gold_block")) if False else None
+            s.put(x, 4, z + 1 if z < c + 4 else z - 1, state("minecraft:gold_block"))
+    for dx in range(-2, 3):
+        s.put(c + dx, 2, c + 3, state("minecraft:cyan_terracotta"))
+    s.put(c - 1, 3, c + 3, state("minecraft:lantern", hanging="false", waterlogged="false")); s.put(c + 1, 3, c + 3, state("minecraft:lantern", hanging="false", waterlogged="false"))
+
+
+STRUCTURES = {
+    "horus_shrine": (lambda i: court_shrine("horus", i, state("minecraft:lapis_block"), "khemet:chests/horus_shrine", horus_extra), 2),
+    "isis_shrine": (lambda i: court_shrine("isis", i, state("minecraft:light_blue_glazed_terracotta"), "khemet:chests/isis_shrine", isis_extra), 2),
+    "thoth_shrine": (lambda i: court_shrine("thoth", i, state("minecraft:white_concrete"), "khemet:chests/thoth_shrine", thoth_extra), 2),
+    "bastet_shrine": (lambda i: court_shrine("bastet", i, state("minecraft:black_concrete"), "khemet:chests/bastet_shrine", bastet_extra), 2),
+    "ra_shrine": (ra_shrine, 2), "anubis_shrine": (anubis_shrine, 2), "obelisk_field": (obelisk_field, 2), "desert_ruin": (desert_ruin, 3)}
 
 
 if __name__ == "__main__":

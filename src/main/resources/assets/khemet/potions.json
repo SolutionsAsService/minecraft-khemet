@@ -114,6 +114,29 @@
           "amplifier": 0
         }
       ]
+    },
+    {
+      "id": "thoth_wisdom",
+      "name": "Thoth's Wisdom",
+      "god": "Thoth",
+      "epithet": "Lord of Wisdom",
+      "domain": "Writing and knowledge",
+      "hue": "#C8CCE8",
+      "realm": "khemet",
+      "ingredient": "ibis_quill",
+      "lore": "A quill from the sacred ibis. Fortune for the learned, and quick hands.",
+      "effects": [
+        {
+          "effect": "minecraft:luck",
+          "seconds": 300,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:haste",
+          "seconds": 180,
+          "amplifier": 0
+        }
+      ]
     }
   ]
 }

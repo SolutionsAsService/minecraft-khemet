@@ -428,14 +428,19 @@ def spawn_rules():
 
 
 STAGES = CONTENT["favor"]["stages"]
-GODS = [("ra", "ra_shrine", "Ra", "God of the Sun", "gods"), ("anubis", "anubis_shrine", "Anubis", "God of the Dead", "gods")]
+GODS = [("ra", "ra_shrine", "Ra", "God of the Sun", "gods"), ("anubis", "anubis_shrine", "Anubis", "God of the Dead", "gods"), ("horus", "horus_shrine", "Horus", "God of the Sky", "gods"),
+        ("isis", "isis_shrine", "Isis", "Lady of Magic", "gods"), ("thoth", "thoth_shrine", "Thoth", "Lord of Wisdom", "gods"), ("bastet", "bastet_shrine", "Bastet", "Lady of Cats", "gods")]
 STRUCTS = [
     ("ra_shrine", "The shrine of Ra", "A stepped limestone and golden-sandstone dais under a golden obelisk, with a gold-rimmed sun disc standing behind it, four golden pillars with braziers on top, and the altar of Ra in front.", ("ra-shrine", "ra-shrine-dusk")),
     ("anubis_shrine", "The shrine of Anubis", "A black-basalt court with a gold trim: two jackal statues in gold collars, four canopic jars, a sarcophagus of dark slabs, soul campfires at the corners, and the altar of Anubis. Mummies are set to guard it.", ("anubis-shrine", "anubis-shrine-dusk")),
+    ("horus_shrine", "The shrine of Horus", "A limestone court with lotus columns and a painted pylon whose centre is lapis and blue-glazed tile, and before it a falcon statue on a plinth: a gold body under a red sun disc, lapis-and-gold wings spread wide.", ("horus-shrine",)),
+    ("isis_shrine", "The shrine of Isis", "A court with a pool of blue and cyan glazed tile with lotus flowers floating on it, and a winged statue of white limestone, gold and glass, her wings spread behind the altar.", ("isis-shrine",)),
+    ("thoth_shrine", "The shrine of Thoth", "A court of scholars: bookshelves and lecterns down both sides, an ibis statue in white and black concrete, and a moon disc over the pylon.", ("thoth-shrine",)),
+    ("bastet_shrine", "The shrine of Bastet", "A court lined with six cat statues in black concrete with gold collars, a lantern-lit fish pond, and the altar of Bastet. Scarabs are set to wander it.", ("bastet-shrine",)),
     ("obelisk_field", "The obelisk field", "Five obelisks of different heights on a pharaoh-stone floor drifted with sand: slender shafts of carved stone banded in gold, each capped with a golden pyramidion that gives light, and a small chest.", ("obelisk-field",)),
     ("desert_ruin", "The desert ruin", "A broken temple court: walls of weathered and cracked stone worn to different heights, lotus columns and golden pillars (some fallen), a painted wall of glyphs, a chest, and sand drifted in. Mummies are set to haunt it.", ("desert-ruin",)),
 ]
-CHEST_LABEL = {"ra_shrine": "Ra's shrine", "anubis_shrine": "Anubis's shrine", "obelisk_field": "an obelisk field", "desert_ruin": "a desert ruin"}
+CHEST_LABEL = {"horus_shrine": "Horus's shrine", "isis_shrine": "Isis's shrine", "thoth_shrine": "Thoth's shrine", "bastet_shrine": "Bastet's shrine", "ra_shrine": "Ra's shrine", "anubis_shrine": "Anubis's shrine", "obelisk_field": "an obelisk field", "desert_ruin": "a desert ruin"}
 STONE_NOTES = {
     "ancient_limestone": "The everyday wall block: pale, seamed, a little worn.",
     "white_limestone": "Brighter limestone for temple faces and columns.",
@@ -458,8 +463,8 @@ def n_structs():
 
 def home_wall():
     panels = [
-        ("gods", "Gods", "Ra & Anubis · " + str(len(STAGES)) + " stages", "Make an offering. Be named Chosen.", "gods.html", "panels/ra-shrine", "ra_altar"),
-        ("structures", "Structures", f"{n_structs()} structures", "Found in deserts; one also in badlands.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
+        ("gods", "Gods", f"{len(GODS)} gods · {len(STAGES)} stages", "Make an offering. Be named Chosen.", "gods.html", "panels/ra-shrine", "ra_altar"),
+        ("structures", "Structures", f"{n_structs()} structures", "Found in deserts; some in badlands or savanna.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
         ("creatures", "Creatures", "5 creatures", "Linen, stone, shell and a crown.", "creatures.html", "panels/creatures-all", "mummy-face"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Limestone, gold, basalt and glyphs.", "blocks.html", "panels/blocks", "hieroglyph_stone"),
         ("potions", "Potions", f"{len(POTIONS)} potions · 2 plants", "Lotus, papyrus and five brews.", "potions.html", "panels/plants", "blue_lotus"),
@@ -500,7 +505,7 @@ def build_index():
   <p>Each god takes offerings at its altar. Every offering adds favor, and favor moves you up four stages; each stage adds a blessing.</p>
   {favor_ladder()}
   <p class="meta">The points are the thresholds in the mod's own data file.</p>
-  {status(["The mod loads on a Fabric server with no data errors.", "All four structures generate on their own in a desert world, and the game's /locate finds them.",
+  {status(["The mod loads on a Fabric server with no data errors.", "All eight structures generate on their own in a desert world, and the game's /locate finds them (the four newer shrines from 257 to 374 blocks away).",
            "Favor, the stage thresholds and the blessings work through the same code the altars use.", "The sandstorm slows a player in the open and not under a roof."],
           ["Using an altar by hand (the same code path was tested through a command).", "Brewing the potions.", "The Ankh and the Khopesh in play.", "A sandstorm starting on its own.", "Mummies spawning on their own."])}
 </section>"""
@@ -530,7 +535,7 @@ def build_blocks():
 
 def build_potions():
     where = {}
-    for slug in ("ra_shrine", "anubis_shrine", "obelisk_field", "desert_ruin"):
+    for slug in ("ra_shrine", "anubis_shrine", "horus_shrine", "isis_shrine", "thoth_shrine", "bastet_shrine", "obelisk_field", "desert_ruin"):
         for it in chest_items(slug):
             where.setdefault(it, []).append(CHEST_LABEL[slug])
     rows = ""
@@ -543,16 +548,16 @@ def build_potions():
               f'<li class="card">{sprite("papyrus", 64, "Papyrus")}<div><h3>Papyrus</h3><p>A tall reed with a feathered head, for river banks and oases. Grows on sand, dirt, clay or sandstone. A stand of papyrus turns up in the desert ruins’ chests.</p></div></li>')
     body = f"""
 <section class="page">
-  <p class="eyebrow">Plants &amp; potions</p><h1>Lotus, papyrus and five brews</h1><div class="rule"></div>
-  <p class="lede">Two river plants and five divine potions, each set to be brewed from an Awkward Potion and one ingredient found in the desert structures. The recipes are registered; none has been brewed in play yet.</p>
+  <p class="eyebrow">Plants &amp; potions</p><h1>Lotus, papyrus and six brews</h1><div class="rule"></div>
+  <p class="lede">Two river plants and six divine potions, each set to be brewed from an Awkward Potion and one ingredient found in the desert structures. The recipes are registered; none has been brewed in play yet.</p>
   <div class="shots two">{fig("plants", "Blue lotus and papyrus on sand, in front of the altars of Ra and Anubis, a brazier and a lotus column.", "Blue lotus and papyrus plants on desert sand")}{fig("relics", "Blood of Ra, held large, beside the Ankh and the Khopesh.", "A Blood of Ra potion shown large beside two relics")}</div>
   <h2>Plants</h2><ul class="cards">{plants}</ul>
-  <h2>The five potions</h2><ul class="cards">{rows}</ul>
+  <h2>The six potions</h2><ul class="cards">{rows}</ul>
   <p class="meta">The potions use the same data format as Asgard's: one entry in <code>potions.json</code> adds an ingredient, a potion and a brewing recipe.</p>
-  {status(["The five potions and their ingredient items load, with names and lore, and the recipes register.", "The plants render with transparent backgrounds after a cutout fix, and are placed in the photograph."],
+  {status(["The six potions and their ingredient items load, with names and lore, and the recipes register.", "The plants render with transparent backgrounds after a cutout fix, and are placed in the photograph."],
           ["Brewing, drinking or splashing the potions in play.", "Planting the lotus and papyrus by hand (the placement rule is in the code)."])}
 </section>"""
-    return page("Plants & potions: lotus, papyrus and five brews", "Blue lotus, papyrus and the five divine potions of the Khemet mod: Blood of Ra, Tears of Isis, Breath of Horus, Anubis's Veil and Bastet's Grace.", body, "potions", "potions.html", "potions")
+    return page("Plants & potions: lotus, papyrus and six brews", "Blue lotus, papyrus and the five divine potions of the Khemet mod: Blood of Ra, Tears of Isis, Breath of Horus, Anubis's Veil and Bastet's Grace.", body, "potions", "potions.html", "potions")
 
 
 def blessing_rows(god):
@@ -575,17 +580,17 @@ def build_gods():
   <table class="data"><caption class="sr">{esc(name)}: blessings by stage</caption><tbody>{blessing_rows(god)}</tbody></table></section>"""
     body = f"""
 <section class="page">
-  <p class="eyebrow">Gods</p><h1>Ra and Anubis</h1><div class="rule"></div>
+  <p class="eyebrow">Gods</p><h1>Six of the Ennead and more</h1><div class="rule"></div>
   <p class="meta">The gods here are game material: a simplified retelling for a Minecraft mod, made with respect for the ancient Egyptian world it draws on, and not a statement about religion.</p>
   <p class="lede">Each god has a shrine and an altar. Hold an offering, use the altar, and the god takes one item, adds to your favor, and gives you a blessing (tested through the matching command; the click itself is not yet tried). Favor is saved with you, and was measured to survive death.</p>
   <h2>Favor</h2>{favor_ladder()}
   <p>Use an altar with an empty hand to see your favor and what the god wants. <code>/khemet favor</code> lists your standing with every god.</p>
   {secs}
-  <p class="meta">Seven more gods are in the design (Horus, Isis, Osiris, Set, Bastet, Thoth, Khonsu); slice one has two.</p>
+  <p class="meta">Three more gods are in the design (Osiris, Set, Khonsu); this slice has six.</p>
   {status(["Offering, refusal of the wrong item, favor kept per god, and all four stage names (Ra reached Chosen at 25 favor), through the command that runs the same code as the altar.", "The blessings stack by stage: at Recognized, Ra gave Fire Resistance and Strength; at Favored, Regeneration and Resistance joined them; at Chosen (28 favor) Regeneration II, Fire Resistance and a longer Strength were active.", "Both shrines generate on their own and are photographed.", "Favor stayed at 28 (Chosen) after the player was killed and respawned."],
           ["Using an altar block with a held item (the click path).", "Favor kept across a server restart (it is saved with the player; not yet restarted to check).", "Anubis's blessings and his stages beyond Stranger were not individually inspected."])}
 </section>"""
-    return page("Gods: the shrines and favor of Ra and Anubis", "Ra and Anubis in the Khemet mod: their altars, offerings, four stages of divine favor and the blessings each stage gives.", body, "gods", "gods.html", "gods")
+    return page("Gods: the shrines and favor of Ra and Anubis", "Six gods in the Khemet mod (Ra, Anubis, Horus, Isis, Thoth and Bastet): their altars, offerings, four stages of divine favor and the blessings each stage gives.", body, "gods", "gods.html", "gods")
 
 
 def build_structures():
@@ -607,10 +612,10 @@ def build_structures():
   <tr><th scope="row">Chest</th><td>{esc(", ".join(chest_items(slug)))}</td></tr></tbody></table></section>"""
     body = f"""
 <section class="page">
-  <p class="eyebrow">Structures</p><h1>Four things in the sand</h1><div class="rule"></div>
-  <p class="lede">The desert hides two shrines, an obelisk field and a ruin. Each is a template with a few variants, generated by the game where the biome allows, with a chest of themed loot.</p>
+  <p class="eyebrow">Structures</p><h1>Eight things in the sand</h1><div class="rule"></div>
+  <p class="lede">The desert hides six shrines, an obelisk field and a ruin. Each is a template with variants, generated by the game where the biome allows, with a chest of themed loot.</p>
   {secs}
-  {status(["All four generate on their own in a desert world: the game's /locate found each one, from 16 to 417 blocks away.", "All four were also placed with the template command and photographed from a client."],
+  {status(["All eight generate on their own in a desert world: the game's /locate found each one, from 16 to 417 blocks away.", "All eight were also placed with the template command and photographed from a client."],
           ["How they sit among vanilla desert structures (a flat test world has none).", "Pyramids, the Sphinx and temples are not in this slice."])}
 </section>"""
     return page("Structures: shrines, obelisks and ruins in the desert", "The four desert structures of the Khemet mod: the shrines of Ra and Anubis, the obelisk field and the desert ruin.", body, "structures", "structures.html", "structures")
@@ -721,7 +726,7 @@ def build_install():
 cd minecraft-khemet
 gradle build
 # the jar is in build/libs/khemet-{esc(mf['version'])}.jar</code></pre>
-  <p>Copy the jar into your <code>mods</code> folder and start the game. The server log line <code>Khemet loaded: 5 potions, 5 brewing recipes, 0 unknown effects skipped; {len(block_ids())} blocks, 2 gods, 2 creatures</code> confirms the registration.</p>
+  <p>Copy the jar into your <code>mods</code> folder and start the game. The server log line <code>Khemet loaded: {len(POTIONS)} potions, {len(POTIONS)} brewing recipes, 0 unknown effects skipped; {len(block_ids())} blocks, {len(GODS)} gods, {len(MOBS)} creatures</code> confirms the registration.</p>
   <h2>Commands</h2>
   <table class="data"><caption class="sr">Commands</caption><tbody><tr><th scope="row"><code>/khemet favor</code></th><td>Your favor and stage with each god.</td></tr>
   <tr><th scope="row"><code>/khemet offer &lt;god&gt;</code></th><td>Operators: offer the item in your hand to a god (the same code the altar runs).</td></tr>

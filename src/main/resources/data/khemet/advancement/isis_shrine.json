@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "khemet:isis_altar"
+    },
+    "title": {
+      "text": "Lady of the Throne"
+    },
+    "description": {
+      "text": "Find the shrine of Isis."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "khemet:isis_shrine"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "khemet:ra_shrine"
+}

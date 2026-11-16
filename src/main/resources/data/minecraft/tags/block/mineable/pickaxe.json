@@ -17,6 +17,10 @@
     "khemet:lotus_column",
     "khemet:sacred_brazier",
     "khemet:ra_altar",
-    "khemet:anubis_altar"
+    "khemet:anubis_altar",
+    "khemet:horus_altar",
+    "khemet:isis_altar",
+    "khemet:thoth_altar",
+    "khemet:bastet_altar"
   ]
 }

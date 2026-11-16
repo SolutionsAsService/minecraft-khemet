@@ -154,6 +154,282 @@
           ]
         }
       ]
+    },
+    "horus": {
+      "name": "Horus",
+      "title": "God of the Sky",
+      "offerings": [
+        {
+          "item": "khemet:falcon_feather",
+          "favor": 3
+        },
+        {
+          "item": "minecraft:gold_ingot",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:lapis_lazuli",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:feather",
+          "favor": 1
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 1,
+          "effects": [
+            [
+              "minecraft:jump_boost",
+              120,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:jump_boost",
+              120,
+              0
+            ],
+            [
+              "minecraft:night_vision",
+              240,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:jump_boost",
+              240,
+              1
+            ],
+            [
+              "minecraft:slow_falling",
+              240,
+              0
+            ],
+            [
+              "minecraft:night_vision",
+              300,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "isis": {
+      "name": "Isis",
+      "title": "Lady of Magic",
+      "offerings": [
+        {
+          "item": "khemet:sacred_myrrh",
+          "favor": 3
+        },
+        {
+          "item": "khemet:blue_lotus",
+          "favor": 2
+        },
+        {
+          "item": "minecraft:lapis_lazuli",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:golden_apple",
+          "favor": 3
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 1,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              15,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              30,
+              0
+            ],
+            [
+              "minecraft:absorption",
+              120,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:regeneration",
+              40,
+              1
+            ],
+            [
+              "minecraft:absorption",
+              240,
+              1
+            ],
+            [
+              "minecraft:resistance",
+              180,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "thoth": {
+      "name": "Thoth",
+      "title": "Lord of Wisdom",
+      "offerings": [
+        {
+          "item": "minecraft:paper",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:book",
+          "favor": 2
+        },
+        {
+          "item": "khemet:papyrus",
+          "favor": 2
+        },
+        {
+          "item": "minecraft:ink_sac",
+          "favor": 1
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 1,
+          "effects": [
+            [
+              "minecraft:luck",
+              180,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:luck",
+              240,
+              0
+            ],
+            [
+              "minecraft:haste",
+              120,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:luck",
+              300,
+              1
+            ],
+            [
+              "minecraft:haste",
+              240,
+              1
+            ],
+            [
+              "minecraft:night_vision",
+              300,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "bastet": {
+      "name": "Bastet",
+      "title": "Lady of Cats",
+      "offerings": [
+        {
+          "item": "minecraft:cod",
+          "favor": 1
+        },
+        {
+          "item": "minecraft:salmon",
+          "favor": 1
+        },
+        {
+          "item": "khemet:golden_date",
+          "favor": 2
+        },
+        {
+          "item": "minecraft:string",
+          "favor": 1
+        }
+      ],
+      "blessings": [
+        {
+          "stage": 1,
+          "effects": [
+            [
+              "minecraft:speed",
+              120,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 2,
+          "effects": [
+            [
+              "minecraft:speed",
+              120,
+              0
+            ],
+            [
+              "minecraft:jump_boost",
+              120,
+              0
+            ]
+          ]
+        },
+        {
+          "stage": 3,
+          "effects": [
+            [
+              "minecraft:speed",
+              240,
+              1
+            ],
+            [
+              "minecraft:jump_boost",
+              240,
+              0
+            ],
+            [
+              "minecraft:night_vision",
+              300,
+              0
+            ]
+          ]
+        }
+      ]
     }
   },
   "ankh": {

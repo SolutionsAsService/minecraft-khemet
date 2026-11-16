@@ -1,0 +1,27 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -10 -430 40 -390",
+    "kill @e[type=!minecraft:player]",
+    "setblock 0 $G -400 khemet:ra_altar",
+    "setblock 3 $G -400 khemet:anubis_altar",
+    "setblock 6 $G -400 khemet:horus_altar",
+    "setblock 9 $G -400 khemet:isis_altar",
+    "setblock 12 $G -400 khemet:thoth_altar",
+    "setblock 15 $G -400 khemet:bastet_altar"
+  ],
+  "steps": [
+    {
+      "tp": [
+        7.5,
+        "G+3.2",
+        -392,
+        180,
+        44
+      ],
+      "capture": "altars-all",
+      "wait": 9
+    }
+  ]
+}

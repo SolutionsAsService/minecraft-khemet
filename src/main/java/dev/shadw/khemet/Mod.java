@@ -115,8 +115,8 @@ public class Mod implements ModInitializer {
 		});
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> entries.accept(KhemetItems.KHOPESH));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> entries.accept(KhemetItems.ANKH));
-		LOGGER.info("Khemet loaded: {} potions, {} brewing recipes, {} unknown effects skipped; {} blocks, 2 gods, 2 creatures",
-				pending.size(), pending.size(), effectsSkipped, KhemetBlocks.count());
+		LOGGER.info("Khemet loaded: {} potions, {} brewing recipes, {} unknown effects skipped; {} blocks, {} gods, {} creatures",
+				pending.size(), pending.size(), effectsSkipped, KhemetBlocks.count(), KhemetBlocks.GODS.length, GeneratedMobs.EGGS.size());
 	}
 
 	private static ResourceKey<Item> itemKey(String path) {

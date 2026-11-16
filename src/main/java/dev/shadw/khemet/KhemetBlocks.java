@@ -23,7 +23,7 @@ public final class KhemetBlocks {
 	public static final String[] STONES = {"ancient_limestone", "white_limestone", "golden_sandstone", "black_basalt", "polished_pharaoh_stone",
 			"hieroglyph_stone", "cracked_temple_stone", "weathered_pyramid_stone", "gold_inlaid_tile", "painted_temple_wall",
 			"hieroglyph_bricks", "obelisk_block"};
-	public static final String[] GODS = {"ra", "anubis"};
+	public static final String[] GODS = {"ra", "anubis", "horus", "isis", "thoth", "bastet"};
 
 	private static int count;
 	public static final List<Block> BUILDING = new ArrayList<>();

@@ -1,0 +1,54 @@
+{
+  "out": "site/img/shots",
+  "settle": 8,
+  "setup": [
+    "forceload add -20 -360 160 -300",
+    "kill @e[type=!minecraft:player]"
+  ],
+  "steps": [
+    {
+      "tp": [
+        22,
+        "G+6",
+        -310,
+        149.5,
+        14
+      ],
+      "capture": "horus-shrine",
+      "wait": 9
+    },
+    {
+      "tp": [
+        62,
+        "G+6",
+        -310,
+        149.5,
+        14
+      ],
+      "capture": "isis-shrine",
+      "wait": 9
+    },
+    {
+      "tp": [
+        102,
+        "G+6",
+        -310,
+        149.5,
+        14
+      ],
+      "capture": "thoth-shrine",
+      "wait": 9
+    },
+    {
+      "tp": [
+        142,
+        "G+6",
+        -310,
+        149.5,
+        14
+      ],
+      "capture": "bastet-shrine",
+      "wait": 9
+    }
+  ]
+}

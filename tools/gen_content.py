@@ -267,12 +267,24 @@ def altar_top(hue, dark, kind):
     def fn(x, y):
         c = shade(dark, (h(x, y, 19) % 5) - 2)
         d = math.hypot(x - 7.5, y - 7.5)
+        sym = set()
         if kind == "ra":
             if 5.2 <= d <= 6.6:
                 c = shade(hue, -30)
             if d <= 4.2:
                 c = GOLD_L if d <= 1.6 else hue
-        else:
+        if kind == "horus":
+            sym = {(x_, 7) for x_ in range(3, 13)} | {(x_, 6) for x_ in range(5, 11)} | {(x_, 8) for x_ in range(5, 10)} | {(11, 9), (11, 10), (10, 10), (10, 11), (9, 11), (4, 8), (4, 9), (5, 9)}
+        elif kind == "isis":
+            sym = {(x_, 11) for x_ in range(5, 11)} | {(x_, 10) for x_ in range(5, 11)} | {(5, 9), (5, 8), (5, 7), (6, 7), (7, 7), (8, 7)} | {(x_, 5) for x_ in range(1, 15) if abs(x_ - 7.5) > 1.5} | {(x_, 4) for x_ in range(1, 6)} | {(x_, 4) for x_ in range(10, 15)}
+        elif kind == "thoth":
+            sym = {(x_, y_) for x_ in range(16) for y_ in range(16) if math.hypot(x_ - 7, y_ - 6) <= 2.6} | {(10, 6), (11, 7), (12, 8), (12, 9), (11, 9)} | {(x_, 12) for x_ in range(4, 12)} | {(5, 11), (10, 11)}
+        elif kind == "bastet":
+            sym = {(x_, y_) for x_ in range(4, 12) for y_ in range(6, 12)} | {(4, 5), (5, 5), (4, 4), (11, 5), (10, 5), (11, 4)}
+        if kind in ("horus", "isis", "thoth", "bastet"):
+            if (x, y) in sym:
+                c = hue
+        elif kind == "anubis":
             if abs(x - 7.5) + abs(y - 7.5) <= 6 and abs(x - 7.5) + abs(y - 7.5) >= 4.5:
                 c = shade(hue, -30)
             if (x in (7, 8) and 3 <= y <= 12) or (y == 6 and 5 <= x <= 10) or (y in (6,) and x in (4, 11)):
@@ -351,6 +363,10 @@ LANG = {
     "block.khemet.golden_pillar": "Golden Pillar", "block.khemet.lotus_column": "Lotus Column",
     "block.khemet.sacred_brazier": "Sacred Brazier", "block.khemet.blue_lotus": "Blue Lotus", "block.khemet.papyrus": "Papyrus",
     "block.khemet.ra_altar": "Altar of Ra", "block.khemet.anubis_altar": "Altar of Anubis",
+    "block.khemet.horus_altar": "Altar of Horus",
+    "block.khemet.isis_altar": "Altar of Isis",
+    "block.khemet.thoth_altar": "Altar of Thoth",
+    "block.khemet.bastet_altar": "Altar of Bastet",
     "entity.khemet.mummy": "Mummy", "entity.khemet.royal_mummy": "Royal Mummy",
     "item.khemet.mummy_spawn_egg": "Mummy Spawn Egg", "item.khemet.royal_mummy_spawn_egg": "Royal Mummy Spawn Egg",
 }
@@ -468,9 +484,9 @@ def main():
         "top": f"{NS}:block/sacred_brazier_top", "bottom": f"{NS}:block/sacred_brazier_side", "side": f"{NS}:block/sacred_brazier_side"}})
     wj(ASSETS / "blockstates/sacred_brazier.json", {"variants": {"": {"model": f"{NS}:block/sacred_brazier"}}})
     item_def("sacred_brazier", f"{NS}:block/sacred_brazier")
-    for god, hue, dark in (("ra", GOLD, (190, 150, 60)), ("anubis", GOLD, (40, 40, 46))):
+    for god, hue, dark in (("ra", GOLD, (190, 150, 60)), ("anubis", GOLD, (40, 40, 46)), ("horus", LAPIS, (218, 206, 170)), ("isis", TURQ, (232, 226, 204)), ("thoth", (60, 70, 130), (206, 208, 224)), ("bastet", GOLD, (34, 34, 40))):
         tex(altar_side(hue, dark)).save(ASSETS / f"textures/block/{god}_altar_side.png")
-        tex(altar_top(GOLD_L if god == "ra" else GOLD, dark, god)).save(ASSETS / f"textures/block/{god}_altar_top.png")
+        tex(altar_top(GOLD_L if god == "ra" else (hue if god in ("horus", "isis", "thoth") else GOLD), dark, god)).save(ASSETS / f"textures/block/{god}_altar_top.png")
         wj(ASSETS / f"models/block/{god}_altar.json", {"parent": "minecraft:block/cube_bottom_top", "textures": {
             "top": f"{NS}:block/{god}_altar_top", "bottom": f"{NS}:block/{god}_altar_side", "side": f"{NS}:block/{god}_altar_side"}})
         wj(ASSETS / f"blockstates/{god}_altar.json", {"variants": {"": {"model": f"{NS}:block/{god}_altar"}}})
