@@ -185,6 +185,62 @@
         "light": "#3fd0b8",
         "cell": 4
       },
+      "croc": {
+        "type": "scales",
+        "base": "#4a5a38",
+        "dark": "#26301c",
+        "light": "#7a8a58",
+        "cell": 3
+      },
+      "croc_belly": {
+        "type": "skin",
+        "base": "#b8b084",
+        "shade": 5
+      },
+      "cobra": {
+        "type": "scales",
+        "base": "#8a7a3a",
+        "dark": "#40361a",
+        "light": "#c8b862",
+        "cell": 3
+      },
+      "cobra_hood": {
+        "type": "scales",
+        "base": "#b09a48",
+        "dark": "#40361a",
+        "light": "#e0d078",
+        "cell": 3
+      },
+      "cobra_belly": {
+        "type": "skin",
+        "base": "#e4d8a0",
+        "shade": 4
+      },
+      "fang": {
+        "type": "plain",
+        "base": "#f0ece0"
+      },
+      "tongue": {
+        "type": "plain",
+        "base": "#c02830"
+      },
+      "tan": {
+        "type": "skin",
+        "base": "#c88a4a",
+        "shade": 5
+      },
+      "sun": {
+        "type": "metal",
+        "base": "#f0b020",
+        "dark": "#a05a08",
+        "light": "#fff4b0"
+      },
+      "sun_red": {
+        "type": "metal",
+        "base": "#d03a18",
+        "dark": "#7a1808",
+        "light": "#ff8a50"
+      },
       "shell_gold": {
         "type": "metal",
         "base": "#d8b030",
@@ -466,17 +522,8 @@
                 "face": "front",
                 "type": "rect",
                 "x": 0,
-                "y": 2,
-                "w": 3,
-                "h": 1,
-                "color": "#2a58b0"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 5,
-                "y": 2,
-                "w": 3,
+                "y": 1,
+                "w": 8,
                 "h": 1,
                 "color": "#2a58b0"
               },
@@ -487,6 +534,15 @@
                 "y": 2,
                 "w": 2,
                 "h": 1,
+                "color": "#101014"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 3,
+                "w": 2,
+                "h": 1,
                 "color": "#ffd040"
               },
               {
@@ -496,14 +552,23 @@
                 "y": 2,
                 "w": 2,
                 "h": 1,
+                "color": "#101014"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 3,
+                "w": 2,
+                "h": 1,
                 "color": "#ffd040"
               },
               {
                 "face": "front",
                 "type": "rect",
-                "x": 0,
-                "y": 1,
-                "w": 3,
+                "x": 2,
+                "y": 3,
+                "w": 1,
                 "h": 1,
                 "color": "#101014"
               },
@@ -511,8 +576,8 @@
                 "face": "front",
                 "type": "rect",
                 "x": 5,
-                "y": 1,
-                "w": 3,
+                "y": 3,
+                "w": 1,
                 "h": 1,
                 "color": "#101014"
               },
@@ -520,10 +585,55 @@
                 "face": "front",
                 "type": "rect",
                 "x": 3,
-                "y": 5,
+                "y": 4,
                 "w": 2,
                 "h": 1,
-                "color": "#8a6a14"
+                "color": "#c09820"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 5,
+                "w": 1,
+                "h": 1,
+                "color": "#80640e"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 5,
+                "w": 1,
+                "h": 1,
+                "color": "#80640e"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 5,
+                "w": 1,
+                "h": 1,
+                "color": "#d8b030"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 6,
+                "y": 5,
+                "w": 1,
+                "h": 1,
+                "color": "#d8b030"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 5,
+                "w": 4,
+                "h": 1,
+                "color": "#a07818"
               }
             ]
           },

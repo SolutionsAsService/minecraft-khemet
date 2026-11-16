@@ -465,7 +465,7 @@ def home_wall():
     panels = [
         ("gods", "Gods", f"{len(GODS)} gods · {len(STAGES)} stages", "Make an offering. Be named Chosen.", "gods.html", "panels/ra-shrine", "ra_altar"),
         ("structures", "Structures", f"{n_structs()} structures", "Found in deserts; some in badlands or savanna.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
-        ("creatures", "Creatures", "5 creatures", "Linen, stone, shell and a crown.", "creatures.html", "panels/creatures-all", "mummy-face"),
+        ("creatures", "Creatures", "8 creatures", "Linen, stone, shell and a crown.", "creatures.html", "panels/creatures-all", "mummy-face"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Limestone, gold, basalt and glyphs.", "blocks.html", "panels/blocks", "hieroglyph_stone"),
         ("potions", "Potions", f"{len(POTIONS)} potions · 2 plants", "Lotus, papyrus and five brews.", "potions.html", "panels/plants", "blue_lotus"),
         ("relics", "Relics", "2 relics · sandstorms", "An ankh and a khopesh, shown large.", "relics.html", "panels/relics", "ankh"),
@@ -653,14 +653,17 @@ def build_creatures():
     info = (("mummy", "A tomb guardian wrapped in bands of linen, hunched with its arms out, with tattered ends streaming and one glowing amber eye in a gap. Its touch leaves Weakness, and dry linen burns twice as hard. It does not burn in sunlight.", "mummy"),
             ("royal_mummy", "An elite mummy from a royal burial in a striped nemes headdress with a cobra, a false beard, the broad collar of gold, turquoise and lapis, gold armbands and a short golden khopesh.", "royal_mummy"),
             ("scarab", "A small sacred beetle with a turquoise shell striped in gold, red eyes, antennae and six legs in a tripod gait. Fast, fragile, and its bite poisons.", "scarab"),
+            ("cobra", "A hooded desert cobra, coiled in five rings with its body raised and the hood spread, red eyes, long fangs and a forked tongue that flicks. It strikes in a short burst, and the bite poisons.", "cobra"),
+            ("crocodile", "A Nile crocodile: a long armoured body with a ridge of scutes, splayed legs, a tapering tail of six segments, a long snout with teeth down both jaws and yellow eyes on raised bumps. It lurks around rivers, swamps and beaches and lunges.", "crocodile"),
             ("tomb_guardian", "A jackal-headed stone warrior with a black head, tall ears and glowing cyan eyes, a gold collar and kilt, an ankh cut into its chest, and a was-sceptre. Armoured and slow; it slams the ground.", "tomb_guardian"),
+            ("sun_pharaoh", "The sun king: bronze-skinned under a gold circlet and a halo of eight rays, in gold and red-orange armour with a flame-red kilt and streaming flames, a sun-gold khopesh and a sceptre topped with a red sun. A boss with a bar: it charges, stamps, enrages when hurt, and its hits blind you for a moment.", "sun_pharaoh"),
             ("forgotten_pharaoh", "The undead king: a golden death-mask under the double crown (white hedjet inside the red deshret), a nemes and uraeus, the broad collar, crook and flail crossed on the chest and a shroud of tattered linen. A boss with a bar: it hunts through walls, charges, slams, enrages below half health, and its blows leave Weakness II. It is not placed by anything yet.", "forgotten_pharaoh"))
     for key, blurb, shotn in info:
         spec = MOBS[key]
         a = spec["attributes"]
         name = spec["name"]
         sp = spec.get("spawn")
-        spawn = (f"Deserts: {sp['min'] if sp['min'] == sp['max'] else str(sp['min']) + ' to ' + str(sp['max'])} at a time, weight {sp['weight']}." if sp else "None: no structure or biome places it yet (an egg and /summon only).")
+        spawn = (f"{', '.join(b.split(':')[1].replace('_', ' ') for b in sp['biomes']).capitalize()}: {sp['min'] if sp['min'] == sp['max'] else str(sp['min']) + ' to ' + str(sp['max'])} at a time, weight {sp['weight']}." if sp else "None: no structure or biome places it yet (an egg and /summon only).")
         guards = []
         for slug, title, *_ in STRUCTS:
             ov = jread(DATA / "worldgen/structure" / f"{slug}.json").get("spawn_overrides", {})
@@ -685,13 +688,13 @@ def build_creatures():
     body = f"""
 <section class="page">
   <p class="eyebrow">Creatures</p><h1>Linen, stone, shell and a crown</h1><div class="rule"></div>
-  <p class="lede">Five creatures, each with its own model: built from many small moving parts, with a texture packed and painted by the mod's generator, from a small data file (<code>mobs/*.json</code>).</p>
-  <div class="shots two">{fig("creatures-all", "From the left: scarab, mummy, royal mummy, tomb guardian, the Forgotten Pharaoh (with his boss bar), with their AI off for the photograph.", "Five Egyptian creatures in a row on desert sand")}</div>
+  <p class="lede">Eight creatures, each with its own model: built from many small moving parts, with a texture packed and painted by the mod's generator, from a small data file (<code>mobs/*.json</code>).</p>
+  <div class="shots two">{fig("creatures-all", "Top row: scarab, cobra, crocodile, mummy. Bottom row: royal mummy, tomb guardian, the Sun Pharaoh and the Forgotten Pharaoh, with their AI off for the photograph.", "Eight Egyptian creatures in two rows on desert sand")}</div>
   {cards}
-  {status(["All five load, render with their own models and are photographed. A test harness measured each in a running game: time to reach a player, the first hit, the effects, and its drops.", "The mummy and royal mummy were moved from hand-written classes to data files and behave as before (Weakness on hit, as measured)."],
+  {status(["All eight load, render with their own models and are photographed. A test harness measured each in a running game: time to reach a player, the first hit, the effects, and its drops.", "The mummy and royal mummy were moved from hand-written classes to data files and behave as before (Weakness on hit, as measured)."],
           ["Mummies, scarabs and guardians spawning on their own over a night, and a real fight with any of them.", "The Forgotten Pharaoh's whole fight, and anywhere to find him: nothing places him yet.", "How the models move in a fight (animation was checked only in still photographs)."])}
 </section>"""
-    return page("Creatures: mummies, scarab, tomb guardian and the Forgotten Pharaoh", "The five creatures of the Khemet mod with their own models: stats, spawns, drops and measured behaviour.", body, "creatures", "creatures.html", "creatures")
+    return page("Creatures: mummies, scarab, cobra, crocodile, guardian and two pharaohs", "The eight creatures of the Khemet mod with their own models: stats, spawns, drops and measured behaviour.", body, "creatures", "creatures.html", "creatures")
 
 
 def build_relics():

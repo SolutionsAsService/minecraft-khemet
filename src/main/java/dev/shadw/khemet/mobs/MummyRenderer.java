@@ -21,6 +21,7 @@ public class MummyRenderer extends MobRenderer<Mummy, MummyModel.State, MummyMod
 	public void extractRenderState(Mummy entity, MummyModel.State state, float partialTick) {
 		super.extractRenderState(entity, state, partialTick);
 		state.attackTime = entity.getAttackAnim(partialTick);
+		state.airborne = !entity.onGround() && !entity.isNoAi();        // a mob with its AI off is posed, not flying
 	}
 
 	@Override

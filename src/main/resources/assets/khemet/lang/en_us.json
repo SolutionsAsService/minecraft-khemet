@@ -66,5 +66,11 @@
   "entity.khemet.scarab": "Scarab",
   "item.khemet.scarab_spawn_egg": "Scarab Spawn Egg",
   "entity.khemet.tomb_guardian": "Tomb Guardian",
-  "item.khemet.tomb_guardian_spawn_egg": "Tomb Guardian Spawn Egg"
+  "item.khemet.tomb_guardian_spawn_egg": "Tomb Guardian Spawn Egg",
+  "entity.khemet.cobra": "Cobra",
+  "item.khemet.cobra_spawn_egg": "Cobra Spawn Egg",
+  "entity.khemet.crocodile": "Crocodile",
+  "item.khemet.crocodile_spawn_egg": "Crocodile Spawn Egg",
+  "entity.khemet.sun_pharaoh": "The Sun Pharaoh",
+  "item.khemet.sun_pharaoh_spawn_egg": "The Sun Pharaoh Spawn Egg"
 }

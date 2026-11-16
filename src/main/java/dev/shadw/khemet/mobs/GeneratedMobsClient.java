@@ -32,6 +32,10 @@ public final class GeneratedMobsClient {
 
 	/** Registers the renderers. Call from the client entrypoint. */
 	public static void initClient() {
+		EntityModelLayerRegistry.registerModelLayer(CobraModel.LAYER, CobraModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.COBRA, CobraRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(CrocodileModel.LAYER, CrocodileModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.CROCODILE, CrocodileRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(ForgottenPharaohModel.LAYER, ForgottenPharaohModel::createBodyLayer);
 		EntityRendererRegistry.register(GeneratedMobs.FORGOTTEN_PHARAOH, ForgottenPharaohRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(MummyModel.LAYER, MummyModel::createBodyLayer);
@@ -40,6 +44,8 @@ public final class GeneratedMobsClient {
 		EntityRendererRegistry.register(GeneratedMobs.ROYAL_MUMMY, RoyalMummyRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(ScarabModel.LAYER, ScarabModel::createBodyLayer);
 		EntityRendererRegistry.register(GeneratedMobs.SCARAB, ScarabRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(SunPharaohModel.LAYER, SunPharaohModel::createBodyLayer);
+		EntityRendererRegistry.register(GeneratedMobs.SUN_PHARAOH, SunPharaohRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(TombGuardianModel.LAYER, TombGuardianModel::createBodyLayer);
 		EntityRendererRegistry.register(GeneratedMobs.TOMB_GUARDIAN, TombGuardianRenderer::new);
 	}

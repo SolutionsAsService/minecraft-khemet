@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "khemet:item/sun_pharaoh_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15773728
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 13646360
+      }
+    ]
+  }
+}

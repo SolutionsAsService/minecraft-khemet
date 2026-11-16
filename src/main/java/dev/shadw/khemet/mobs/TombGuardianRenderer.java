@@ -21,6 +21,7 @@ public class TombGuardianRenderer extends MobRenderer<TombGuardian, TombGuardian
 	public void extractRenderState(TombGuardian entity, TombGuardianModel.State state, float partialTick) {
 		super.extractRenderState(entity, state, partialTick);
 		state.attackTime = entity.getAttackAnim(partialTick);
+		state.airborne = !entity.onGround() && !entity.isNoAi();        // a mob with its AI off is posed, not flying
 	}
 
 	@Override

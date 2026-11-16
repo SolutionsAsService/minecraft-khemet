@@ -21,6 +21,7 @@ public class ScarabRenderer extends MobRenderer<Scarab, ScarabModel.State, Scara
 	public void extractRenderState(Scarab entity, ScarabModel.State state, float partialTick) {
 		super.extractRenderState(entity, state, partialTick);
 		state.attackTime = entity.getAttackAnim(partialTick);
+		state.airborne = !entity.onGround() && !entity.isNoAi();        // a mob with its AI off is posed, not flying
 	}
 
 	@Override

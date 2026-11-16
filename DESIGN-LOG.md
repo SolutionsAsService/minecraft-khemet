@@ -247,3 +247,17 @@ The criterion (MAYA) held, and the graph held. The panel's most productive seats
 - [x] Double-loop paragraph written.
 - [ ] Run recorded in the ledger (`import_log.py`, `rate_seats.py` not run: the dada repository's ledger was not updated in this session).
 - [x] Final reply states the mode, the tools, the stop conditions and everything skipped.
+
+
+## Run: Polish and extend (2.0: faces, and a cobra, a crocodile and the Sun Pharaoh)
+
+**Brief:** revamp and polish the Khemet models; keep going from the design. Mode: Adaptive. Run type: Polish for the five existing creatures, Extend for the new ones.
+
+**Found by the close-ups:** the mummies' head wraps lay over their eye rows (blank faces), the royal mummy's face was the same linen as its wrappings, the
+jackal's eyes were one pixel at the edge of its head, and the scarab and the guardian's face cameras pointed at nothing (a small or long-snouted mob needs its
+head position given). **Fixed:** `face()` on every head, bands moved above the eyes and under the mouth, a gold mask, eyes on the side faces of the jackal,
+thicker mummy arms. **New, from the design's lists** (the Serpent Pharaoh's venomous creatures, "crocodile-infested waters", the Sun Pharaoh): a Cobra (17
+parts), a Crocodile (42) and The Sun Pharaoh (47 parts, a boss). Measured once each in a running game: cobra reached a player in 3 s and hit for 2.5 with
+Poison; crocodile 4 s, 4.5; Sun Pharaoh 3 s, 6.5.
+**Not done:** the Serpent Pharaoh, the Golden Pharaoh and the mounts (a rideable scarab, falcon, camel) are not built; the cobra's head reads small from the
+front; the crocodile does not swim; the Sun Pharaoh spawns rarely in deserts and nothing else places it; no panel; animation in stills only.

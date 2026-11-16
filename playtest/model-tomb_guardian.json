@@ -72,18 +72,16 @@
   "setup": [
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
-    "kill @e[type=item]",
     "gamerule doMobSpawning false",
-    "kill @e[type=khemet:satyr]",
-    "kill @e[type=khemet:gorgon]",
-    "kill @e[type=khemet:hoplite]",
-    "kill @e[type=khemet:cyclops]",
-    "kill @e[type=khemet:minotaur]",
     "kill @e[type=khemet:mummy]",
     "kill @e[type=khemet:royal_mummy]",
     "kill @e[type=khemet:scarab]",
     "kill @e[type=khemet:tomb_guardian]",
     "kill @e[type=khemet:forgotten_pharaoh]",
+    "kill @e[type=khemet:cobra]",
+    "kill @e[type=khemet:crocodile]",
+    "kill @e[type=khemet:sun_pharaoh]",
+    "kill @e[type=item]",
     "summon khemet:tomb_guardian 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
   ]
 }

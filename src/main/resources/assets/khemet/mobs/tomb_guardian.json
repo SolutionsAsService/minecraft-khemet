@@ -153,6 +153,62 @@
         "light": "#3fd0b8",
         "cell": 4
       },
+      "croc": {
+        "type": "scales",
+        "base": "#4a5a38",
+        "dark": "#26301c",
+        "light": "#7a8a58",
+        "cell": 3
+      },
+      "croc_belly": {
+        "type": "skin",
+        "base": "#b8b084",
+        "shade": 5
+      },
+      "cobra": {
+        "type": "scales",
+        "base": "#8a7a3a",
+        "dark": "#40361a",
+        "light": "#c8b862",
+        "cell": 3
+      },
+      "cobra_hood": {
+        "type": "scales",
+        "base": "#b09a48",
+        "dark": "#40361a",
+        "light": "#e0d078",
+        "cell": 3
+      },
+      "cobra_belly": {
+        "type": "skin",
+        "base": "#e4d8a0",
+        "shade": 4
+      },
+      "fang": {
+        "type": "plain",
+        "base": "#f0ece0"
+      },
+      "tongue": {
+        "type": "plain",
+        "base": "#c02830"
+      },
+      "tan": {
+        "type": "skin",
+        "base": "#c88a4a",
+        "shade": 5
+      },
+      "sun": {
+        "type": "metal",
+        "base": "#f0b020",
+        "dark": "#a05a08",
+        "light": "#fff4b0"
+      },
+      "sun_red": {
+        "type": "metal",
+        "base": "#d03a18",
+        "dark": "#7a1808",
+        "light": "#ff8a50"
+      },
       "shell_gold": {
         "type": "metal",
         "base": "#d8b030",
@@ -351,17 +407,44 @@
                 "face": "front",
                 "type": "rect",
                 "x": 0,
+                "y": 1,
+                "w": 7,
+                "h": 1,
+                "color": "#d8b030"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
                 "y": 2,
-                "w": 2,
+                "w": 1,
+                "h": 1,
+                "color": "#050508"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
+                "y": 3,
+                "w": 1,
                 "h": 1,
                 "color": "#40e0f0"
               },
               {
                 "face": "front",
                 "type": "rect",
-                "x": 5,
+                "x": 6,
                 "y": 2,
-                "w": 2,
+                "w": 1,
+                "h": 1,
+                "color": "#050508"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 6,
+                "y": 3,
+                "w": 1,
                 "h": 1,
                 "color": "#40e0f0"
               },
@@ -369,19 +452,64 @@
                 "face": "front",
                 "type": "rect",
                 "x": 0,
-                "y": 1,
-                "w": 3,
+                "y": 3,
+                "w": 1,
                 "h": 1,
-                "color": "#101014"
+                "color": "#ffffff"
               },
               {
                 "face": "front",
                 "type": "rect",
-                "x": 4,
-                "y": 1,
-                "w": 3,
+                "x": 6,
+                "y": 3,
+                "w": 1,
                 "h": 1,
-                "color": "#101014"
+                "color": "#ffffff"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 0,
+                "y": 0,
+                "w": 7,
+                "h": 1,
+                "color": "#d8b030"
+              },
+              {
+                "face": "left",
+                "type": "rect",
+                "x": 1,
+                "y": 2,
+                "w": 3,
+                "h": 2,
+                "color": "#050508"
+              },
+              {
+                "face": "left",
+                "type": "rect",
+                "x": 1,
+                "y": 2,
+                "w": 2,
+                "h": 1,
+                "color": "#40e0f0"
+              },
+              {
+                "face": "right",
+                "type": "rect",
+                "x": 1,
+                "y": 2,
+                "w": 3,
+                "h": 2,
+                "color": "#050508"
+              },
+              {
+                "face": "right",
+                "type": "rect",
+                "x": 1,
+                "y": 2,
+                "w": 2,
+                "h": 1,
+                "color": "#40e0f0"
               }
             ]
           },
@@ -964,6 +1092,96 @@
             ],
             "grow": 0,
             "paint": "black_gold"
+          }
+        ]
+      },
+      {
+        "name": "jaw",
+        "parent": "head",
+        "pivot": [
+          0,
+          1.0,
+          -2.0
+        ],
+        "rot": [
+          10,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -1.5,
+              0,
+              -6.6
+            ],
+            "size": [
+              3.0,
+              1.0,
+              6.2
+            ],
+            "grow": 0,
+            "paint": "basalt"
+          }
+        ]
+      },
+      {
+        "name": "fang_r",
+        "parent": "snout",
+        "pivot": [
+          -1.0,
+          -0.4,
+          -8.2
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.3,
+              0,
+              -0.3
+            ],
+            "size": [
+              0.6,
+              1.6,
+              0.6
+            ],
+            "grow": 0,
+            "paint": "fang"
+          }
+        ]
+      },
+      {
+        "name": "fang_l",
+        "parent": "snout",
+        "pivot": [
+          1.0,
+          -0.4,
+          -8.2
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "boxes": [
+          {
+            "from": [
+              -0.3,
+              0,
+              -0.3
+            ],
+            "size": [
+              0.6,
+              1.6,
+              0.6
+            ],
+            "grow": 0,
+            "paint": "fang"
           }
         ]
       },

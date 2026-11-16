@@ -1,0 +1,87 @@
+{
+  "out": "playtest/models",
+  "settle": 8,
+  "steps": [
+    {
+      "tp": [
+        0,
+        "G+-0.02",
+        -13.0,
+        180,
+        6
+      ],
+      "capture": "sun_pharaoh-front",
+      "wait": 6
+    },
+    {
+      "tp": [
+        4.8999999999999995,
+        "G+-0.02",
+        -15.100000000000001,
+        145,
+        6
+      ],
+      "capture": "sun_pharaoh-three-quarter",
+      "wait": 6
+    },
+    {
+      "tp": [
+        7.0,
+        "G+-0.02",
+        -20,
+        90,
+        6
+      ],
+      "capture": "sun_pharaoh-side",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+-0.02",
+        -27.0,
+        0,
+        6
+      ],
+      "capture": "sun_pharaoh-back",
+      "wait": 6
+    },
+    {
+      "tp": [
+        0,
+        "G+1.08",
+        -16.7,
+        180,
+        0
+      ],
+      "capture": "sun_pharaoh-face",
+      "wait": 6
+    },
+    {
+      "tp": [
+        2.64,
+        "G+1.08",
+        -17.69,
+        153,
+        0
+      ],
+      "capture": "sun_pharaoh-face-side",
+      "wait": 6
+    }
+  ],
+  "setup": [
+    "forceload add -20 -40 20 0",
+    "kill @e[type=slime]",
+    "gamerule doMobSpawning false",
+    "kill @e[type=khemet:mummy]",
+    "kill @e[type=khemet:royal_mummy]",
+    "kill @e[type=khemet:scarab]",
+    "kill @e[type=khemet:tomb_guardian]",
+    "kill @e[type=khemet:forgotten_pharaoh]",
+    "kill @e[type=khemet:cobra]",
+    "kill @e[type=khemet:crocodile]",
+    "kill @e[type=khemet:sun_pharaoh]",
+    "kill @e[type=item]",
+    "summon khemet:sun_pharaoh 0 $G -20 {NoAI:1b,PersistenceRequired:1b,Rotation:[0f,0f]}"
+  ]
+}

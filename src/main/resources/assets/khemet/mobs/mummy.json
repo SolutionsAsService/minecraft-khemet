@@ -169,6 +169,62 @@
         "light": "#3fd0b8",
         "cell": 4
       },
+      "croc": {
+        "type": "scales",
+        "base": "#4a5a38",
+        "dark": "#26301c",
+        "light": "#7a8a58",
+        "cell": 3
+      },
+      "croc_belly": {
+        "type": "skin",
+        "base": "#b8b084",
+        "shade": 5
+      },
+      "cobra": {
+        "type": "scales",
+        "base": "#8a7a3a",
+        "dark": "#40361a",
+        "light": "#c8b862",
+        "cell": 3
+      },
+      "cobra_hood": {
+        "type": "scales",
+        "base": "#b09a48",
+        "dark": "#40361a",
+        "light": "#e0d078",
+        "cell": 3
+      },
+      "cobra_belly": {
+        "type": "skin",
+        "base": "#e4d8a0",
+        "shade": 4
+      },
+      "fang": {
+        "type": "plain",
+        "base": "#f0ece0"
+      },
+      "tongue": {
+        "type": "plain",
+        "base": "#c02830"
+      },
+      "tan": {
+        "type": "skin",
+        "base": "#c88a4a",
+        "shade": 5
+      },
+      "sun": {
+        "type": "metal",
+        "base": "#f0b020",
+        "dark": "#a05a08",
+        "light": "#fff4b0"
+      },
+      "sun_red": {
+        "type": "metal",
+        "base": "#d03a18",
+        "dark": "#7a1808",
+        "light": "#ff8a50"
+      },
       "shell_gold": {
         "type": "metal",
         "base": "#d8b030",
@@ -399,47 +455,119 @@
               {
                 "face": "front",
                 "type": "rect",
-                "x": 1,
-                "y": 2,
-                "w": 2,
-                "h": 1,
-                "color": "#2a1a10"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 5,
-                "y": 2,
-                "w": 2,
-                "h": 1,
-                "color": "#2a1a10"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 1,
-                "y": 2,
-                "w": 1,
-                "h": 1,
-                "color": "#ffc840"
-              },
-              {
-                "face": "front",
-                "type": "rect",
-                "x": 5,
-                "y": 2,
-                "w": 1,
-                "h": 1,
-                "color": "#ffc840"
-              },
-              {
-                "face": "front",
-                "type": "rect",
                 "x": 0,
-                "y": 3,
+                "y": 1,
                 "w": 8,
                 "h": 1,
-                "color": "#7a5c40"
+                "color": "#8a7a58"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 2,
+                "w": 2,
+                "h": 1,
+                "color": "#1a1008"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 3,
+                "w": 2,
+                "h": 1,
+                "color": "#ffc840"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 2,
+                "w": 2,
+                "h": 1,
+                "color": "#1a1008"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 3,
+                "w": 2,
+                "h": 1,
+                "color": "#ffc840"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 3,
+                "w": 1,
+                "h": 1,
+                "color": "#2a1a10"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 3,
+                "w": 1,
+                "h": 1,
+                "color": "#2a1a10"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 3,
+                "y": 4,
+                "w": 2,
+                "h": 1,
+                "color": "#a89870"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 5,
+                "w": 1,
+                "h": 1,
+                "color": "#5a4a30"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 5,
+                "y": 5,
+                "w": 1,
+                "h": 1,
+                "color": "#5a4a30"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 1,
+                "y": 5,
+                "w": 1,
+                "h": 1,
+                "color": "#9a8a68"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 6,
+                "y": 5,
+                "w": 1,
+                "h": 1,
+                "color": "#9a8a68"
+              },
+              {
+                "face": "front",
+                "type": "rect",
+                "x": 2,
+                "y": 5,
+                "w": 4,
+                "h": 1,
+                "color": "#5a4a30"
               }
             ]
           },
@@ -460,7 +588,7 @@
           {
             "from": [
               -4.5,
-              -4.2,
+              -5.8,
               -4.5
             ],
             "size": [
@@ -474,7 +602,7 @@
           {
             "from": [
               -4.5,
-              -1.8,
+              0.3,
               -4.5
             ],
             "size": [
@@ -503,28 +631,28 @@
         "boxes": [
           {
             "from": [
+              -2.8,
               -2.5,
-              -2.5,
-              -2.5
+              -2.8
             ],
             "size": [
-              5,
+              5.6,
               3,
-              5
+              5.6
             ],
             "grow": 0.1,
             "paint": "linen_dark"
           },
           {
             "from": [
-              -1.5,
+              -1.8,
               -0.5,
-              -1.5
+              -1.8
             ],
             "size": [
-              3,
+              3.6,
               5,
-              3
+              3.6
             ],
             "grow": 0,
             "paint": "linen"
@@ -575,14 +703,14 @@
         "boxes": [
           {
             "from": [
-              -1.5,
+              -1.8,
               0,
-              -1.5
+              -1.8
             ],
             "size": [
-              3,
+              3.6,
               5,
-              3
+              3.6
             ],
             "grow": 0,
             "paint": "linen",
@@ -600,14 +728,14 @@
           },
           {
             "from": [
-              -1.5,
+              -1.8,
               1,
-              -1.5
+              -1.8
             ],
             "size": [
-              3,
+              3.6,
               2,
-              3
+              3.6
             ],
             "grow": 0.35,
             "paint": "linen_dark"
@@ -658,14 +786,14 @@
         "boxes": [
           {
             "from": [
-              -1.5,
+              -1.8,
               0,
-              -1.5
+              -1.8
             ],
             "size": [
-              3,
+              3.6,
               2,
-              3
+              3.6
             ],
             "grow": 0.1,
             "paint": "linen"
@@ -848,28 +976,28 @@
         "boxes": [
           {
             "from": [
+              -2.8,
               -2.5,
-              -2.5,
-              -2.5
+              -2.8
             ],
             "size": [
-              5,
+              5.6,
               3,
-              5
+              5.6
             ],
             "grow": 0.1,
             "paint": "linen_dark"
           },
           {
             "from": [
-              -1.5,
+              -1.8,
               -0.5,
-              -1.5
+              -1.8
             ],
             "size": [
-              3,
+              3.6,
               5,
-              3
+              3.6
             ],
             "grow": 0,
             "paint": "linen"
@@ -920,28 +1048,28 @@
         "boxes": [
           {
             "from": [
-              -1.5,
+              -1.8,
               0,
-              -1.5
+              -1.8
             ],
             "size": [
-              3,
+              3.6,
               5,
-              3
+              3.6
             ],
             "grow": 0,
             "paint": "linen"
           },
           {
             "from": [
-              -1.5,
+              -1.8,
               1,
-              -1.5
+              -1.8
             ],
             "size": [
-              3,
+              3.6,
               2,
-              3
+              3.6
             ],
             "grow": 0.35,
             "paint": "linen_dark"
@@ -992,14 +1120,14 @@
         "boxes": [
           {
             "from": [
-              -1.5,
+              -1.8,
               0,
-              -1.5
+              -1.8
             ],
             "size": [
-              3,
+              3.6,
               2,
-              3
+              3.6
             ],
             "grow": 0.1,
             "paint": "linen"
