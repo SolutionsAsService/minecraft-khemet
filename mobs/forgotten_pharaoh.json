@@ -1,0 +1,129 @@
+{
+  "id": "forgotten_pharaoh",
+  "name": "The Forgotten Pharaoh",
+  "base": "zombie",
+  "hostile": true,
+  "attributes": {
+    "health": 220,
+    "damage": 9,
+    "armor": 8,
+    "speed": 0.22,
+    "knockback_resistance": 0.8,
+    "follow_range": 96,
+    "scale": 1.4
+  },
+  "flags": {
+    "sun_sensitive": false,
+    "converts_in_water": false,
+    "baby": false,
+    "reinforcements": false
+  },
+  "behaviours": [
+    {
+      "type": "hunt",
+      "through_walls": true,
+      "stalk": true
+    },
+    {
+      "type": "charge",
+      "min": 6,
+      "max": 16,
+      "cooldown_ticks": 200,
+      "seconds": 3,
+      "amplifier": 2
+    },
+    {
+      "type": "slam",
+      "cooldown_ticks": 240,
+      "radius": 5.0,
+      "damage": 6
+    },
+    {
+      "type": "enrage",
+      "below": 0.5,
+      "speed_bonus": 0.25,
+      "damage_bonus": 0.4
+    },
+    {
+      "type": "boss_bar",
+      "color": "yellow"
+    },
+    {
+      "type": "on_hit_effect",
+      "effect": "minecraft:weakness",
+      "seconds": 8,
+      "amplifier": 1
+    },
+    {
+      "type": "fire_vulnerable",
+      "multiplier": 1.5
+    }
+  ],
+  "drops": [
+    {
+      "item": "minecraft:gold_ingot",
+      "min": 6,
+      "max": 12
+    },
+    {
+      "item": "minecraft:diamond",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "khemet:sunstone_powder",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "item": "khemet:ankh",
+      "min": 1,
+      "max": 1,
+      "chance": 0.5
+    }
+  ],
+  "skin": {
+    "parts": {
+      "head": "#d4c8a0",
+      "body": "#c8bc94",
+      "arms": "#c8bc94",
+      "legs": "#b0a478"
+    },
+    "noise": 4,
+    "features": [
+      {
+        "type": "wraps",
+        "color": "#d4c8a0",
+        "shadow": "#a09070"
+      },
+      {
+        "type": "helmet",
+        "color": "#e0b830"
+      },
+      {
+        "type": "crest",
+        "color": "#2a58b0"
+      },
+      {
+        "type": "eyes",
+        "color": "#ffd040",
+        "y": 4
+      },
+      {
+        "type": "band",
+        "part": "body",
+        "y": 0,
+        "h": 3,
+        "color": "#e0b830"
+      }
+    ]
+  },
+  "egg": [
+    "#e0b830",
+    "#2a58b0"
+  ],
+  "tests": {
+    "reach_distance": 12,
+    "reach_max_seconds": 25
+  }
+}

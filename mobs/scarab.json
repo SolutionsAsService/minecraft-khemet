@@ -1,0 +1,80 @@
+{
+  "id": "scarab",
+  "name": "Scarab",
+  "base": "zombie",
+  "hostile": true,
+  "attributes": {
+    "health": 8,
+    "damage": 2,
+    "armor": 0,
+    "speed": 0.31,
+    "scale": 0.55
+  },
+  "flags": {
+    "sun_sensitive": false,
+    "converts_in_water": false,
+    "baby": false,
+    "reinforcements": false
+  },
+  "behaviours": [
+    {
+      "type": "on_hit_effect",
+      "effect": "minecraft:poison",
+      "seconds": 4,
+      "amplifier": 0
+    }
+  ],
+  "spawn": {
+    "biomes": [
+      "minecraft:desert"
+    ],
+    "weight": 10,
+    "min": 2,
+    "max": 5
+  },
+  "drops": [
+    {
+      "item": "minecraft:gold_nugget",
+      "min": 0,
+      "max": 2,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:lapis_lazuli",
+      "min": 0,
+      "max": 1,
+      "chance": 0.3
+    }
+  ],
+  "skin": {
+    "parts": {
+      "head": "#1c4a6a",
+      "body": "#164a58",
+      "arms": "#1c4a6a",
+      "legs": "#10303c"
+    },
+    "noise": 6,
+    "features": [
+      {
+        "type": "eyes",
+        "color": "#ff5030",
+        "y": 3
+      },
+      {
+        "type": "band",
+        "part": "body",
+        "y": 3,
+        "h": 2,
+        "color": "#e0b030"
+      }
+    ]
+  },
+  "egg": [
+    "#164a58",
+    "#e0b030"
+  ],
+  "tests": {
+    "reach_distance": 12,
+    "reach_max_seconds": 20
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "khemet:item/forgotten_pharaoh_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 14727216
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 2775216
+      }
+    ]
+  }
+}

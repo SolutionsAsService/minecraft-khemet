@@ -34,6 +34,7 @@ public class KhemetClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		// plants have transparent pixels: without a cutout layer they render with a black background
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(), KhemetBlocks.BLUE_LOTUS, KhemetBlocks.PAPYRUS);
+		dev.shadw.khemet.mobs.GeneratedMobsClient.initClient();
 		EntityRendererRegistry.register(KhemetEntities.MUMMY, ctx -> new SkinnedZombieRenderer(ctx, texture("mummy")));
 		EntityRendererRegistry.register(KhemetEntities.ROYAL_MUMMY, ctx -> new SkinnedZombieRenderer(ctx, texture("royal_mummy")));
 	}

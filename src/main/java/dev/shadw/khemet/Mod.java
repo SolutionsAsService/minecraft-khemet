@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import dev.shadw.khemet.mobs.GeneratedMobs;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
@@ -44,6 +45,7 @@ public class Mod implements ModInitializer {
 		KhemetBlocks.init();
 		KhemetItems.init();
 		KhemetEntities.init();
+		GeneratedMobs.init();
 		Favor.init();
 		KhemetCommands.init();
 		Sandstorm.init();
@@ -112,6 +114,7 @@ public class Mod implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> {
 			entries.accept(KhemetEntities.MUMMY_SPAWN_EGG);
 			entries.accept(KhemetEntities.ROYAL_MUMMY_SPAWN_EGG);
+			GeneratedMobs.EGGS.forEach(entries::accept);
 		});
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> entries.accept(KhemetItems.KHOPESH));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> entries.accept(KhemetItems.ANKH));

@@ -51,5 +51,11 @@
   "entity.khemet.mummy": "Mummy",
   "entity.khemet.royal_mummy": "Royal Mummy",
   "item.khemet.mummy_spawn_egg": "Mummy Spawn Egg",
-  "item.khemet.royal_mummy_spawn_egg": "Royal Mummy Spawn Egg"
+  "item.khemet.royal_mummy_spawn_egg": "Royal Mummy Spawn Egg",
+  "entity.khemet.forgotten_pharaoh": "The Forgotten Pharaoh",
+  "item.khemet.forgotten_pharaoh_spawn_egg": "The Forgotten Pharaoh Spawn Egg",
+  "entity.khemet.scarab": "Scarab",
+  "item.khemet.scarab_spawn_egg": "Scarab Spawn Egg",
+  "entity.khemet.tomb_guardian": "Tomb Guardian",
+  "item.khemet.tomb_guardian_spawn_egg": "Tomb Guardian Spawn Egg"
 }
