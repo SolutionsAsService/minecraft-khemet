@@ -29,6 +29,7 @@ class Structure:
         self.size = (sx, sy, sz)
         self.blocks = {}
         self.nbt = {}
+        self.entities = []
 
     def put(self, x, y, z, block, tag=None):
         sx, sy, sz = self.size
@@ -42,6 +43,15 @@ class Structure:
             for z in range(z0, z1 + 1):
                 for x in range(x0, x1 + 1):
                     self.put(x, y, z, block)
+
+    def entity(self, x, y, z, entity_id, persistent=True):
+        """Place a creature when the structure is placed (a boss in its room). x, y, z are block coordinates inside the template;
+        the creature stands at the middle of that block. `persistent` keeps it from despawning."""
+        data = {"id": (nbt.STRING, entity_id)}
+        if persistent:
+            data["PersistenceRequired"] = (nbt.BYTE, 1)
+        self.entities.append({"pos": (nbt.LIST, (nbt.DOUBLE, [x + 0.5, float(y), z + 0.5])),
+                              "blockPos": (nbt.LIST, (nbt.INT, [x, y, z])), "nbt": (nbt.COMPOUND, data)})
 
     def remove(self, x, y, z):
         self.blocks.pop((x, y, z), None)
@@ -70,6 +80,6 @@ class Structure:
             "size": (nbt.LIST, (nbt.INT, list(self.size))),
             "palette": (nbt.LIST, (nbt.COMPOUND, pal)),
             "blocks": (nbt.LIST, (nbt.COMPOUND, blocks)),
-            "entities": (nbt.LIST, (nbt.COMPOUND, [])),
+            "entities": (nbt.LIST, (nbt.COMPOUND, self.entities)),
         }
         return nbt.dumps(root)

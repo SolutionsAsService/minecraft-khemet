@@ -1,13 +1,13 @@
 """A small NBT reader and writer (gzip, big-endian), enough for Minecraft structure files. Stdlib only.
 
 Values are (type_id, value) pairs:
-  1 byte, 3 int, 8 string, 9 list = (element_type_id, [values]), 10 compound = {name: (type_id, value)}, 11 int array.
+  1 byte, 3 int, 6 double, 8 string, 9 list = (element_type_id, [values]), 10 compound = {name: (type_id, value)}, 11 int array.
 """
 
 import gzip
 import struct
 
-END, BYTE, INT, STRING, LIST, COMPOUND, INT_ARRAY = 0, 1, 3, 8, 9, 10, 11
+END, BYTE, INT, DOUBLE, STRING, LIST, COMPOUND, INT_ARRAY = 0, 1, 3, 6, 8, 9, 10, 11
 
 
 def _str(s):
@@ -20,6 +20,8 @@ def _payload(t, v):
         return struct.pack(">b", v)
     if t == INT:
         return struct.pack(">i", v)
+    if t == DOUBLE:
+        return struct.pack(">d", v)
     if t == STRING:
         return _str(v)
     if t == LIST:
