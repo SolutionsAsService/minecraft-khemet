@@ -314,13 +314,13 @@ class Rig:
 
 
     # ---------- a riding horse (and variants: winged, many-legged) ----------
-    def horse(self, coat, mane, belly=None, hoof=None, nose=None, saddle="saddle", trim="trim", eye="#2a1c10", eye_glow=None, tail_paint=None, extra=None, body=(9, 9.5, 22), scale_legs=1.0):
+    def horse(self, coat, mane, belly=None, hoof=None, nose=None, saddle="saddle", trim="trim", eye="#2a1c10", eye_glow=None, tail_paint=None, extra=None, body=(9, 9.5, 22), scale_legs=1.0, head_drop=20):
         """A saddled riding horse built on quadruped(): a long arched neck with a mane down its back, a long head with a forelock, a deep chest,
         long legs with hooves, a hanging tail and a saddle with stirrups on the back. Returns the part names; `extra` adds leg pairs (Sleipnir's eight)."""
         sl = lambda t: tuple(round(v * scale_legs, 2) for v in t)
         n = self.quadruped(coat, belly=belly or coat, mane=mane, claw=hoof or "hoof", nose=nose or hoof or "hoof", body=body, head=(5.4, 6.2, 7), snout=(4.0, 4.2, 7), leg_w=3.4, ears=(1.8, 3.2),
                            neck=(5.6, 12, 6.4), neck_rot=34, front=sl((7, 7, 2.6)), hind=sl((7, 7.8, 2.6)), front_pose=(4, -4, 0), hind_pose=(-18, 34, -16), walk=0.8, eye=eye, eye_glow=eye_glow,
-                           fangs=False, jaw_open=2, ruff=False, hoof_paint=hoof or "hoof", extra=extra,
+                           fangs=False, jaw_open=2, ruff=False, hoof_paint=hoof or "hoof", extra=extra, head_drop=head_drop,
                            tail={"segs": [(5, 2.4, 2.4, 0), (6, 3.2, 3.2, -4), (6, 3.0, 3.0, -4), (5, 2.0, 2.0, -4)], "paint": tail_paint or mane}, tail_rot=30)
         bw, bh, bl = body
         nw, nl, nd = 5.6, 12, 6.4

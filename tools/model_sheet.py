@@ -11,7 +11,7 @@ SIZES = {"chariot": (1.6, 1.0, 7.0, 2.6, 0.0), "mummy": (1.95, 1.7, 4.4, 1.9), "
          "cobra": (1.1, 0.95, 3.2, 1.3), "crocodile": (1.1, 0.5, 5.0, 1.6, 1.4), "sun_pharaoh": (3.2, 2.7, 7.0, 3.3)}
 
 
-K = {"fenrir": 0.95, "raven": 0.85, "warg": 0.9, "sleipnir": 0.55, "pegasus": 0.55, "troll": 0.8, "jotunn": 0.82, "draugr_lord": 0.8, "crocodile": 0.58, "chariot": 0.6, "cobra": 0.7, "scarab": 0.75, "forgotten_pharaoh": 0.85, "sun_pharaoh": 0.85, "tomb_guardian": 0.8, "minotaur": 0.85, "cyclops": 0.8, "gorgon": 0.8}   # framing: the fraction of the full-view distance the portrait cameras use (default 0.75)
+K = {"fenrir": 0.95, "raven": 0.85, "warg": 0.9, "sleipnir": 0.6, "pegasus": 0.7, "troll": 0.8, "jotunn": 0.82, "draugr_lord": 0.8, "crocodile": 0.58, "chariot": 0.6, "cobra": 0.7, "scarab": 0.75, "forgotten_pharaoh": 0.85, "sun_pharaoh": 0.85, "tomb_guardian": 0.8, "minotaur": 0.85, "cyclops": 0.8, "gorgon": 0.8}   # framing: the fraction of the full-view distance the portrait cameras use (default 0.75)
 
 
 def cam(x, y, z, yaw, p, n):
