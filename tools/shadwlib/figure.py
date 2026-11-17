@@ -160,7 +160,7 @@ class Rig:
     # ---------- a finely shaped four-legged beast (wolf, hound, boar, big cat) ----------
     def quadruped(self, fur, belly=None, mane=None, claw=None, nose=None, body=(8, 8, 17), head=(7, 6, 6), snout=(4, 3.4, 5.5), leg_w=3.0,
                   front=(6.5, 6, 3), hind=(6.5, 6.5, 3), tail=None, ears=(2.2, 3.4), neck=(5.5, 6, 5), walk=0.9, eye="#ffd040", eye_glow=None,
-                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100, hoof_paint=None, extra=None):
+                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100, hoof_paint=None, extra=None, head_drop=6):
         """Builds a lean body with a deeper chest and a mane, a neck, a head with a stepped snout, jaw, ears and fangs, four legs of three
         segments (thigh, lower leg, paw) in a diagonal walk, and an optional tail chain. The hip height is solved from the leg angles so the
         paws meet the ground. Returns the part names."""
@@ -232,7 +232,7 @@ class Rig:
     # ---------- a finely shaped four-legged beast (wolf, hound, boar, big cat) ----------
     def quadruped(self, fur, belly=None, mane=None, claw=None, nose=None, body=(8, 8, 17), head=(7, 6, 6), snout=(4, 3.4, 5.5), leg_w=3.0,
                   front=(6.5, 6, 3), hind=(6.5, 6.5, 3), tail=None, ears=(2.2, 3.4), neck=(5.5, 6, 5), walk=0.9, eye="#ffd040", eye_glow=None,
-                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100, hoof_paint=None, extra=None):
+                  fangs=True, jaw_open=8, front_pose=(8, -8, 0), hind_pose=(-24, 42, -20), neck_rot=48, mane_len=0.45, ruff=True, tail_rot=100, hoof_paint=None, extra=None, head_drop=6):
         """Builds a lean body with a deeper chest and a mane, a neck, a head with a stepped snout, jaw, ears and fangs, four legs of three
         segments (thigh, lower leg, paw) in a diagonal walk, and an optional tail chain. The hip height is solved from the leg angles so the
         paws meet the ground. Returns the part names."""
@@ -267,7 +267,7 @@ class Rig:
         n["neck"] = self.part("neck", "chest", (0, -bh + 1.4, -2.2), (neck_rot, 0, 0), [box((-nw / 2, -nl, -nd / 2), (nw, nl, nd), fur), box((-nw / 2 - 0.4, -nl + 0.4, -nd / 2 - 0.3), (nw + 0.8, nl * 0.55, nd + 0.6), mane, 0.0)])
         ew_ = max(1, int(hw // 3))
         eyes = [rect("front", 0, 2, ew_, 1, "#101010"), rect("front", int(math.ceil(hw)) - ew_, 2, ew_, 1, "#101010"), rect("front", 0, 3, ew_, 1, eye_glow or eye), rect("front", int(math.ceil(hw)) - ew_, 3, ew_, 1, eye_glow or eye)]
-        n["head"] = self.part("head", "neck", (0, -nl + 0.6, 0.3), (-neck_rot + 6, 0, 0), [
+        n["head"] = self.part("head", "neck", (0, -nl + 0.6, 0.3), (-neck_rot + head_drop, 0, 0), [
             box((-hw / 2, -hh / 2, -hd + 1.5), (hw, hh, hd), fur, 0.0, eyes), box((-hw / 2 - 0.5, -hh / 2 + 1.5, -hd / 2 + 1.5), (hw + 1.0, hh - 2.0, 2.5), mane)])
         self.anim("head", "look", amount=0.8)
         n["snout"] = self.part("snout", "head", (0, 0.4, -hd + 1.5), (0, 0, 0), [

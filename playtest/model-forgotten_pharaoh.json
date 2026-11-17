@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        4.8999999999999995,
-        "G+-0.02",
-        -15.100000000000001,
-        145,
-        6
+        4.165,
+        "G+1.23",
+        -15.835,
+        135,
+        12
       ],
       "capture": "forgotten_pharaoh-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        7.0,
-        "G+-0.02",
+        5.95,
+        "G+1.23",
         -20,
         90,
-        6
+        12
       ],
       "capture": "forgotten_pharaoh-side",
       "wait": 6
@@ -73,6 +73,7 @@
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
     "gamerule doMobSpawning false",
+    "kill @e[type=khemet:chariot]",
     "kill @e[type=khemet:mummy]",
     "kill @e[type=khemet:royal_mummy]",
     "kill @e[type=khemet:scarab]",

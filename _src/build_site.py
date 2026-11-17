@@ -384,8 +384,8 @@ def status(tested, untested, hue=None):
             f'<p><b>Not yet tested:</b></p><ul>{u}</ul></section>')
 
 
-def fig(name, caption, alt):
-    return (f'<figure class="shot"><img src="{shot(name)}" alt="{esc(alt)}" width="854" height="480" loading="lazy"><figcaption>{esc(caption)}</figcaption></figure>'
+def fig(name, caption, alt, w=854, h=480):
+    return (f'<figure class="shot"><img src="{shot(name)}" alt="{esc(alt)}" width="{w}" height="{h}" loading="lazy"><figcaption>{esc(caption)}</figcaption></figure>'
             if shot(name) else "")
 
 
@@ -465,7 +465,7 @@ def home_wall():
     panels = [
         ("gods", "Gods", f"{len(GODS)} gods · {len(STAGES)} stages", "Make an offering. Be named Chosen.", "gods.html", "panels/ra-shrine", "ra_altar"),
         ("structures", "Structures", f"{n_structs()} structures", "Found in deserts; some in badlands or savanna.", "structures.html", "panels/anubis-shrine", "obelisk_block"),
-        ("creatures", "Creatures", "8 creatures", "Linen, stone, shell and a crown.", "creatures.html", "panels/creatures-all", "mummy-face"),
+        ("creatures", "Creatures", "9 creatures", "Linen, stone, shell and a crown.", "creatures.html", "panels/creatures-all", "mummy-face"),
         ("blocks", "Blocks", f"{len(block_ids())} blocks", "Limestone, gold, basalt and glyphs.", "blocks.html", "panels/blocks", "hieroglyph_stone"),
         ("potions", "Potions", f"{len(POTIONS)} potions · 2 plants", "Lotus, papyrus and five brews.", "potions.html", "panels/plants", "blue_lotus"),
         ("relics", "Relics", "2 relics · sandstorms", "An ankh and a khopesh, shown large.", "relics.html", "panels/relics", "ankh"),
@@ -655,6 +655,7 @@ def build_creatures():
             ("scarab", "A small sacred beetle with a turquoise shell striped in gold, red eyes, antennae and six legs in a tripod gait. Fast, fragile, and its bite poisons.", "scarab"),
             ("cobra", "A hooded desert cobra, coiled in five rings with its body raised and the hood spread, red eyes, long fangs and a forked tongue that flicks. It strikes in a short burst, and the bite poisons.", "cobra"),
             ("crocodile", "A Nile crocodile: a long armoured body with a ridge of scutes, splayed legs, a tapering tail of six segments, a long snout with teeth down both jaws and yellow eyes on raised bumps. It lurks around rivers, swamps and beaches and lunges.", "crocodile"),
+            ("chariot", "The war chariot: a gilded carriage with a lapis guard and a sun disc, two spoked wheels that turn as it moves, a pole and yoke and two harnessed ponies. Craft it, set it down, use it to climb aboard and look where you want to go; a second rider sits behind.", "chariot"),
             ("tomb_guardian", "A jackal-headed stone warrior with a black head, tall ears and glowing cyan eyes, a gold collar and kilt, an ankh cut into its chest, and a was-sceptre. Armoured and slow; it slams the ground.", "tomb_guardian"),
             ("sun_pharaoh", "The sun king: bronze-skinned under a gold circlet and a halo of eight rays, in gold and red-orange armour with a flame-red kilt and streaming flames, a sun-gold khopesh and a sceptre topped with a red sun. A boss with a bar: it charges, stamps, enrages when hurt, and its hits blind you for a moment.", "sun_pharaoh"),
             ("forgotten_pharaoh", "The undead king: a golden death-mask under the double crown (white hedjet inside the red deshret), a nemes and uraeus, the broad collar, crook and flail crossed on the chest and a shroud of tattered linen. A boss with a bar: it hunts through walls, charges, slams, enrages below half health, and its blows leave Weakness II. It is not placed by anything yet.", "forgotten_pharaoh"))
@@ -663,7 +664,7 @@ def build_creatures():
         a = spec["attributes"]
         name = spec["name"]
         sp = spec.get("spawn")
-        spawn = (f"{', '.join(b.split(':')[1].replace('_', ' ') for b in sp['biomes']).capitalize()}: {sp['min'] if sp['min'] == sp['max'] else str(sp['min']) + ' to ' + str(sp['max'])} at a time, weight {sp['weight']}." if sp else "None: no structure or biome places it yet (an egg and /summon only).")
+        spawn = ("Crafted, not spawned: leather, three acacia planks, a gold ingot and two sticks (in the pattern shown on this page's recipe line). It drops itself when broken." if key == "chariot" else None) or (f"{', '.join(b.split(':')[1].replace('_', ' ') for b in sp['biomes']).capitalize()}: {sp['min'] if sp['min'] == sp['max'] else str(sp['min']) + ' to ' + str(sp['max'])} at a time, weight {sp['weight']}." if sp else "None: no structure or biome places it yet (an egg and /summon only).")
         guards = []
         for slug, title, *_ in STRUCTS:
             ov = jread(DATA / "worldgen/structure" / f"{slug}.json").get("spawn_overrides", {})
@@ -672,13 +673,13 @@ def build_creatures():
         if guards:
             spawn += " Set to guard " + " and ".join(guards) + " (in the data; not yet watched)."
         loot = ", ".join(label(d["item"]) for d in spec["drops"])
-        fx = ", ".join(f"{label(b['effect'])} {roman(b.get('amplifier', 0) + 1)} for {b.get('seconds', 5)} s" for b in spec["behaviours"] if b["type"] == "on_hit_effect")
+        fx = ", ".join(f"{label(b['effect'])} {roman(b.get('amplifier', 0) + 1)} for {b.get('seconds', 5)} s" for b in spec.get("behaviours", []) if b["type"] == "on_hit_effect")
         meas = jread(REPO / "playtest" / f"mobtest-{key}.json") if (REPO / "playtest" / f"mobtest-{key}.json").exists() else None
         mrow = ""
         if meas and meas.get("first_hit_damage") is not None:
             reach = f"reached a player {meas['reach_distance']} blocks away in {meas['reach_seconds']} s" if meas.get("reach_seconds") else "did not reach the player in the test"
             mrow = f'<tr><th scope="row">Measured</th><td>In a flat desert test world: {esc(reach)}; first hit took {meas["first_hit_damage"]:g} health on Easy; effects on the player: {esc(", ".join(label(e) for e in meas["effects_on_player"]) or "none")}. (One run each; <code>shadw-mod playtest mobtest</code>.)</td></tr>'
-        cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{blurb}</p><div class="shots two">{fig(key + "-three-quarter", name + ", three-quarter view, with its AI off for the photograph.", name + " standing on desert sand")}{fig(key + "-face-side", name + ", close up.", name + " close up")}</div>
+        cards += f"""<section class="sec" id="{key}"><h2>{name}</h2><p>{blurb}</p><div class="shots two">{fig(key + "-three-quarter", name + ", three-quarter view, with its AI off for the photograph.", name + " standing on desert sand")}{fig(key + "-side", name + ", side view, with its AI off for the photograph.", name + " seen from the side on desert sand")}</div>
   <table class="data"><caption class="sr">{name}: facts</caption><tbody>
   <tr><th scope="row">Stats</th><td>{a['health']:g} health ({a['health'] / 2:g} hearts), {a.get('damage', 0):g} attack damage, {a.get('armor', 0):g} armour{(', ' + fx + ' on hit') if fx else ''}</td></tr>
   <tr><th scope="row">Spawns</th><td>{esc(spawn)}</td></tr>
@@ -688,13 +689,13 @@ def build_creatures():
     body = f"""
 <section class="page">
   <p class="eyebrow">Creatures</p><h1>Linen, stone, shell and a crown</h1><div class="rule"></div>
-  <p class="lede">Eight creatures, each with its own model: built from many small moving parts, with a texture packed and painted by the mod's generator, from a small data file (<code>mobs/*.json</code>).</p>
-  <div class="shots two">{fig("creatures-all", "Top row: scarab, cobra, crocodile, mummy. Bottom row: royal mummy, tomb guardian, the Sun Pharaoh and the Forgotten Pharaoh, with their AI off for the photograph.", "Eight Egyptian creatures in two rows on desert sand")}</div>
+  <p class="lede">Nine creatures, each with its own model: built from many small moving parts, with a texture packed and painted by the mod's generator, from a small data file (<code>mobs/*.json</code>).</p>
+  <div class="shots">{fig("creatures-all", "Top row: scarab, cobra, crocodile. Middle row: mummy, royal mummy, tomb guardian. Bottom row: the Sun Pharaoh, the Forgotten Pharaoh and the craftable chariot, with their AI off for the photograph.", "Nine Egyptian creatures and a chariot in three rows on desert sand", 1281, 720)}</div>
   {cards}
-  {status(["All eight load, render with their own models and are photographed. A test harness measured each in a running game: time to reach a player, the first hit, the effects, and its drops.", "The mummy and royal mummy were moved from hand-written classes to data files and behave as before (Weakness on hit, as measured)."],
+  {status(["All nine load, render with their own models and are photographed. A test harness measured each in a running game: time to reach a player, the first hit, the effects, and its drops.", "The mummy and royal mummy were moved from hand-written classes to data files and behave as before (Weakness on hit, as measured)."],
           ["Mummies, scarabs and guardians spawning on their own over a night, and a real fight with any of them.", "The Forgotten Pharaoh's whole fight, and anywhere to find him: nothing places him yet.", "How the models move in a fight (animation was checked only in still photographs)."])}
 </section>"""
-    return page("Creatures: mummies, scarab, cobra, crocodile, guardian and two pharaohs", "The eight creatures of the Khemet mod with their own models: stats, spawns, drops and measured behaviour.", body, "creatures", "creatures.html", "creatures")
+    return page("Creatures: mummies, scarab, cobra, crocodile, guardian and two pharaohs", "The nine creatures of the Khemet mod with their own models: stats, spawns, drops and measured behaviour.", body, "creatures", "creatures.html", "creatures")
 
 
 def build_relics():

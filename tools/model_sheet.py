@@ -11,6 +11,9 @@ SIZES = {"chariot": (1.6, 1.0, 7.0, 2.6, 0.0), "mummy": (1.95, 1.7, 4.4, 1.9), "
          "cobra": (1.1, 0.95, 3.2, 1.3), "crocodile": (1.1, 0.5, 5.0, 1.6, 1.4), "sun_pharaoh": (3.2, 2.7, 7.0, 3.3)}
 
 
+K = {"fenrir": 0.95, "raven": 0.85, "warg": 0.9, "sleipnir": 0.55, "pegasus": 0.55, "troll": 0.8, "jotunn": 0.82, "draugr_lord": 0.8, "crocodile": 0.58, "chariot": 0.6, "cobra": 0.7, "scarab": 0.75, "forgotten_pharaoh": 0.85, "sun_pharaoh": 0.85, "tomb_guardian": 0.8, "minotaur": 0.85, "cyclops": 0.8, "gorgon": 0.8}   # framing: the fraction of the full-view distance the portrait cameras use (default 0.75)
+
+
 def cam(x, y, z, yaw, p, n):
     return {"tp": [x, y, z, yaw, p], "capture": n, "wait": 6}
 
@@ -22,8 +25,10 @@ def main(ids, ns):
         fy = f"G+{max(head - 1.62, -1.2):.2f}"
         mid = f"G+{max(hgt * 0.5 - 1.62, -0.9):.2f}"
         cx, cz = 0, -20
-        steps = [cam(cx, mid, cz + dist, 180, 6, f"{mob}-front"), cam(cx + dist * 0.7, mid, cz + dist * 0.7, 145, 6, f"{mob}-three-quarter"),
-                 cam(cx + dist, mid, cz, 90, 6, f"{mob}-side"), cam(cx, mid, cz - dist, 0, 6, f"{mob}-back"),
+        t = dist * K.get(mob, 0.75)        # tight, for the site's pictures: the subject fills about half the frame, and the camera is AIMED at it (yaw 135 looks at the mob from 45 degrees)
+        up = f"G+{hgt * 0.5 - 1.62 + 0.21 * t:.2f}"      # the portraits look down 12 degrees at the creature's centre, so the ground shows and the creature sits mid-frame
+        steps = [cam(cx, mid, cz + dist, 180, 6, f"{mob}-front"), cam(cx + t * 0.7, up, cz + t * 0.7, 135, 12, f"{mob}-three-quarter"),
+                 cam(cx + t, up, cz, 90, 12, f"{mob}-side"), cam(cx, mid, cz - dist, 0, 6, f"{mob}-back"),
                  cam(cx, fy, cz + hz + fd, 180, 0, f"{mob}-face"), cam(fd * 0.8, fy, cz + hz + fd * 0.7, 153, 0, f"{mob}-face-side")]
         scene = {"out": "playtest/models", "settle": 8, "steps": steps, "setup": [
             "forceload add -20 -40 20 0", "kill @e[type=slime]", "gamerule doMobSpawning false"] + [f"kill @e[type={ns}:{m}]" for m in SIZES] + ["kill @e[type=item]"] +

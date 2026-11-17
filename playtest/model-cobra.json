@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        2.2399999999999998,
-        "G+-0.90",
-        -17.76,
-        145,
-        6
+        1.5679999999999998,
+        "G+-0.60",
+        -18.432,
+        135,
+        12
       ],
       "capture": "cobra-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        3.2,
-        "G+-0.90",
+        2.2399999999999998,
+        "G+-0.60",
         -20,
         90,
-        6
+        12
       ],
       "capture": "cobra-side",
       "wait": 6
@@ -73,6 +73,7 @@
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
     "gamerule doMobSpawning false",
+    "kill @e[type=khemet:chariot]",
     "kill @e[type=khemet:mummy]",
     "kill @e[type=khemet:royal_mummy]",
     "kill @e[type=khemet:scarab]",

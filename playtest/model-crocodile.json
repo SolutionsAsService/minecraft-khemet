@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        3.5,
-        "G+-0.90",
-        -16.5,
-        145,
-        6
+        2.03,
+        "G+-0.46",
+        -17.97,
+        135,
+        12
       ],
       "capture": "crocodile-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        5.0,
-        "G+-0.90",
+        2.9,
+        "G+-0.46",
         -20,
         90,
-        6
+        12
       ],
       "capture": "crocodile-side",
       "wait": 6
@@ -73,6 +73,7 @@
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
     "gamerule doMobSpawning false",
+    "kill @e[type=khemet:chariot]",
     "kill @e[type=khemet:mummy]",
     "kill @e[type=khemet:royal_mummy]",
     "kill @e[type=khemet:scarab]",

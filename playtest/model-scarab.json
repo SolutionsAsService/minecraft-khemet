@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        1.8199999999999998,
-        "G+-0.90",
-        -18.18,
-        145,
-        6
+        1.365,
+        "G+-0.86",
+        -18.635,
+        135,
+        12
       ],
       "capture": "scarab-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        2.6,
-        "G+-0.90",
+        1.9500000000000002,
+        "G+-0.86",
         -20,
         90,
-        6
+        12
       ],
       "capture": "scarab-side",
       "wait": 6
@@ -73,6 +73,7 @@
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
     "gamerule doMobSpawning false",
+    "kill @e[type=khemet:chariot]",
     "kill @e[type=khemet:mummy]",
     "kill @e[type=khemet:royal_mummy]",
     "kill @e[type=khemet:scarab]",

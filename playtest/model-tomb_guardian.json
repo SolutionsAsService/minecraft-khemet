@@ -15,22 +15,22 @@
     },
     {
       "tp": [
-        4.199999999999999,
-        "G+-0.27",
-        -15.8,
-        145,
-        6
+        3.3600000000000003,
+        "G+0.74",
+        -16.64,
+        135,
+        12
       ],
       "capture": "tomb_guardian-three-quarter",
       "wait": 6
     },
     {
       "tp": [
-        6.0,
-        "G+-0.27",
+        4.800000000000001,
+        "G+0.74",
         -20,
         90,
-        6
+        12
       ],
       "capture": "tomb_guardian-side",
       "wait": 6
@@ -73,6 +73,7 @@
     "forceload add -20 -40 20 0",
     "kill @e[type=slime]",
     "gamerule doMobSpawning false",
+    "kill @e[type=khemet:chariot]",
     "kill @e[type=khemet:mummy]",
     "kill @e[type=khemet:royal_mummy]",
     "kill @e[type=khemet:scarab]",
